@@ -99,6 +99,11 @@
   let vh = $state(1);
 
   $effect(() => {
+    // Skip intro animation if page loaded already scrolled (e.g. browser refresh)
+    if (window.scrollY > 50) {
+      introComplete = true;
+      return;
+    }
     document.body.style.overflow = 'hidden';
     const id = setTimeout(() => {
       introComplete = true;
@@ -263,6 +268,7 @@
 
   .tile.intro-done {
     animation: none;
+    opacity: 1;
   }
 
   /* Matches Figma clip box: right=63, bottom=65 in the 1920×1065 coordinate space */
@@ -281,6 +287,7 @@
 
   .hero-content.intro-done {
     animation: none;
+    opacity: 1;
   }
 
   .detail {

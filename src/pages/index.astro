@@ -40,7 +40,7 @@ import Hero from '../components/Hero.svelte';
 
     <section class="programs">
       <h2 class="programs-headline">
-        In the past year, gap years have run programs with over <span class="red">10,000+ real users </span>
+        In the past year, gap years have run programs<br>with over <span class="red">10,000+ real users </span>
       </h2>
 
       <div class="programs-grid">
@@ -75,39 +75,14 @@ import Hero from '../components/Hero.svelte';
       <div class="programs-more">
         <h3 class="programs-more-title">...and so much more...</h3>
         <div class="programs-more-grid">
-          <!-- Row 1 -->
-          <div class="mini-card">
-            <img class="bg" src="https://www.figma.com/api/mcp/asset/4cc8b9e3-077b-4d7f-a36e-101b4e9b9d8a" alt="" />
-            <img class="logo" src="https://www.figma.com/api/mcp/asset/792e472b-fae1-49ae-8b31-3235d3760e00" alt="Summer of Making" style="width:225px;height:130px" />
-          </div>
-          <div class="mini-card campfire-mini">
-            <img class="bg" src="https://www.figma.com/api/mcp/asset/580378d6-139d-42fb-bae8-30d00bc41fa4" alt="" />
-            <img class="logo" src="https://www.figma.com/api/mcp/asset/5c69f40e-d690-4dbd-889e-a5f955591222" alt="Campfire" style="width:242px;height:56px;transform:translate(-50%,-50%) rotate(-4deg)" />
-          </div>
-          <div class="mini-card sleepover">
-            <img class="logo" src="https://www.figma.com/api/mcp/asset/536544b1-4e85-4151-a4a2-058dfd83e178" alt="Sleepover" style="width:224px;height:131px" />
-          </div>
-          <div class="mini-card">
-            <img class="bg" src="https://www.figma.com/api/mcp/asset/1a25049b-b55a-4029-9aeb-304e15c4a4b8" alt="Overglade" />
-          </div>
-
-          <!-- Row 2 -->
-          <div class="mini-card">
-            <img class="bg" src="https://www.figma.com/api/mcp/asset/54818d72-39ba-464b-ac9b-7d904d1af85d" alt="" />
-            <img class="logo" src="https://www.figma.com/api/mcp/asset/63d6c958-72d7-44d0-8d5e-1229c1134123" alt="Undercity" style="width:239px;height:90px" />
-          </div>
-          <div class="mini-card">
-            <img class="bg" src="https://www.figma.com/api/mcp/asset/c7250dc1-fe05-4937-864a-748710cbc79a" alt="" style="opacity:0.4" />
-            <img class="logo" src="https://www.figma.com/api/mcp/asset/a97b9869-8dcb-4d14-acbb-36784f6e68b6" alt="Shiba Arcade" style="width:308px;height:108px;opacity:0.8;filter:drop-shadow(0 0 80px white)" />
-          </div>
-          <div class="mini-card">
-            <img class="bg" src="https://www.figma.com/api/mcp/asset/28edb20a-0904-4d3d-92ad-551abb0da76e" alt="" />
-            <img class="logo" src="https://www.figma.com/api/mcp/asset/0ddb446d-be2a-4c91-9253-9f1a744d6712" alt="Hackpad" style="width:243px;height:76px" />
-          </div>
-          <div class="mini-card">
-            <img class="bg" src="https://www.figma.com/api/mcp/asset/9d450f77-7f72-438b-93c9-d27e7ea1a0be" alt="" />
-            <img class="logo" src="https://www.figma.com/api/mcp/asset/fcf655af-5499-4f2a-8ab2-91dd94d44b11" alt="Horizons" style="width:395px;height:117px" />
-          </div>
+          <img class="mini-card-img" src="https://www.figma.com/api/mcp/asset/abbcfe1c-cc12-466c-9901-f4209ff82af2" alt="Summer of Making" />
+          <img class="mini-card-img" src="https://www.figma.com/api/mcp/asset/684144d2-5939-40be-8b39-dc8971a7c365" alt="Campfire" />
+          <img class="mini-card-img" src="https://www.figma.com/api/mcp/asset/1518c7a8-3e64-4d53-8638-b89c1bce706c" alt="Sleepover" />
+          <img class="mini-card-img" src="https://www.figma.com/api/mcp/asset/d43991a0-c32b-4261-8355-74b44b110a4e" alt="Overglade" />
+          <img class="mini-card-img" src="https://www.figma.com/api/mcp/asset/15892ce9-4658-455f-9dbb-bbf126a6ac20" alt="Undercity" />
+          <img class="mini-card-img" src="https://www.figma.com/api/mcp/asset/278c6002-8f16-4483-b1a1-c36df5610262" alt="Shiba Arcade" />
+          <img class="mini-card-img" src="https://www.figma.com/api/mcp/asset/c3ce67ba-1977-48d7-9f3f-c3aad10c87b5" alt="Hackpad" />
+          <img class="mini-card-img" src="https://www.figma.com/api/mcp/asset/c8d6a438-4a06-404c-b4b2-2fba6e9d5d4f" alt="Horizons" />
         </div>
       </div>
     </section>
@@ -117,65 +92,25 @@ import Hero from '../components/Hero.svelte';
       <div class="gapyear-grid">
         <!-- Work (top-left) -->
         <div class="quadrant work">
-          <div class="collage work-photos">
-            <img style="left:383px;top:0;width:449px;height:337px" src="https://www.figma.com/api/mcp/asset/818bf3bc-6d25-4b17-a122-79db01857135" alt="" />
-            <img style="left:0;top:295px;width:383px;height:287px" src="https://www.figma.com/api/mcp/asset/089ce521-7c34-4229-a6f3-115ec1c3fe9d" alt="" />
-            <img style="left:383px;top:337px;width:327px;height:245px" src="https://www.figma.com/api/mcp/asset/a8fa76ad-1949-4d7c-be4e-b1ee5974d494" alt="" />
-            <img style="left:0;top:0;width:383px;height:295px" src="https://www.figma.com/api/mcp/asset/16a271f6-47c0-4dbd-a8c4-ec6317ee7087" alt="" />
-            <img style="left:710px;top:337px;width:122px;height:124px" src="https://www.figma.com/api/mcp/asset/b0059a59-f547-4f09-a1bc-184f8f940eda" alt="" />
-            <img style="left:710px;top:461px;width:122px;height:121px" src="https://www.figma.com/api/mcp/asset/02fa7247-4e82-4c17-a75b-d7f8e11c3069" alt="" />
-          </div>
+          <img class="quadrant-img" src="https://www.figma.com/api/mcp/asset/9be44b2e-f3ab-48b7-9b92-c06ede760b5e" alt="Work" style="height:582px" />
           <p class="quadrant-desc">40 gap years get $ 8.5M to build YSWS Programs and $50K as salary for the year.</p>
         </div>
 
         <!-- Vermont Life (top-right) -->
         <div class="quadrant vermont">
-          <div class="collage vermont-photos">
-            <img style="left:253px;top:2px;width:186px;height:286px" src="https://www.figma.com/api/mcp/asset/4b160c8e-0026-4043-8588-6b8255ac2ca3" alt="" />
-            <img style="left:0;top:308px;width:253px;height:274px" src="https://www.figma.com/api/mcp/asset/1df7d44c-7770-4fe1-84a7-28387bd056a3" alt="" />
-            <img style="left:0;top:0;width:253px;height:308px" src="https://www.figma.com/api/mcp/asset/92409d70-a60b-42d6-9b65-80a4292d3a57" alt="" />
-            <img style="left:253px;top:288px;width:186px;height:294px" src="https://www.figma.com/api/mcp/asset/79caf3c8-d39f-4f25-84f7-a4713bfe2104" alt="" />
-            <img style="left:439px;top:2px;width:261px;height:196px" src="https://www.figma.com/api/mcp/asset/18f8e789-2227-48e1-9ab1-9ed7663c972a" alt="" />
-            <img style="left:439px;top:198px;width:261px;height:196px" src="https://www.figma.com/api/mcp/asset/19532bb4-3ce6-40d2-84e8-61c05ebc2390" alt="" />
-            <img style="left:439px;top:394px;width:141px;height:188px" src="https://www.figma.com/api/mcp/asset/a0c68133-fe68-49f6-b20c-6f4ad54ae0e9" alt="" />
-            <img style="left:580px;top:394px;width:120px;height:188px" src="https://www.figma.com/api/mcp/asset/897baeeb-e2df-4b74-923a-ccb4867dc982" alt="" />
-          </div>
+          <img class="quadrant-img" src="https://www.figma.com/api/mcp/asset/f9f7e74e-f130-47fc-b8c6-4ab80f42018f" alt="Vermont Life" style="height:582px" />
           <p class="quadrant-desc right">Work in person at our offices in Shelburne VT, and get to enjoy the vibrant 4 seasons of New England</p>
         </div>
 
         <!-- Building Projects (bottom-left) -->
         <div class="quadrant projects">
-          <div class="collage projects-photos">
-            <img style="left:0;top:0;width:523px;height:294px" src="https://www.figma.com/api/mcp/asset/93a16c54-d2a8-46b5-a7ab-52bc80fa5918" alt="" />
-            <img style="left:523px;top:0;width:177px;height:133px" src="https://www.figma.com/api/mcp/asset/efe525ee-2de6-4c92-ad4d-449c10727b7d" alt="" />
-            <img style="left:427px;top:294px;width:273px;height:177px" src="https://www.figma.com/api/mcp/asset/d8127ee7-15e0-4711-b681-82db4b2e3604" alt="" />
-            <img style="left:290px;top:294px;width:137px;height:177px" src="https://www.figma.com/api/mcp/asset/5184e023-b36a-41ec-856f-de65054f4bc6" alt="" />
-            <img style="left:0;top:294px;width:290px;height:177px" src="https://www.figma.com/api/mcp/asset/c4a977ae-d745-4c8a-98da-1d75629c4d2e" alt="" />
-            <img style="left:523px;top:133px;width:177px;height:161px" src="https://www.figma.com/api/mcp/asset/5a136246-2436-4923-bb68-25cf1f6f26ac" alt="" />
-          </div>
+          <img class="quadrant-img" src="https://www.figma.com/api/mcp/asset/96878ede-6b89-4ce9-a623-e24a44c6d00a" alt="Building Projects" style="height:471px" />
           <p class="quadrant-desc">Run programs and own GitHub repos with thousands of real world users!</p>
         </div>
 
         <!-- Travel (bottom-right) -->
         <div class="quadrant travel">
-          <div class="collage travel-photos">
-            <img style="left:0;top:0;width:240px;height:159px" src="https://www.figma.com/api/mcp/asset/84abdcee-da0f-4319-aa9a-042fb3b11de5" alt="" />
-            <img style="left:0;top:160px;width:120px;height:161px" src="https://www.figma.com/api/mcp/asset/4f7ee127-d3d6-47ac-b31c-8d4364becfbe" alt="" />
-            <img style="left:120px;top:160px;width:120px;height:161px" src="https://www.figma.com/api/mcp/asset/8031cfe0-7dbb-4f59-8f69-45257c7a6671" alt="" />
-            <img style="left:240px;top:0;width:175px;height:233px" src="https://www.figma.com/api/mcp/asset/326ebccd-1dd9-474b-ac50-882d7a0226c5" alt="" />
-            <img style="left:240px;top:233px;width:175px;height:131px" src="https://www.figma.com/api/mcp/asset/4ec358e6-907b-46af-bbcb-fbc2f1ff313d" alt="" />
-            <img style="left:240px;top:364px;width:175px;height:107px" src="https://www.figma.com/api/mcp/asset/8427a84b-5bc8-4642-9137-ef83043677b5" alt="" />
-            <img style="left:0;top:321px;width:240px;height:150px" src="https://www.figma.com/api/mcp/asset/aa0364fe-2f89-4046-b6c5-268d49ebf9d2" alt="" />
-            <img style="left:415px;top:0;width:131px;height:131px" src="https://www.figma.com/api/mcp/asset/16726cda-fe38-474b-9289-8e7b0e04f74f" alt="" />
-            <img style="left:415px;top:131px;width:131px;height:102px" src="https://www.figma.com/api/mcp/asset/9e7b20be-5f88-4458-935a-f9696f2586b4" alt="" />
-            <img style="left:415px;top:233px;width:131px;height:131px" src="https://www.figma.com/api/mcp/asset/487366fb-c0fa-47b5-afee-8b2770dcc407" alt="" />
-            <img style="left:415px;top:364px;width:131px;height:107px" src="https://www.figma.com/api/mcp/asset/65031390-4fb5-47ba-940e-714195dd270c" alt="" />
-            <img style="left:546px;top:0;width:286px;height:146px" src="https://www.figma.com/api/mcp/asset/e45bbfe2-03ba-4c7e-a2a2-52755c7ef058" alt="" />
-            <img style="left:546px;top:146px;width:131px;height:130px" src="https://www.figma.com/api/mcp/asset/7730d085-e2ac-4b3a-888a-d595fdfd757a" alt="" />
-            <img style="left:546px;top:276px;width:131px;height:195px" src="https://www.figma.com/api/mcp/asset/6a6edd94-97ef-478a-aa38-1c0d44623da3" alt="" />
-            <img style="left:677px;top:146px;width:155px;height:206px" src="https://www.figma.com/api/mcp/asset/390d0a59-a905-4d77-956b-19f9b0df6301" alt="" />
-            <img style="left:677px;top:352px;width:155px;height:119px" src="https://www.figma.com/api/mcp/asset/8d220b29-ffc7-4e56-9759-7a90f6b497b5" alt="" />
-          </div>
+          <img class="quadrant-img" src="https://www.figma.com/api/mcp/asset/edf546ef-a8f5-45a3-aa30-c140eb3beb3b" alt="Travel" style="height:471px" />
           <p class="quadrant-desc right">Travel around the world for Hack Club events<br />and go on adventures.</p>
         </div>
       </div>
@@ -426,7 +361,7 @@ import Hero from '../components/Hero.svelte';
         line-height: normal;
         font-weight: normal;
         margin: 0;
-        max-width: 1169px;
+        max-width: 1644px;
         width: 100%;
       }
 
@@ -518,34 +453,11 @@ import Hero from '../components/Hero.svelte';
         width: 100%;
       }
 
-      .mini-card {
-        position: relative;
-        height: 190px;
-        overflow: hidden;
-        background: #d9d9d9;
-      }
-
-      .mini-card img.bg {
-        position: absolute;
-        inset: 0;
+      .mini-card-img {
         width: 100%;
-        height: 100%;
+        height: 190px;
         object-fit: cover;
-      }
-
-      .mini-card img.logo {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-      .mini-card.sleepover {
-        background: #dbdcf7;
-      }
-
-      .mini-card.campfire-mini {
-        background: #fff;
+        display: block;
       }
 
       /* Gap Year Life section */
@@ -608,33 +520,10 @@ import Hero from '../components/Hero.svelte';
         align-items: flex-end;
       }
 
-      .collage {
-        position: relative;
-      }
-
-      .collage img {
-        position: absolute;
+      .quadrant-img {
+        width: 100%;
         object-fit: cover;
-      }
-
-      .work-photos {
-        width: 832px;
-        height: 582px;
-      }
-
-      .vermont-photos {
-        width: 700px;
-        height: 582px;
-      }
-
-      .projects-photos {
-        width: 700px;
-        height: 471px;
-      }
-
-      .travel-photos {
-        width: 832px;
-        height: 471px;
+        display: block;
       }
 
       .quadrant-desc {
@@ -835,11 +724,11 @@ import Hero from '../components/Hero.svelte';
         font-family: 'Young Serif', serif;
         font-size: 48px;
         color: #eee;
-        text-align: center;
         line-height: normal;
         font-weight: normal;
         margin: 0;
-        max-width: 788px;
+        max-width: 1107px;
+        width: 100%;
       }
 
       .manifesto-body {
