@@ -18,9 +18,17 @@ import Hero from '../components/Hero.svelte';
     <!-- Preload Young Serif font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,700;1,400&family=Young+Serif&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&family=Inter:ital,wght@0,400;1,400&family=Jua&family=PT+Serif:ital,wght@0,700;1,400&family=Young+Serif&display=swap" rel="stylesheet" />
 
     <style>
+      @font-face {
+        font-family: 'Phantom Sans';
+        src: url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff2') format('woff2'),
+             url('https://assets.hackclub.com/fonts/Phantom_Sans_0.7/Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
       *, *::before, *::after { box-sizing: border-box; }
       html, body { margin: 0; padding: 0; background: #0c0c0b; }
     </style>
@@ -44,130 +52,160 @@ import Hero from '../components/Hero.svelte';
       </h2>
 
       <div class="programs-grid">
-        <div class="program-card">
-          <img class="program-card-img" src="https://www.figma.com/api/mcp/asset/4f76d0a9-19b1-4fff-8c46-68cb0325cc35" alt="Campfire Flagship" />
-          <img class="program-card-logo" src="https://www.figma.com/api/mcp/asset/39b0c621-7fce-45d9-b4bb-902a1ee831b1" alt="Campfire Flagship logo" />
+        <a class="program-card" href="https://flagship.hackclub.com" target="_blank" rel="noopener">
+          <img class="program-card-img" src="/images/campfire-flagship.png" alt="Campfire Flagship" />
+          <img class="program-card-logo" src="/images/campfire-flagship-logo.png" alt="Campfire Flagship logo" />
           <p class="program-card-desc">A 3 day flagship game jam in Los Angeles with YouTubers like Michael Reeves, William Osman, and many more!</p>
-        </div>
+        </a>
 
-        <div class="program-card">
-          <img class="program-card-img" src="https://www.figma.com/api/mcp/asset/604232e9-c48e-4302-8b5f-6c6f203de886" alt="Midnight" />
+        <a class="program-card" href="https://midnight.hackclub.com" target="_blank" rel="noopener">
+          <img class="program-card-img" src="/images/midnight.jpg" alt="Midnight" />
           <div class="midnight-logo">
-            <img class="oblique" src="https://www.figma.com/api/mcp/asset/548ae32c-c94d-43ec-8114-54f7df2993bb" alt="" />
-            <img class="front" src="https://www.figma.com/api/mcp/asset/ec3ac4f7-5dd9-43e1-8764-7f2a9576aee7" alt="Midnight logo" />
+            <img class="oblique" src="/images/midnight-logo-oblique.svg" alt="" />
+            <img class="front" src="/images/midnight-logo.svg" alt="Midnight logo" />
           </div>
           <p class="program-card-desc">A murder-mystery hackathon held in Austria, Vienna with 60+ teenagers from all across the world!</p>
-        </div>
+        </a>
 
-        <div class="program-card">
-          <img class="program-card-img" src="https://www.figma.com/api/mcp/asset/6adc8a20-a8cd-4375-9876-1ecb66b1cf71" alt="Blueprint" />
-          <img class="program-card-logo" src="https://www.figma.com/api/mcp/asset/1f7f4f1f-4311-4d2d-9775-6d7603d89e5d" alt="Blueprint logo" style="width:300px" />
+        <a class="program-card" href="https://blueprint.hackclub.com" target="_blank" rel="noopener">
+          <img class="program-card-img" src="/images/blueprint.png" alt="Blueprint" />
+          <img class="program-card-logo" src="/images/blueprint-logo.png" alt="Blueprint logo" style="width:300px" />
           <p class="program-card-desc">From October 2025 to March 2026, Blueprint gave $140,000 to fund 1,500 hardware and electronics projects built by 1000 teenagers from 77 countries</p>
-        </div>
+        </a>
 
-        <div class="program-card">
-          <img class="program-card-img" src="https://www.figma.com/api/mcp/asset/c7079683-fc2e-4ae4-8770-0f99fcf7dbf1" alt="Siege" />
-          <img class="program-card-logo" src="https://www.figma.com/api/mcp/asset/5e716af7-8be1-46b8-b468-fb1a062acf16" alt="Siege logo" style="width:161px" />
+        <a class="program-card" href="https://siege.hackclub.com" target="_blank" rel="noopener">
+          <img class="program-card-img" src="/images/siege.png" alt="Siege" />
+          <img class="program-card-logo" src="/images/siege-logo.png" alt="Siege logo" style="width:161px" />
           <p class="program-card-desc">A 14 week event where 250 teens created a project each week to work towards a laptop with over 100 framework laptops given out.</p>
-        </div>
+        </a>
       </div>
 
       <div class="programs-more">
         <h3 class="programs-more-title">...and so much more...</h3>
         <div class="programs-more-grid">
-          <img class="mini-card-img" src="https://www.figma.com/api/mcp/asset/abbcfe1c-cc12-466c-9901-f4209ff82af2" alt="Summer of Making" />
-          <img class="mini-card-img" src="https://www.figma.com/api/mcp/asset/684144d2-5939-40be-8b39-dc8971a7c365" alt="Campfire" />
-          <img class="mini-card-img" src="https://www.figma.com/api/mcp/asset/1518c7a8-3e64-4d53-8638-b89c1bce706c" alt="Sleepover" />
-          <img class="mini-card-img" src="https://www.figma.com/api/mcp/asset/d43991a0-c32b-4261-8355-74b44b110a4e" alt="Overglade" />
-          <img class="mini-card-img" src="https://www.figma.com/api/mcp/asset/15892ce9-4658-455f-9dbb-bbf126a6ac20" alt="Undercity" />
-          <img class="mini-card-img" src="https://www.figma.com/api/mcp/asset/278c6002-8f16-4483-b1a1-c36df5610262" alt="Shiba Arcade" />
-          <img class="mini-card-img" src="https://www.figma.com/api/mcp/asset/c3ce67ba-1977-48d7-9f3f-c3aad10c87b5" alt="Hackpad" />
-          <img class="mini-card-img" src="https://www.figma.com/api/mcp/asset/c8d6a438-4a06-404c-b4b2-2fba6e9d5d4f" alt="Horizons" />
+          <a class="mini-card" href="https://summer.hackclub.com" target="_blank" rel="noopener">
+            <img class="mini-card-img" src="/images/summer-of-making.png" alt="Summer of Making" />
+          </a>
+          <a class="mini-card" href="https://campfire.hackclub.com" target="_blank" rel="noopener">
+            <img class="mini-card-img" src="/images/campfire.png" alt="Campfire" />
+          </a>
+          <a class="mini-card" href="https://sleepover.hackclub.com" target="_blank" rel="noopener">
+            <img class="mini-card-img" src="/images/sleepover.png" alt="Sleepover" />
+          </a>
+          <a class="mini-card" href="https://overglade.hackclub.com" target="_blank" rel="noopener">
+            <img class="mini-card-img" src="/images/overglade.png" alt="Overglade" />
+          </a>
+          <a class="mini-card" href="https://undercity.hackclub.com" target="_blank" rel="noopener">
+            <img class="mini-card-img" src="/images/undercity.png" alt="Undercity" />
+          </a>
+          <a class="mini-card" href="https://shiba.hackclub.com" target="_blank" rel="noopener">
+            <img class="mini-card-img" src="/images/shiba-arcade.png" alt="Shiba Arcade" />
+          </a>
+          <a class="mini-card" href="https://hackpad.hackclub.com" target="_blank" rel="noopener">
+            <img class="mini-card-img" src="/images/hackpad.png" alt="Hackpad" />
+          </a>
+          <a class="mini-card" href="https://horizons.hackclub.com" target="_blank" rel="noopener">
+            <img class="mini-card-img" src="/images/horizons.png" alt="Horizons" />
+          </a>
         </div>
       </div>
     </section>
 
     <section class="gapyear">
       <h2 class="gapyear-title">As a gap year...</h2>
-      <div class="gapyear-grid">
-        <!-- Work (top-left) -->
-        <div class="quadrant work">
-          <img class="quadrant-img" src="https://www.figma.com/api/mcp/asset/9be44b2e-f3ab-48b7-9b92-c06ede760b5e" alt="Work" style="height:582px" />
-          <p class="quadrant-desc">40 gap years get $ 8.5M to build YSWS Programs and $50K as salary for the year.</p>
+      <div class="gapyear-col">
+        <div class="gapyear-row">
+          <div class="quadrant work">
+            <img class="quadrant-img" src="/images/gapyear-work.png" alt="Work" />
+            <p class="quadrant-desc">40 gap years get $ 8.5M to build YSWS Programs and $50K as salary for the year.</p>
+          </div>
+          <div class="quadrant vermont">
+            <img class="quadrant-img" src="/images/gapyear-vermont.png" alt="Vermont Life" />
+            <p class="quadrant-desc right">Work in person at our offices in Shelburne VT, and get to enjoy the vibrant 4 seasons of New England</p>
+          </div>
         </div>
-
-        <!-- Vermont Life (top-right) -->
-        <div class="quadrant vermont">
-          <img class="quadrant-img" src="https://www.figma.com/api/mcp/asset/f9f7e74e-f130-47fc-b8c6-4ab80f42018f" alt="Vermont Life" style="height:582px" />
-          <p class="quadrant-desc right">Work in person at our offices in Shelburne VT, and get to enjoy the vibrant 4 seasons of New England</p>
-        </div>
-
-        <!-- Building Projects (bottom-left) -->
-        <div class="quadrant projects">
-          <img class="quadrant-img" src="https://www.figma.com/api/mcp/asset/96878ede-6b89-4ce9-a623-e24a44c6d00a" alt="Building Projects" style="height:471px" />
-          <p class="quadrant-desc">Run programs and own GitHub repos with thousands of real world users!</p>
-        </div>
-
-        <!-- Travel (bottom-right) -->
-        <div class="quadrant travel">
-          <img class="quadrant-img" src="https://www.figma.com/api/mcp/asset/edf546ef-a8f5-45a3-aa30-c140eb3beb3b" alt="Travel" style="height:471px" />
-          <p class="quadrant-desc right">Travel around the world for Hack Club events<br />and go on adventures.</p>
+        <div class="gapyear-row">
+          <div class="quadrant projects">
+            <img class="quadrant-img" src="/images/gapyear-projects.png" alt="Building Projects" />
+            <p class="quadrant-desc">Run programs and own GitHub repos with thousands of real world users!</p>
+          </div>
+          <div class="quadrant travel">
+            <img class="quadrant-img" src="/images/gapyear-travel.png" alt="Travel" />
+            <p class="quadrant-desc right">Travel around the world for Hack Club events<br />and go on adventures.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="teens-built">
-      <h2 class="teens-built-title">This past year, Gap Years ran programs that <span class="red">helped teens build...</span></h2>
+      <h2 class="teens-built-title">This past year, Gap Years ran programs that <span class="red">helped teens build</span>...</h2>
       <div class="teens-built-grid">
+
         <!-- DoomPDF -->
-        <div class="showcase-card" style="background:#282828">
-          <img class="sc-screenshot" src="https://www.figma.com/api/mcp/asset/be7e705a-d654-4403-b04d-b72821301183" alt="DoomPDF screenshot" style="width:324px;height:247px;top:19px;border-radius:8px" />
-          <img class="sc-logo" src="https://www.figma.com/api/mcp/asset/c4b0115e-af9a-46d6-aa1a-3c1d5a855513" alt="DoomPDF" style="width:227px;height:58px;top:294px" />
-          <p class="sc-desc" style="top:363px">A source port of <em>Doom</em> (1993) that runs inside a PDF document<br />By Allen D</p>
+        <div class="sc sc-doompdf">
           <span class="sc-stars">3.7k⭐︎</span>
+          <div class="sc-inner">
+            <img class="sc-doompdf-screenshot" src="/images/doompdf-screenshot.png" alt="DoomPDF screenshot" />
+            <img class="sc-doompdf-logo" src="/images/doompdf-logo.svg" alt="DoomPDF" />
+            <p class="sc-desc">A source port of <em>Doom</em> (1993) that runs inside a PDF document<br />By Allen D</p>
+          </div>
         </div>
 
         <!-- LibrePods -->
-        <div class="showcase-card" style="background:#fff">
-          <img class="sc-screenshot" src="https://www.figma.com/api/mcp/asset/ea7c33cb-d8ef-4da7-8a02-8e8c87548375" alt="LibrePods screenshot" style="width:112px;height:243px;top:28px" />
-          <img class="sc-logo" src="https://www.figma.com/api/mcp/asset/d1913c7a-dcf3-436a-91d8-e2026e61bfb7" alt="LibrePods" style="width:241px;height:89px;top:278px" />
-          <p class="sc-desc" style="top:367px;color:#000">Airpods liberated from Apple's ecosystem</p>
-          <span class="sc-stars" style="color:#000">25.7k⭐︎</span>
+        <div class="sc sc-librepods">
+          <span class="sc-stars sc-stars-dark">25.7k⭐︎</span>
+          <div class="sc-inner">
+            <img class="sc-librepods-screenshot" src="/images/librepods-screenshot.png" alt="LibrePods" />
+            <img class="sc-librepods-logo" src="/images/librepods-logo.png" alt="LibrePods" />
+            <p class="sc-desc sc-desc-dark">Airpods liberated from Apple's ecosystem</p>
+          </div>
         </div>
 
         <!-- Vert -->
-        <div class="showcase-card" style="background:#ff83fa">
-          <img class="sc-screenshot" src="https://www.figma.com/api/mcp/asset/a60fa1f0-d559-4664-81e5-0fd270c34bdc" alt="Vert screenshot" style="width:344px;height:247px;top:34px" />
-          <img class="sc-logo" src="https://www.figma.com/api/mcp/asset/996940b3-66c7-47e9-b5f8-1eb95e982da8" alt="Vert" style="width:202px;height:75px;top:281px" />
-          <p class="sc-desc" style="top:351px;color:#000">VERT is a file conversion utility that uses WebAssembly to convert files on your device instead of a cloud.</p>
-          <span class="sc-stars" style="color:#000">14.1k⭐︎</span>
+        <div class="sc sc-vert">
+          <span class="sc-stars sc-stars-dark">14.1k⭐︎</span>
+          <div class="sc-inner">
+            <img class="sc-vert-screenshot" src="/images/vert-screenshot.png" alt="Vert screenshot" />
+            <img class="sc-vert-logo" src="/images/vert-logo.png" alt="Vert" />
+            <p class="sc-desc sc-desc-dark">VERT is a file conversion utility that uses WebAssembly to convert files on your device instead of a cloud.</p>
+          </div>
         </div>
 
         <!-- BAM -->
-        <div class="showcase-card bam-card" style="background:#282828">
-          <img class="bam-bg" src="https://www.figma.com/api/mcp/asset/294059b3-a6f6-479f-bac4-0f7843bde9a6" alt="" />
-          <img class="sc-screenshot" src="https://www.figma.com/api/mcp/asset/8701b77f-a1cf-4c93-8f33-ba4acf603245" alt="Biblically Accurate Macropad" style="width:288px;height:207px;top:6px;box-shadow:0 4px 100px rgba(234,255,0,0.3)" />
-          <div class="bam-title">THE<br />BIBLICALLY<br />ACCURATE<br />MACROPAD</div>
-          <p class="sc-desc bam-desc" style="top:338px;color:#fdd882">A very macro, macropad in the form<br />of a biblically accurate angel!<br />by Alex Tran</p>
+        <div class="sc sc-bam">
+          <img class="sc-bam-bg" src="/images/bam-bg.png" alt="" />
+          <div class="sc-bam-gradient"></div>
+          <div class="sc-inner sc-bam-inner">
+            <img class="sc-bam-screenshot" src="/images/bam-screenshot.png" alt="BAM screenshot" />
+            <img class="sc-bam-logo" src="/images/bam-logo.svg" alt="The Biblically Accurate Macropad" />
+            <p class="sc-desc sc-bam-desc">A very macro, macropad in the form<br />of a biblically accurate angel!<br />by Alex Tran</p>
+          </div>
         </div>
 
         <!-- Specter -->
-        <div class="showcase-card" style="background:#222034">
-          <img class="specter-game" src="https://www.figma.com/api/mcp/asset/87a7409f-1807-49b5-a60b-eb016477a12c" alt="Specter gameplay" />
-          <img class="sc-logo" src="https://www.figma.com/api/mcp/asset/61bdb663-4da2-4b22-ac91-f7168fc764de" alt="Specter" style="width:127px;height:41px;top:286px" />
-          <p class="sc-desc" style="top:335px;font-size:11px">A game about a knight bravely trying to escape the cave but he is haunted by his own ghost. His last gameplay shows up as a ghost in the next run.<br />Would he let this distract him or use it for his advantage? It's for you to decide.<br /><strong>By Ayessa</strong></p>
+        <div class="sc sc-specter">
+          <img class="sc-specter-gameplay" src="/images/specter-gameplay.svg" alt="Specter gameplay" />
+          <div class="sc-specter-info">
+            <img class="sc-specter-logo" src="/images/specter-logo.png" alt="Specter" />
+            <div class="sc-specter-text">
+              <p>A game about a knight bravely trying to escape the cave but he is haunted by his own ghost.</p>
+              <p class="sc-specter-author">By Ayessa</p>
+            </div>
+          </div>
         </div>
 
         <!-- Blind Defusal -->
-        <div class="showcase-card" style="background:#c83430;overflow:hidden">
-          <img class="blind-noise" src="https://www.figma.com/api/mcp/asset/056a1be7-0285-4ed7-a559-60bb32ab3eb4" alt="" />
-          <img class="blind-photo" src="https://www.figma.com/api/mcp/asset/9e3190f6-8df1-4522-8d6a-664d1de89f6a" alt="Blind Defusal" />
-          <div class="blind-header">
-            <p class="blind-title">BLIND</p>
-            <p class="blind-title">DEFUSAL</p>
-            <p class="blind-subtitle">A two-player, cooperative "bomb defusal" game.</p>
+        <div class="sc sc-blind">
+          <img class="sc-blind-noise" src="/images/blind-defusal-noise.png" alt="" />
+          <div class="sc-inner sc-blind-inner">
+            <img class="sc-blind-photo" src="/images/blind-defusal-photo.png" alt="Blind Defusal" />
+            <div class="sc-blind-info">
+              <img class="sc-blind-logo" src="/images/blind-defusal-logo.svg" alt="Blind Defusal" />
+              <p class="sc-blind-desc">A two-player, cooperative "bomb defusal" game.</p>
+            </div>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -296,7 +334,7 @@ import Hero from '../components/Hero.svelte';
 
       .fellowship-title {
         font-family: 'Young Serif', serif;
-        font-size: 50px;
+        font-size: 42px;
         color: #eee;
         text-align: center;
         max-width: 1331px;
@@ -307,7 +345,7 @@ import Hero from '../components/Hero.svelte';
 
       .fellowship-body {
         font-family: 'Glyseric', sans-serif;
-        font-size: 36px;
+        font-size: 28px;
         color: rgba(238, 238, 238, 0.8);
         text-align: center;
         max-width: 1122px;
@@ -331,7 +369,7 @@ import Hero from '../components/Hero.svelte';
         height: 65px;
         border: 2px solid #fff;
         border-radius: 9999px;
-        font-size: 36px;
+        font-size: 28px;
         font-family: 'Glyseric', sans-serif;
         color: #fff;
         text-decoration: none;
@@ -350,13 +388,13 @@ import Hero from '../components/Hero.svelte';
         flex-direction: column;
         gap: 32px;
         align-items: center;
-        padding: 0 137px 200px;
+        padding: 60px 137px 200px;
       }
 
       /* Headliner */
       .programs-headline {
         font-family: 'Young Serif', serif;
-        font-size: 48px;
+        font-size: 40px;
         color: #eee;
         line-height: normal;
         font-weight: normal;
@@ -382,6 +420,12 @@ import Hero from '../components/Hero.svelte';
         flex-direction: column;
         gap: 24px;
         align-items: center;
+        text-decoration: none;
+      }
+
+      .program-card:hover .program-card-img {
+        transform: scale(1.03);
+        filter: brightness(1.1);
       }
 
       .program-card-img {
@@ -389,6 +433,7 @@ import Hero from '../components/Hero.svelte';
         height: 505px;
         object-fit: cover;
         display: block;
+        transition: transform 0.3s ease, filter 0.3s ease;
       }
 
       .program-card-logo {
@@ -398,7 +443,7 @@ import Hero from '../components/Hero.svelte';
 
       .program-card-desc {
         font-family: 'Glyseric', sans-serif;
-        font-size: 24px;
+        font-size: 20px;
         color: #fff;
         line-height: normal;
         margin: 0;
@@ -439,7 +484,7 @@ import Hero from '../components/Hero.svelte';
 
       .programs-more-title {
         font-family: 'Young Serif', serif;
-        font-size: 36px;
+        font-size: 28px;
         color: #eee;
         line-height: normal;
         font-weight: normal;
@@ -453,11 +498,26 @@ import Hero from '../components/Hero.svelte';
         width: 100%;
       }
 
+      .mini-card {
+        display: block;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+
+      .mini-card:hover {
+        transform: scale(1.05);
+      }
+
+      .mini-card:hover .mini-card-img {
+        filter: brightness(1.1);
+      }
+
       .mini-card-img {
         width: 100%;
         height: 190px;
         object-fit: cover;
         display: block;
+        transition: filter 0.3s ease;
       }
 
       /* Gap Year Life section */
@@ -472,7 +532,7 @@ import Hero from '../components/Hero.svelte';
 
       .gapyear-title {
         font-family: 'Young Serif', serif;
-        font-size: 48px;
+        font-size: 40px;
         color: #eee;
         line-height: normal;
         font-weight: normal;
@@ -481,54 +541,41 @@ import Hero from '../components/Hero.svelte';
         width: 100%;
       }
 
-      .gapyear-grid {
-        position: relative;
+      .gapyear-col {
+        display: flex;
+        flex-direction: column;
+        gap: 53px;
         width: 100%;
         max-width: 1628px;
-        height: 1459px;
+      }
+
+      .gapyear-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 36px;
       }
 
       .quadrant {
-        position: absolute;
         display: flex;
         flex-direction: column;
         gap: 16px;
       }
 
-      .quadrant.work {
-        left: 0;
-        top: 0;
-        width: 832px;
-      }
-
-      .quadrant.vermont {
-        right: 0;
-        top: 0;
-        width: 700px;
-      }
-
-      .quadrant.projects {
-        left: 0;
-        bottom: 36px;
-        width: 700px;
-      }
-
-      .quadrant.travel {
-        right: 0;
-        bottom: 36px;
-        width: 832px;
-        align-items: flex-end;
-      }
+      .quadrant.work { width: 54%; }
+      .quadrant.vermont { width: 45%; }
+      .quadrant.projects { width: 45%; }
+      .quadrant.travel { width: 54%; align-items: flex-end; }
 
       .quadrant-img {
         width: 100%;
-        object-fit: cover;
+        height: auto;
         display: block;
       }
 
       .quadrant-desc {
         font-family: 'Glyseric', sans-serif;
-        font-size: 40px;
+        font-size: 32px;
         color: #fff;
         line-height: normal;
         margin: 0;
@@ -538,14 +585,13 @@ import Hero from '../components/Hero.svelte';
         text-align: right;
       }
 
-      /* Teens Built section */
+      /* ── Teens Built section ── */
       .teens-built {
         background: #0c0c0b;
         display: flex;
         flex-direction: column;
         gap: 36px;
-        align-items: center;
-        padding: 0 137px 200px;
+        padding: 0 136px 200px;
       }
 
       .teens-built-title {
@@ -555,8 +601,6 @@ import Hero from '../components/Hero.svelte';
         line-height: normal;
         font-weight: normal;
         margin: 0;
-        max-width: 1648px;
-        width: 100%;
       }
 
       .teens-built-title .red {
@@ -567,147 +611,240 @@ import Hero from '../components/Hero.svelte';
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 36px;
-        width: 100%;
-        max-width: 1648px;
       }
 
-      .showcase-card {
+      /* ── Shared card base ── */
+      .sc {
         position: relative;
-        height: 412px;
         overflow: hidden;
       }
 
-      .sc-screenshot {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        object-fit: cover;
+      .sc-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+        height: 412px;
       }
 
-      .sc-logo {
+      .sc-stars {
         position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        object-fit: contain;
+        top: 15px;
+        right: 16px;
+        font-family: 'Phantom Sans', sans-serif;
+        font-size: 15px;
+        color: #fff;
+        opacity: 0.85;
+        z-index: 2;
       }
+
+      .sc-stars-dark { color: #000; }
 
       .sc-desc {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 402px;
         font-family: 'Inter', sans-serif;
-        font-size: 12px;
+        font-size: 16px;
         color: #fff;
         text-align: center;
         line-height: normal;
         margin: 0;
       }
 
-      .sc-stars {
-        position: absolute;
-        top: 15px;
-        right: 14px;
-        font-family: 'Phantom Sans', sans-serif;
-        font-size: 15px;
-        color: #fff;
-        opacity: 0.85;
+      .sc-desc-dark { color: #000; }
+
+      /* ── DoomPDF ── */
+      .sc-doompdf { background: #282828; }
+
+      .sc-doompdf-screenshot {
+        width: 301px;
+        height: 230px;
+        object-fit: cover;
+        border-radius: 8px;
       }
 
-      /* BAM card */
-      .bam-bg {
-        position: absolute;
-        left: -17px;
-        top: -189px;
-        width: 656px;
-        height: 919px;
+      .sc-doompdf-logo {
+        width: 197px;
+        height: 50px;
+        object-fit: contain;
+      }
+
+      /* ── LibrePods ── */
+      .sc-librepods { background: #fff; }
+
+      .sc-librepods .sc-inner { gap: 4px; }
+
+      .sc-librepods-screenshot {
+        width: 106px;
+        height: 230px;
         object-fit: cover;
       }
 
-      .bam-card::after {
-        content: '';
+      .sc-librepods-logo {
+        width: 241px;
+        height: 89px;
+        object-fit: contain;
+      }
+
+      /* ── Vert ── */
+      .sc-vert { background: #ff83fa; }
+
+      .sc-vert .sc-inner { gap: 8px; }
+
+      .sc-vert-screenshot {
+        width: 319px;
+        height: 230px;
+        object-fit: cover;
+      }
+
+      .sc-vert-logo {
+        width: 135px;
+        height: 50px;
+        object-fit: contain;
+      }
+
+      /* ── BAM ── */
+      .sc-bam { position: relative; }
+
+      .sc-bam-bg {
         position: absolute;
         inset: 0;
-        background: linear-gradient(to top, rgba(0,0,0,0.8) 32%, rgba(0,0,0,0) 80%);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .sc-bam-gradient {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 77%);
         pointer-events: none;
       }
 
-      .bam-card .sc-screenshot,
-      .bam-card .bam-title,
-      .bam-card .sc-desc {
+      .sc-bam-inner {
+        position: relative;
         z-index: 1;
+        height: auto;
+        padding: 6px 20px;
+        gap: 8px;
       }
 
-      .bam-title {
-        position: absolute;
-        top: 223px;
-        left: 185px;
-        width: 156px;
-        font-family: 'jsMath-cmti10', serif;
-        font-size: 24px;
-        font-style: italic;
-        color: #fff;
-        text-shadow: 0 0 10px rgba(0,0,0,0.7);
-        line-height: normal;
-        z-index: 1;
+      .sc-bam-screenshot {
+        width: 288px;
+        height: 207px;
+        object-fit: cover;
+        box-shadow: 0 4px 100px rgba(234,255,0,0.3);
       }
 
-      .bam-desc {
+      .sc-bam-logo {
+        width: 152px;
+        object-fit: contain;
+      }
+
+      .sc-bam-desc {
+        color: #fdd882;
         font-family: 'Jua', sans-serif;
         font-size: 16px;
       }
 
-      /* Specter card */
-      .specter-game {
-        position: absolute;
-        left: -14px;
-        top: -12px;
-        width: 540px;
-        height: 280px;
+      /* ── Specter ── */
+      .sc-specter {
+        background: #222034;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .sc-specter-gameplay {
+        width: 100%;
+        aspect-ratio: 1050 / 554;
         object-fit: cover;
+        display: block;
       }
 
-      /* Blind Defusal card */
-      .blind-noise {
-        position: absolute;
-        left: -139px;
-        top: -59px;
-        width: 1126px;
-        height: 613px;
-        object-fit: cover;
-        opacity: 0.15;
+      .sc-specter-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 7px;
+        padding: 0 20px;
+        height: 135px;
       }
 
-      .blind-photo {
-        position: absolute;
-        left: -21px;
-        top: -100px;
-        width: 552px;
-        height: 368px;
-        object-fit: cover;
-        transform: rotate(-1.14deg);
+      .sc-specter-logo {
+        width: 127px;
+        height: 41px;
+        object-fit: contain;
       }
 
-      .blind-header {
-        position: absolute;
-        left: 83px;
-        top: 223px;
-      }
-
-      .blind-title {
-        font-family: 'Retro Gaming', sans-serif;
-        font-size: 73px;
-        color: #f8f2da;
-        line-height: normal;
+      .sc-specter-text {
+        font-family: 'Phantom Sans', sans-serif;
+        font-size: 16px;
+        color: #fff;
+        text-align: center;
+        line-height: 1.12;
         margin: 0;
       }
 
-      .blind-subtitle {
+      .sc-specter-text p { margin: 0; }
+
+      .sc-specter-author {
+        font-weight: 500;
+      }
+
+      /* ── Blind Defusal ── */
+      .sc-blind {
+        background: #c83430;
+        position: relative;
+      }
+
+      .sc-blind-noise {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.15;
+        pointer-events: none;
+      }
+
+      .sc-blind-inner {
+        position: relative;
+        z-index: 1;
+        height: auto;
+        padding: 11px 54px;
+        gap: 0;
+        justify-content: center;
+      }
+
+      .sc-blind-photo {
+        width: 100%;
+        aspect-ratio: 832 / 463;
+        object-fit: cover;
+        display: block;
+      }
+
+      .sc-blind-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .sc-blind-logo {
+        width: 326px;
+        height: 100px;
+        object-fit: contain;
+      }
+
+      .sc-blind-desc {
         font-family: 'Anonymous Pro', monospace;
-        font-size: 15px;
+        font-weight: 700;
+        font-size: 16px;
         color: #f8f2da;
         text-transform: uppercase;
-        margin: 8px 0 0;
+        text-align: center;
+        margin: 0;
+        white-space: nowrap;
       }
 
       /* Manifesto section */
@@ -722,7 +859,7 @@ import Hero from '../components/Hero.svelte';
 
       .manifesto-title {
         font-family: 'Young Serif', serif;
-        font-size: 48px;
+        font-size: 40px;
         color: #eee;
         line-height: normal;
         font-weight: normal;
@@ -733,7 +870,7 @@ import Hero from '../components/Hero.svelte';
 
       .manifesto-body {
         font-family: 'Glyseric', sans-serif;
-        font-size: 24px;
+        font-size: 20px;
         color: #fff;
         line-height: normal;
         max-width: 1107px;
@@ -784,12 +921,126 @@ import Hero from '../components/Hero.svelte';
 
       .cta-end-title {
         font-family: 'Young Serif', serif;
-        font-size: 128px;
+        font-size: 96px;
         color: #fff;
         text-align: center;
         line-height: normal;
         font-weight: normal;
         margin: 0;
+      }
+
+      /* ── Responsive ── */
+
+      /* Tablet: ≤1200px */
+      @media (max-width: 1200px) {
+        .programs { padding: 48px 48px 120px; }
+        .gapyear { padding: 0 48px 120px; }
+        .teens-built { padding: 0 48px 120px; }
+        .manifesto-section { padding: 0 48px 120px; }
+        .fellowship { padding: 100px 48px 120px; }
+
+        .fellowship-title { font-size: 36px; }
+        .fellowship-body { font-size: 24px; }
+
+        .programs-headline { font-size: 32px; }
+        .gapyear-title { font-size: 32px; }
+        .teens-built-title { font-size: 36px; }
+
+        .programs-grid { grid-template-columns: 1fr 1fr; }
+
+        .programs-more-grid { grid-template-columns: repeat(4, 1fr); }
+
+        .teens-built-grid { grid-template-columns: repeat(2, 1fr); }
+
+        .sc-inner { height: 360px; }
+        .sc-doompdf-screenshot { width: 240px; height: 180px; }
+        .sc-librepods-screenshot { width: 85px; height: 180px; }
+        .sc-vert-screenshot { width: 260px; height: 180px; }
+        .sc-bam-screenshot { width: 230px; height: 165px; }
+
+        .quadrant-desc { font-size: 24px; }
+
+        .cta-end-title { font-size: 64px; }
+      }
+
+      /* Small tablet / large phone: ≤768px */
+      @media (max-width: 768px) {
+        .programs { padding: 36px 24px 80px; }
+        .gapyear { padding: 0 24px 80px; }
+        .teens-built { padding: 0 24px 80px; }
+        .manifesto-section { padding: 0 24px 80px; }
+        .fellowship { padding: 80px 24px 80px; }
+        .cta-end { padding: 0 24px 120px; }
+
+        .fellowship-title { font-size: 28px; }
+        .fellowship-body { font-size: 20px; }
+        .fellowship-btn { width: 240px; height: 50px; font-size: 24px; }
+
+        .programs-headline { font-size: 24px; }
+        .gapyear-title { font-size: 24px; }
+        .teens-built-title { font-size: 28px; }
+        .manifesto-title { font-size: 32px; }
+        .manifesto-body { font-size: 18px; }
+
+        .programs-grid { grid-template-columns: 1fr; }
+
+        .programs-more-grid { grid-template-columns: repeat(2, 1fr); }
+
+        .gapyear-row { flex-direction: column; }
+        .gapyear-row { flex-direction: column; }
+        .quadrant.work,
+        .quadrant.vermont,
+        .quadrant.projects,
+        .quadrant.travel { width: 100%; }
+
+        .quadrant-desc { font-size: 20px; }
+        .quadrant-desc.right { text-align: left; }
+
+        .teens-built-grid { grid-template-columns: 1fr; }
+        .sc-inner { height: auto; min-height: 350px; }
+        .sc-blind-inner { padding: 11px 24px; }
+        .sc-blind-desc { white-space: normal; }
+
+        .cta-end-title { font-size: 48px; }
+
+        .programs-more-title { font-size: 24px; }
+      }
+
+      /* Phone: ≤480px */
+      @media (max-width: 480px) {
+        .programs { padding: 24px 16px 60px; }
+        .gapyear { padding: 0 16px 60px; }
+        .teens-built { padding: 0 16px 60px; }
+        .manifesto-section { padding: 0 16px 60px; }
+        .fellowship { padding: 60px 16px 60px; }
+        .cta-end { padding: 0 16px 80px; }
+
+        .fellowship-title { font-size: 22px; }
+        .fellowship-body { font-size: 16px; }
+        .fellowship-btn { width: 200px; height: 44px; font-size: 20px; }
+
+        .programs-headline { font-size: 20px; }
+        .gapyear-title { font-size: 20px; }
+        .teens-built-title { font-size: 22px; }
+        .sc-doompdf-screenshot { width: 200px; height: 150px; }
+        .sc-librepods-screenshot { width: 70px; height: 150px; }
+        .sc-vert-screenshot { width: 200px; height: 150px; }
+        .sc-bam-screenshot { width: 180px; height: 130px; }
+        .sc-blind-logo { width: 220px; height: 70px; }
+        .manifesto-title { font-size: 24px; }
+        .manifesto-body { font-size: 16px; }
+
+        .programs-more-grid { grid-template-columns: 1fr; }
+
+        .mini-card-img { height: 160px; }
+
+        .quadrant-desc { font-size: 18px; }
+
+        .program-card-desc { font-size: 16px; }
+
+        .cta-end-title { font-size: 36px; }
+
+        .programs-more-title { font-size: 20px; }
       }
     </style>
   </body>

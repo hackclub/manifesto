@@ -368,4 +368,19 @@
     text-decoration-color: transparent;
     text-underline-offset: 4px;
   }
+
+  @media (max-width: 768px) {
+    .manifesto-text {
+      font-size: 24px;
+      max-width: 90vw;
+      padding: 0 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .manifesto-text {
+      font-size: 18px;
+      line-height: 1.4;
+    }
+  }
 </style>
