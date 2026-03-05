@@ -160,7 +160,7 @@ import Hero from '../components/Hero.svelte';
           <div class="sc-inner">
             <img class="sc-doompdf-screenshot" src="/images/doompdf-screenshot.png" alt="DoomPDF screenshot" />
             <img class="sc-doompdf-logo" src="/images/doompdf-logo.svg" alt="DoomPDF" />
-            <p class="sc-desc">A source port of <em>Doom</em> (1993) that runs inside a PDF document<br />By Allen D</p>
+            <p class="sc-desc">A source port of <em>Doom</em> (1993) that runs inside a PDF document. By Allen D.</p>
           </div>
         </div>
 
@@ -1025,6 +1025,7 @@ import Hero from '../components/Hero.svelte';
         .quadrant.travel { width: 100%; }
 
         .quadrant-desc.right { text-align: left; }
+        .quadrant.travel { align-items: flex-start; }
 
         .teens-built-grid { grid-template-columns: 1fr; }
         .sc { height: auto; min-height: 350px; }
@@ -1063,7 +1064,7 @@ import Hero from '../components/Hero.svelte';
 
         .mini-card { height: 160px; }
 
-        .quadrant-desc { font-size: 16px; }
+        .quadrant-desc, .quadrant-desc.right { font-size: 16px; text-align: left; }
 
         .program-card-desc { font-size: 16px; }
 
