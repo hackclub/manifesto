@@ -228,7 +228,7 @@
   .hero {
     position: relative;
     height: 330dvh;
-    background: #0c0c0b;
+    background: #1c1c1a;
   }
 
   .hero-sticky {
