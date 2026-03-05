@@ -1,4 +1,5 @@
 <script>
+  let { applyUrl = "" } = $props();
   // cx/cy = offset from center of 1920×1065 Figma frame, w/h = px dimensions
   const tiles = [
     // top band
@@ -204,7 +205,7 @@
           <img class="flag" src="/hero/flag.svg" alt="Hack Club" loading="eager" fetchpriority="high" />
           <p class="headline">hackers wanted.</p>
         </div>
-        <a class="apply-btn" href="/apply">Apply Now</a>
+        <a class="apply-btn" href={applyUrl} target="_blank" rel="noopener noreferrer">Apply Now</a>
       </div>
     </div>
 

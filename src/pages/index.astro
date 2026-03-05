@@ -1,5 +1,6 @@
 ---
 import Hero from '../components/Hero.svelte';
+import { APPLY_URL } from '../config';
 ---
 <!doctype html>
 <html lang="en">
@@ -34,7 +35,7 @@ import Hero from '../components/Hero.svelte';
     </style>
   </head>
   <body>
-    <Hero client:load />
+    <Hero client:load applyUrl={APPLY_URL} />
 
     <section class="fellowship">
       <h2 class="fellowship-title">Introducing the Hack Club Gap Year Fellowship</h2>
@@ -43,7 +44,7 @@ import Hero from '../components/Hero.svelte';
         <p>The job is to design and execute on the next generation of You Ship, we ships!</p>
         <p>The people who have this job today are all of the Hack Club staff you see running programs. This is the next batch of people running Hack Club!</p>
       </div>
-      <a class="fellowship-btn" href="/apply">Apply Now</a>
+      <a class="fellowship-btn" href={APPLY_URL} target="_blank" rel="noopener noreferrer">Apply Now</a>
     </section>
 
     <section class="programs">
@@ -154,34 +155,34 @@ import Hero from '../components/Hero.svelte';
       <h2 class="teens-built-title">This past year, Gap Years ran programs that <span class="red">helped teens build</span>...</h2>
       <div class="teens-built-grid">
 
-        <div class="sc sc-doompdf">
+        <a href="https://github.com/ading2210/doompdf" target="_blank" rel="noopener noreferrer" class="sc sc-doompdf">
           <span class="sc-stars">3.7k⭐︎</span>
           <div class="sc-inner">
             <img class="sc-doompdf-screenshot" src="/images/doompdf-screenshot.png" alt="DoomPDF screenshot" />
             <img class="sc-doompdf-logo" src="/images/doompdf-logo.svg" alt="DoomPDF" />
             <p class="sc-desc">A source port of <em>Doom</em> (1993) that runs inside a PDF document. By Allen D.</p>
           </div>
-        </div>
+        </a>
 
-        <div class="sc sc-librepods">
+        <a href="https://github.com/kavishdevar/librepods" target="_blank" rel="noopener noreferrer" class="sc sc-librepods">
           <span class="sc-stars sc-stars-dark">25.7k⭐︎</span>
           <div class="sc-inner sc-inner-tight">
             <img class="sc-librepods-screenshot" src="/images/librepods-screenshot.png" alt="LibrePods" />
             <img class="sc-librepods-logo" src="/images/librepods-logo.png" alt="LibrePods" />
             <p class="sc-desc sc-desc-dark">Airpods liberated from Apple's ecosystem</p>
           </div>
-        </div>
+        </a>
 
-        <div class="sc sc-vert">
+        <a href="https://github.com/VERT-sh/VERT" target="_blank" rel="noopener noreferrer" class="sc sc-vert">
           <span class="sc-stars sc-stars-dark">14.1k⭐︎</span>
           <div class="sc-inner sc-inner-med">
             <img class="sc-vert-screenshot" src="/images/vert-screenshot.png" alt="Vert screenshot" />
             <img class="sc-vert-logo" src="/images/vert-logo.png" alt="Vert" />
             <p class="sc-desc sc-desc-dark">VERT is a file conversion utility that uses WebAssembly to convert files on your device instead of a cloud.</p>
           </div>
-        </div>
+        </a>
 
-        <div class="sc sc-bam">
+        <a href="https://github.com/geg-tech/biblicallyaccuratekeyboard" target="_blank" rel="noopener noreferrer" class="sc sc-bam">
           <img class="sc-bam-bg" src="/images/bam-bg.png" alt="" />
           <div class="sc-bam-gradient"></div>
           <div class="sc-inner sc-bam-inner">
@@ -189,9 +190,9 @@ import Hero from '../components/Hero.svelte';
             <img class="sc-bam-logo" src="/images/bam-logo.svg" alt="The Biblically Accurate Macropad" />
             <p class="sc-desc sc-bam-desc">A very macro, macropad in the form<br />of a biblically accurate angel!<br />by Alex Tran</p>
           </div>
-        </div>
+        </a>
 
-        <div class="sc sc-specter">
+        <a href="https://github.com/ayessaaa/specter" target="_blank" rel="noopener noreferrer" class="sc sc-specter">
           <img class="sc-specter-gameplay" src="/images/specter-gameplay.png" alt="Specter gameplay" />
           <div class="sc-specter-info">
             <img class="sc-specter-logo" src="/images/specter-logo.png" alt="Specter" />
@@ -200,9 +201,9 @@ import Hero from '../components/Hero.svelte';
               <p class="sc-specter-author">By Ayessa</p>
             </div>
           </div>
-        </div>
+        </a>
 
-        <div class="sc sc-blind">
+        <a href="https://github.com/Jayx2u/blind-defusal" target="_blank" rel="noopener noreferrer" class="sc sc-blind">
           <img class="sc-blind-noise" src="/images/blind-defusal-noise.png" alt="" />
           <div class="sc-inner sc-blind-inner">
             <img class="sc-blind-screenshot" src="/images/blind-defusal-screenshot.png" alt="Blind Defusal" />
@@ -211,7 +212,7 @@ import Hero from '../components/Hero.svelte';
               <p class="sc-blind-desc">A two-player, cooperative<br />"bomb defusal" game.</p>
             </div>
           </div>
-        </div>
+        </a>
 
       </div>
     </section>
@@ -316,7 +317,7 @@ import Hero from '../components/Hero.svelte';
 
         <div class="cta-end">
           <h2 class="cta-end-title">The door is open.</h2>
-          <a class="fellowship-btn" href="/apply">Apply Now</a>
+          <a class="fellowship-btn" href={APPLY_URL} target="_blank" rel="noopener noreferrer">Apply Now</a>
         </div>
 
         <p><em>Love,<br />Hack Club</em></p>
@@ -651,6 +652,24 @@ import Hero from '../components/Hero.svelte';
         position: relative;
         overflow: hidden;
         height: 400px;
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.2s ease;
+      }
+
+      .sc:hover, .sc:focus-visible {
+        transform: scale(1.05);
+        filter: brightness(1.1);
+      }
+
+      .sc:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: 2px;
+      }
+
+      .sc, .sc * {
+        text-decoration: none;
       }
 
       .sc-inner {
