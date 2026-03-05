@@ -77,7 +77,7 @@
     'A', 'few', 'also', 'have', 'the', 'talent', 'and', 'vision', 'to', 'will', 'something', 'better', 'into', 'being:', 'br',
     ['hackers.', 'hackers'], 'br',
     'We', 'can', 'either', 'embrace', 'them', 'and', 'reap', 'the', 'magic,', 'or', 'alienate', 'them', 'and',
-    'suffer', 'the', 'loss.', ["It's", 'wiser'], ['time', 'wiser'], ['we', 'wiser'], ['chose', 'wiser'],
+    'suffer', 'the', 'loss.', 'br', ["It's", 'wiser'], ['time', 'wiser'], ['we', 'wiser'], ['chose', 'wiser'],
     ['the', 'wiser'], ['wiser', 'wiser'], ['path.', 'wiser'],
   ];
 
@@ -345,7 +345,7 @@
 
   .manifesto-text {
     font-family: 'Glyseric', sans-serif;
-    font-size: 36px;
+    font-size: 27px;
     color: #eee;
     text-align: center;
     line-height: 1.5;
@@ -371,7 +371,7 @@
 
   @media (max-width: 768px) {
     .manifesto-text {
-      font-size: 24px;
+      font-size: 18px;
       max-width: 90vw;
       padding: 0 16px;
     }
@@ -379,7 +379,7 @@
 
   @media (max-width: 480px) {
     .manifesto-text {
-      font-size: 18px;
+      font-size: 13.5px;
       line-height: 1.4;
     }
   }

@@ -84,28 +84,42 @@ import Hero from '../components/Hero.svelte';
         <h3 class="programs-more-title">...and so much more...</h3>
         <div class="programs-more-grid">
           <a class="mini-card" href="https://summer.hackclub.com" target="_blank" rel="noopener">
-            <img class="mini-card-img" src="/images/summer-of-making.png" alt="Summer of Making" />
+            <img class="mini-card-bg" src="/images/summer-of-making.png" alt="" />
+            <img class="mini-card-logo" src="/images/som-logo.png" alt="Summer of Making" style="width:225px;height:130px" />
           </a>
+
           <a class="mini-card" href="https://campfire.hackclub.com" target="_blank" rel="noopener">
-            <img class="mini-card-img" src="/images/campfire.png" alt="Campfire" />
+            <img class="mini-card-bg" src="/images/campfire-bg.png" alt="" />
+            <img class="mini-card-logo" src="/images/campfire-logo.svg" alt="Campfire" style="width:242px;height:56px;transform:rotate(-4deg)" />
           </a>
-          <a class="mini-card" href="https://sleepover.hackclub.com" target="_blank" rel="noopener">
-            <img class="mini-card-img" src="/images/sleepover.png" alt="Sleepover" />
+
+          <a class="mini-card" href="https://sleepover.hackclub.com" target="_blank" rel="noopener" style="background:#dbdcf7">
+            <img class="mini-card-logo" src="/images/sleepover-logo.png" alt="Sleepover" style="width:224px;height:131px" />
           </a>
+
           <a class="mini-card" href="https://overglade.hackclub.com" target="_blank" rel="noopener">
-            <img class="mini-card-img" src="/images/overglade.png" alt="Overglade" />
+            <img class="mini-card-bg" src="/images/overglade.png" alt="Overglade" />
           </a>
-          <a class="mini-card" href="https://undercity.hackclub.com" target="_blank" rel="noopener">
-            <img class="mini-card-img" src="/images/undercity.png" alt="Undercity" />
+
+          <a class="mini-card" href="https://undercity.hackclub.com" target="_blank" rel="noopener" style="background:#171717">
+            <img class="mini-card-bg" src="/images/undercity-bg.png" alt="" />
+            <img class="mini-card-logo" src="/images/undercity-logo.png" alt="Undercity" style="width:239px;height:90px" />
           </a>
+
           <a class="mini-card" href="https://shiba.hackclub.com" target="_blank" rel="noopener">
-            <img class="mini-card-img" src="/images/shiba-arcade.png" alt="Shiba Arcade" />
+            <img class="mini-card-bg" src="/images/shiba-bg.png" alt="" />
+            <div class="mini-card-overlay"></div>
+            <img class="mini-card-logo" src="/images/shiba-logo.png" alt="Shiba Arcade" style="width:308px;max-width:80%;height:auto;opacity:0.8;filter:drop-shadow(0 0 80px white)" />
           </a>
+
           <a class="mini-card" href="https://hackpad.hackclub.com" target="_blank" rel="noopener">
-            <img class="mini-card-img" src="/images/hackpad.png" alt="Hackpad" />
+            <img class="mini-card-bg" src="/images/hackpad-bg.png" alt="" />
+            <img class="mini-card-logo" src="/images/hackpad-logo.png" alt="Hackpad" style="width:243px;height:76px" />
           </a>
+
           <a class="mini-card" href="https://horizons.hackclub.com" target="_blank" rel="noopener">
-            <img class="mini-card-img" src="/images/horizons.png" alt="Horizons" />
+            <img class="mini-card-bg" src="/images/horizons-bg.png" alt="" />
+            <img class="mini-card-logo" src="/images/horizons-logo.png" alt="Horizons" style="width:395px;height:117px;max-width:100%" />
           </a>
         </div>
       </div>
@@ -365,11 +379,11 @@ import Hero from '../components/Hero.svelte';
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 326px;
-        height: 65px;
+        width: 245px;
+        height: 49px;
         border: 2px solid #fff;
         border-radius: 9999px;
-        font-size: 28px;
+        font-size: 21px;
         font-family: 'Glyseric', sans-serif;
         color: #fff;
         text-decoration: none;
@@ -484,7 +498,7 @@ import Hero from '../components/Hero.svelte';
 
       .programs-more-title {
         font-family: 'Young Serif', serif;
-        font-size: 28px;
+        font-size: 36px;
         color: #eee;
         line-height: normal;
         font-weight: normal;
@@ -499,8 +513,12 @@ import Hero from '../components/Hero.svelte';
       }
 
       .mini-card {
-        display: block;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         overflow: hidden;
+        height: 190px;
         transition: transform 0.3s ease;
       }
 
@@ -508,16 +526,31 @@ import Hero from '../components/Hero.svelte';
         transform: scale(1.05);
       }
 
-      .mini-card:hover .mini-card-img {
+      .mini-card:hover .mini-card-bg {
         filter: brightness(1.1);
       }
 
-      .mini-card-img {
+      .mini-card-bg {
+        position: absolute;
+        inset: 0;
         width: 100%;
-        height: 190px;
+        height: 100%;
         object-fit: cover;
         display: block;
         transition: filter 0.3s ease;
+      }
+
+      .mini-card-logo {
+        position: relative;
+        z-index: 1;
+        display: block;
+        object-fit: contain;
+      }
+
+      .mini-card-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
       }
 
       /* Gap Year Life section */
@@ -552,7 +585,7 @@ import Hero from '../components/Hero.svelte';
       .gapyear-row {
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: stretch;
         gap: 36px;
       }
 
@@ -569,13 +602,14 @@ import Hero from '../components/Hero.svelte';
 
       .quadrant-img {
         width: 100%;
-        height: auto;
+        aspect-ratio: 16 / 11;
+        object-fit: cover;
         display: block;
       }
 
       .quadrant-desc {
         font-family: 'Glyseric', sans-serif;
-        font-size: 32px;
+        font-size: 20px;
         color: #fff;
         line-height: normal;
         margin: 0;
@@ -859,7 +893,7 @@ import Hero from '../components/Hero.svelte';
 
       .manifesto-title {
         font-family: 'Young Serif', serif;
-        font-size: 40px;
+        font-size: 30px;
         color: #eee;
         line-height: normal;
         font-weight: normal;
@@ -870,7 +904,7 @@ import Hero from '../components/Hero.svelte';
 
       .manifesto-body {
         font-family: 'Glyseric', sans-serif;
-        font-size: 20px;
+        font-size: 15px;
         color: #fff;
         line-height: normal;
         max-width: 1107px;
@@ -921,7 +955,7 @@ import Hero from '../components/Hero.svelte';
 
       .cta-end-title {
         font-family: 'Young Serif', serif;
-        font-size: 96px;
+        font-size: 72px;
         color: #fff;
         text-align: center;
         line-height: normal;
@@ -958,9 +992,9 @@ import Hero from '../components/Hero.svelte';
         .sc-vert-screenshot { width: 260px; height: 180px; }
         .sc-bam-screenshot { width: 230px; height: 165px; }
 
-        .quadrant-desc { font-size: 24px; }
+        .quadrant-desc { font-size: 20px; }
 
-        .cta-end-title { font-size: 64px; }
+        .cta-end-title { font-size: 48px; }
       }
 
       /* Small tablet / large phone: ≤768px */
@@ -974,13 +1008,13 @@ import Hero from '../components/Hero.svelte';
 
         .fellowship-title { font-size: 28px; }
         .fellowship-body { font-size: 20px; }
-        .fellowship-btn { width: 240px; height: 50px; font-size: 24px; }
+        .fellowship-btn { width: 180px; height: 38px; font-size: 18px; }
 
         .programs-headline { font-size: 24px; }
         .gapyear-title { font-size: 24px; }
         .teens-built-title { font-size: 28px; }
-        .manifesto-title { font-size: 32px; }
-        .manifesto-body { font-size: 18px; }
+        .manifesto-title { font-size: 24px; }
+        .manifesto-body { font-size: 13.5px; }
 
         .programs-grid { grid-template-columns: 1fr; }
 
@@ -993,7 +1027,6 @@ import Hero from '../components/Hero.svelte';
         .quadrant.projects,
         .quadrant.travel { width: 100%; }
 
-        .quadrant-desc { font-size: 20px; }
         .quadrant-desc.right { text-align: left; }
 
         .teens-built-grid { grid-template-columns: 1fr; }
@@ -1001,7 +1034,7 @@ import Hero from '../components/Hero.svelte';
         .sc-blind-inner { padding: 11px 24px; }
         .sc-blind-desc { white-space: normal; }
 
-        .cta-end-title { font-size: 48px; }
+        .cta-end-title { font-size: 36px; }
 
         .programs-more-title { font-size: 24px; }
       }
@@ -1017,7 +1050,7 @@ import Hero from '../components/Hero.svelte';
 
         .fellowship-title { font-size: 22px; }
         .fellowship-body { font-size: 16px; }
-        .fellowship-btn { width: 200px; height: 44px; font-size: 20px; }
+        .fellowship-btn { width: 150px; height: 33px; font-size: 15px; }
 
         .programs-headline { font-size: 20px; }
         .gapyear-title { font-size: 20px; }
@@ -1027,18 +1060,18 @@ import Hero from '../components/Hero.svelte';
         .sc-vert-screenshot { width: 200px; height: 150px; }
         .sc-bam-screenshot { width: 180px; height: 130px; }
         .sc-blind-logo { width: 220px; height: 70px; }
-        .manifesto-title { font-size: 24px; }
-        .manifesto-body { font-size: 16px; }
+        .manifesto-title { font-size: 18px; }
+        .manifesto-body { font-size: 12px; }
 
         .programs-more-grid { grid-template-columns: 1fr; }
 
-        .mini-card-img { height: 160px; }
+        .mini-card { height: 160px; }
 
-        .quadrant-desc { font-size: 18px; }
+        .quadrant-desc { font-size: 16px; }
 
         .program-card-desc { font-size: 16px; }
 
-        .cta-end-title { font-size: 36px; }
+        .cta-end-title { font-size: 27px; }
 
         .programs-more-title { font-size: 20px; }
       }
