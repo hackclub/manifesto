@@ -320,7 +320,7 @@
     border: 2px solid #fff;
     border-radius: 9999px;
     font-size: 20px;
-    font-family: 'Glyseric', sans-serif;
+    font-family: 'Glyseric', 'Newsreader', sans-serif;
     color: #fff;
     text-decoration: none;
     letter-spacing: 0.03em;
@@ -344,7 +344,7 @@
   }
 
   .manifesto-text {
-    font-family: 'Glyseric', sans-serif;
+    font-family: 'Glyseric', 'Newsreader', sans-serif;
     font-size: 27px;
     color: #eee;
     text-align: center;
