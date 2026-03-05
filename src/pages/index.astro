@@ -319,9 +319,13 @@ import Hero from '../components/Hero.svelte';
           <a class="fellowship-btn" href="/apply">Apply Now</a>
         </div>
 
-        <p>Love,<br />Hack Club</p>
+        <p><em>Love,<br />Hack Club</em></p>
       </div>
     </section>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 <a href="https://hackclub.com" target="_blank" rel="noopener">Hack Club</a>. 501(c)(3) nonprofit (EIN: 81-2908499)</p>
+    </footer>
 
     <style>
       @font-face {
@@ -972,6 +976,24 @@ import Hero from '../components/Hero.svelte';
         line-height: 1.7;
         margin: 0;
         text-align: center;
+      }
+
+      .site-footer {
+        background: #0c0c0b;
+        text-align: center;
+        padding: 0 16px 40px;
+        color: #888;
+        font-family: 'Glyseric', 'Newsreader', sans-serif;
+        font-size: 14px;
+      }
+
+      .site-footer p {
+        margin: 0;
+      }
+
+      .site-footer a {
+        color: #888;
+        text-decoration: underline;
       }
 
       /* ── Responsive ── */
