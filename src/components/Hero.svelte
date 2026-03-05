@@ -330,7 +330,7 @@
 
   .apply-btn:hover {
     background: #fff;
-    color: #0c0c0b;
+    color: #1c1c1a;
   }
 
   /* Manifesto overlay */
