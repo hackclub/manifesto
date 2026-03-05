@@ -1,0 +1,907 @@
+---
+import Hero from '../components/Hero.svelte';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Hacker Manifesto</title>
+
+    <!-- Preload fonts -->
+    <link rel="preload" as="font" href="/Glyseric.woff2" type="font/woff2" crossorigin />
+    <!-- Preload the most visible hero images -->
+    <link rel="preload" as="image" href="/hero/01.webp" type="image/webp" />
+    <link rel="preload" as="image" href="/hero/11.webp" type="image/webp" />
+    <link rel="preload" as="image" href="/hero/04.webp" type="image/webp" />
+    <link rel="preload" as="image" href="/hero/flag.svg" type="image/svg+xml" />
+    <!-- Preload Young Serif font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,700;1,400&family=Young+Serif&display=swap" rel="stylesheet" />
+
+    <style>
+      *, *::before, *::after { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; background: #0c0c0b; }
+    </style>
+  </head>
+  <body>
+    <Hero client:load />
+
+    <section class="fellowship">
+      <h2 class="fellowship-title">Introducing the Hack Club Gap Year Fellowship</h2>
+      <div class="fellowship-body">
+        <p>This is a full-time job at Hack Club HQ in Shelburne, Vermont. It's intended to be something you do for a year before you go to college or whatever your plans are after high school, but if you are on an alternate schooling path that works too!</p>
+        <p>The job is to design and execute on the next generation of You Ship, we ships!</p>
+        <p>The people who have this job today are all of the Hack Club staff you see running programs. This is the next batch of people running Hack Club!</p>
+      </div>
+      <a class="fellowship-btn" href="/apply">Apply Now</a>
+    </section>
+
+    <section class="programs">
+      <h2 class="programs-headline">
+        In the past year, gap years have run programs with over <span class="red">10,000+ real users </span>
+      </h2>
+
+      <div class="programs-grid">
+        <div class="program-card">
+          <img class="program-card-img" src="https://www.figma.com/api/mcp/asset/4f76d0a9-19b1-4fff-8c46-68cb0325cc35" alt="Campfire Flagship" />
+          <img class="program-card-logo" src="https://www.figma.com/api/mcp/asset/39b0c621-7fce-45d9-b4bb-902a1ee831b1" alt="Campfire Flagship logo" />
+          <p class="program-card-desc">A 3 day flagship game jam in Los Angeles with YouTubers like Michael Reeves, William Osman, and many more!</p>
+        </div>
+
+        <div class="program-card">
+          <img class="program-card-img" src="https://www.figma.com/api/mcp/asset/604232e9-c48e-4302-8b5f-6c6f203de886" alt="Midnight" />
+          <div class="midnight-logo">
+            <img class="oblique" src="https://www.figma.com/api/mcp/asset/548ae32c-c94d-43ec-8114-54f7df2993bb" alt="" />
+            <img class="front" src="https://www.figma.com/api/mcp/asset/ec3ac4f7-5dd9-43e1-8764-7f2a9576aee7" alt="Midnight logo" />
+          </div>
+          <p class="program-card-desc">A murder-mystery hackathon held in Austria, Vienna with 60+ teenagers from all across the world!</p>
+        </div>
+
+        <div class="program-card">
+          <img class="program-card-img" src="https://www.figma.com/api/mcp/asset/6adc8a20-a8cd-4375-9876-1ecb66b1cf71" alt="Blueprint" />
+          <img class="program-card-logo" src="https://www.figma.com/api/mcp/asset/1f7f4f1f-4311-4d2d-9775-6d7603d89e5d" alt="Blueprint logo" style="width:300px" />
+          <p class="program-card-desc">From October 2025 to March 2026, Blueprint gave $140,000 to fund 1,500 hardware and electronics projects built by 1000 teenagers from 77 countries</p>
+        </div>
+
+        <div class="program-card">
+          <img class="program-card-img" src="https://www.figma.com/api/mcp/asset/c7079683-fc2e-4ae4-8770-0f99fcf7dbf1" alt="Siege" />
+          <img class="program-card-logo" src="https://www.figma.com/api/mcp/asset/5e716af7-8be1-46b8-b468-fb1a062acf16" alt="Siege logo" style="width:161px" />
+          <p class="program-card-desc">A 14 week event where 250 teens created a project each week to work towards a laptop with over 100 framework laptops given out.</p>
+        </div>
+      </div>
+
+      <div class="programs-more">
+        <h3 class="programs-more-title">...and so much more...</h3>
+        <div class="programs-more-grid">
+          <!-- Row 1 -->
+          <div class="mini-card">
+            <img class="bg" src="https://www.figma.com/api/mcp/asset/4cc8b9e3-077b-4d7f-a36e-101b4e9b9d8a" alt="" />
+            <img class="logo" src="https://www.figma.com/api/mcp/asset/792e472b-fae1-49ae-8b31-3235d3760e00" alt="Summer of Making" style="width:225px;height:130px" />
+          </div>
+          <div class="mini-card campfire-mini">
+            <img class="bg" src="https://www.figma.com/api/mcp/asset/580378d6-139d-42fb-bae8-30d00bc41fa4" alt="" />
+            <img class="logo" src="https://www.figma.com/api/mcp/asset/5c69f40e-d690-4dbd-889e-a5f955591222" alt="Campfire" style="width:242px;height:56px;transform:translate(-50%,-50%) rotate(-4deg)" />
+          </div>
+          <div class="mini-card sleepover">
+            <img class="logo" src="https://www.figma.com/api/mcp/asset/536544b1-4e85-4151-a4a2-058dfd83e178" alt="Sleepover" style="width:224px;height:131px" />
+          </div>
+          <div class="mini-card">
+            <img class="bg" src="https://www.figma.com/api/mcp/asset/1a25049b-b55a-4029-9aeb-304e15c4a4b8" alt="Overglade" />
+          </div>
+
+          <!-- Row 2 -->
+          <div class="mini-card">
+            <img class="bg" src="https://www.figma.com/api/mcp/asset/54818d72-39ba-464b-ac9b-7d904d1af85d" alt="" />
+            <img class="logo" src="https://www.figma.com/api/mcp/asset/63d6c958-72d7-44d0-8d5e-1229c1134123" alt="Undercity" style="width:239px;height:90px" />
+          </div>
+          <div class="mini-card">
+            <img class="bg" src="https://www.figma.com/api/mcp/asset/c7250dc1-fe05-4937-864a-748710cbc79a" alt="" style="opacity:0.4" />
+            <img class="logo" src="https://www.figma.com/api/mcp/asset/a97b9869-8dcb-4d14-acbb-36784f6e68b6" alt="Shiba Arcade" style="width:308px;height:108px;opacity:0.8;filter:drop-shadow(0 0 80px white)" />
+          </div>
+          <div class="mini-card">
+            <img class="bg" src="https://www.figma.com/api/mcp/asset/28edb20a-0904-4d3d-92ad-551abb0da76e" alt="" />
+            <img class="logo" src="https://www.figma.com/api/mcp/asset/0ddb446d-be2a-4c91-9253-9f1a744d6712" alt="Hackpad" style="width:243px;height:76px" />
+          </div>
+          <div class="mini-card">
+            <img class="bg" src="https://www.figma.com/api/mcp/asset/9d450f77-7f72-438b-93c9-d27e7ea1a0be" alt="" />
+            <img class="logo" src="https://www.figma.com/api/mcp/asset/fcf655af-5499-4f2a-8ab2-91dd94d44b11" alt="Horizons" style="width:395px;height:117px" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gapyear">
+      <h2 class="gapyear-title">As a gap year...</h2>
+      <div class="gapyear-grid">
+        <!-- Work (top-left) -->
+        <div class="quadrant work">
+          <div class="collage work-photos">
+            <img style="left:383px;top:0;width:449px;height:337px" src="https://www.figma.com/api/mcp/asset/818bf3bc-6d25-4b17-a122-79db01857135" alt="" />
+            <img style="left:0;top:295px;width:383px;height:287px" src="https://www.figma.com/api/mcp/asset/089ce521-7c34-4229-a6f3-115ec1c3fe9d" alt="" />
+            <img style="left:383px;top:337px;width:327px;height:245px" src="https://www.figma.com/api/mcp/asset/a8fa76ad-1949-4d7c-be4e-b1ee5974d494" alt="" />
+            <img style="left:0;top:0;width:383px;height:295px" src="https://www.figma.com/api/mcp/asset/16a271f6-47c0-4dbd-a8c4-ec6317ee7087" alt="" />
+            <img style="left:710px;top:337px;width:122px;height:124px" src="https://www.figma.com/api/mcp/asset/b0059a59-f547-4f09-a1bc-184f8f940eda" alt="" />
+            <img style="left:710px;top:461px;width:122px;height:121px" src="https://www.figma.com/api/mcp/asset/02fa7247-4e82-4c17-a75b-d7f8e11c3069" alt="" />
+          </div>
+          <p class="quadrant-desc">40 gap years get $ 8.5M to build YSWS Programs and $50K as salary for the year.</p>
+        </div>
+
+        <!-- Vermont Life (top-right) -->
+        <div class="quadrant vermont">
+          <div class="collage vermont-photos">
+            <img style="left:253px;top:2px;width:186px;height:286px" src="https://www.figma.com/api/mcp/asset/4b160c8e-0026-4043-8588-6b8255ac2ca3" alt="" />
+            <img style="left:0;top:308px;width:253px;height:274px" src="https://www.figma.com/api/mcp/asset/1df7d44c-7770-4fe1-84a7-28387bd056a3" alt="" />
+            <img style="left:0;top:0;width:253px;height:308px" src="https://www.figma.com/api/mcp/asset/92409d70-a60b-42d6-9b65-80a4292d3a57" alt="" />
+            <img style="left:253px;top:288px;width:186px;height:294px" src="https://www.figma.com/api/mcp/asset/79caf3c8-d39f-4f25-84f7-a4713bfe2104" alt="" />
+            <img style="left:439px;top:2px;width:261px;height:196px" src="https://www.figma.com/api/mcp/asset/18f8e789-2227-48e1-9ab1-9ed7663c972a" alt="" />
+            <img style="left:439px;top:198px;width:261px;height:196px" src="https://www.figma.com/api/mcp/asset/19532bb4-3ce6-40d2-84e8-61c05ebc2390" alt="" />
+            <img style="left:439px;top:394px;width:141px;height:188px" src="https://www.figma.com/api/mcp/asset/a0c68133-fe68-49f6-b20c-6f4ad54ae0e9" alt="" />
+            <img style="left:580px;top:394px;width:120px;height:188px" src="https://www.figma.com/api/mcp/asset/897baeeb-e2df-4b74-923a-ccb4867dc982" alt="" />
+          </div>
+          <p class="quadrant-desc right">Work in person at our offices in Shelburne VT, and get to enjoy the vibrant 4 seasons of New England</p>
+        </div>
+
+        <!-- Building Projects (bottom-left) -->
+        <div class="quadrant projects">
+          <div class="collage projects-photos">
+            <img style="left:0;top:0;width:523px;height:294px" src="https://www.figma.com/api/mcp/asset/93a16c54-d2a8-46b5-a7ab-52bc80fa5918" alt="" />
+            <img style="left:523px;top:0;width:177px;height:133px" src="https://www.figma.com/api/mcp/asset/efe525ee-2de6-4c92-ad4d-449c10727b7d" alt="" />
+            <img style="left:427px;top:294px;width:273px;height:177px" src="https://www.figma.com/api/mcp/asset/d8127ee7-15e0-4711-b681-82db4b2e3604" alt="" />
+            <img style="left:290px;top:294px;width:137px;height:177px" src="https://www.figma.com/api/mcp/asset/5184e023-b36a-41ec-856f-de65054f4bc6" alt="" />
+            <img style="left:0;top:294px;width:290px;height:177px" src="https://www.figma.com/api/mcp/asset/c4a977ae-d745-4c8a-98da-1d75629c4d2e" alt="" />
+            <img style="left:523px;top:133px;width:177px;height:161px" src="https://www.figma.com/api/mcp/asset/5a136246-2436-4923-bb68-25cf1f6f26ac" alt="" />
+          </div>
+          <p class="quadrant-desc">Run programs and own GitHub repos with thousands of real world users!</p>
+        </div>
+
+        <!-- Travel (bottom-right) -->
+        <div class="quadrant travel">
+          <div class="collage travel-photos">
+            <img style="left:0;top:0;width:240px;height:159px" src="https://www.figma.com/api/mcp/asset/84abdcee-da0f-4319-aa9a-042fb3b11de5" alt="" />
+            <img style="left:0;top:160px;width:120px;height:161px" src="https://www.figma.com/api/mcp/asset/4f7ee127-d3d6-47ac-b31c-8d4364becfbe" alt="" />
+            <img style="left:120px;top:160px;width:120px;height:161px" src="https://www.figma.com/api/mcp/asset/8031cfe0-7dbb-4f59-8f69-45257c7a6671" alt="" />
+            <img style="left:240px;top:0;width:175px;height:233px" src="https://www.figma.com/api/mcp/asset/326ebccd-1dd9-474b-ac50-882d7a0226c5" alt="" />
+            <img style="left:240px;top:233px;width:175px;height:131px" src="https://www.figma.com/api/mcp/asset/4ec358e6-907b-46af-bbcb-fbc2f1ff313d" alt="" />
+            <img style="left:240px;top:364px;width:175px;height:107px" src="https://www.figma.com/api/mcp/asset/8427a84b-5bc8-4642-9137-ef83043677b5" alt="" />
+            <img style="left:0;top:321px;width:240px;height:150px" src="https://www.figma.com/api/mcp/asset/aa0364fe-2f89-4046-b6c5-268d49ebf9d2" alt="" />
+            <img style="left:415px;top:0;width:131px;height:131px" src="https://www.figma.com/api/mcp/asset/16726cda-fe38-474b-9289-8e7b0e04f74f" alt="" />
+            <img style="left:415px;top:131px;width:131px;height:102px" src="https://www.figma.com/api/mcp/asset/9e7b20be-5f88-4458-935a-f9696f2586b4" alt="" />
+            <img style="left:415px;top:233px;width:131px;height:131px" src="https://www.figma.com/api/mcp/asset/487366fb-c0fa-47b5-afee-8b2770dcc407" alt="" />
+            <img style="left:415px;top:364px;width:131px;height:107px" src="https://www.figma.com/api/mcp/asset/65031390-4fb5-47ba-940e-714195dd270c" alt="" />
+            <img style="left:546px;top:0;width:286px;height:146px" src="https://www.figma.com/api/mcp/asset/e45bbfe2-03ba-4c7e-a2a2-52755c7ef058" alt="" />
+            <img style="left:546px;top:146px;width:131px;height:130px" src="https://www.figma.com/api/mcp/asset/7730d085-e2ac-4b3a-888a-d595fdfd757a" alt="" />
+            <img style="left:546px;top:276px;width:131px;height:195px" src="https://www.figma.com/api/mcp/asset/6a6edd94-97ef-478a-aa38-1c0d44623da3" alt="" />
+            <img style="left:677px;top:146px;width:155px;height:206px" src="https://www.figma.com/api/mcp/asset/390d0a59-a905-4d77-956b-19f9b0df6301" alt="" />
+            <img style="left:677px;top:352px;width:155px;height:119px" src="https://www.figma.com/api/mcp/asset/8d220b29-ffc7-4e56-9759-7a90f6b497b5" alt="" />
+          </div>
+          <p class="quadrant-desc right">Travel around the world for Hack Club events<br />and go on adventures.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="teens-built">
+      <h2 class="teens-built-title">This past year, Gap Years ran programs that <span class="red">helped teens build...</span></h2>
+      <div class="teens-built-grid">
+        <!-- DoomPDF -->
+        <div class="showcase-card" style="background:#282828">
+          <img class="sc-screenshot" src="https://www.figma.com/api/mcp/asset/be7e705a-d654-4403-b04d-b72821301183" alt="DoomPDF screenshot" style="width:324px;height:247px;top:19px;border-radius:8px" />
+          <img class="sc-logo" src="https://www.figma.com/api/mcp/asset/c4b0115e-af9a-46d6-aa1a-3c1d5a855513" alt="DoomPDF" style="width:227px;height:58px;top:294px" />
+          <p class="sc-desc" style="top:363px">A source port of <em>Doom</em> (1993) that runs inside a PDF document<br />By Allen D</p>
+          <span class="sc-stars">3.7k⭐︎</span>
+        </div>
+
+        <!-- LibrePods -->
+        <div class="showcase-card" style="background:#fff">
+          <img class="sc-screenshot" src="https://www.figma.com/api/mcp/asset/ea7c33cb-d8ef-4da7-8a02-8e8c87548375" alt="LibrePods screenshot" style="width:112px;height:243px;top:28px" />
+          <img class="sc-logo" src="https://www.figma.com/api/mcp/asset/d1913c7a-dcf3-436a-91d8-e2026e61bfb7" alt="LibrePods" style="width:241px;height:89px;top:278px" />
+          <p class="sc-desc" style="top:367px;color:#000">Airpods liberated from Apple's ecosystem</p>
+          <span class="sc-stars" style="color:#000">25.7k⭐︎</span>
+        </div>
+
+        <!-- Vert -->
+        <div class="showcase-card" style="background:#ff83fa">
+          <img class="sc-screenshot" src="https://www.figma.com/api/mcp/asset/a60fa1f0-d559-4664-81e5-0fd270c34bdc" alt="Vert screenshot" style="width:344px;height:247px;top:34px" />
+          <img class="sc-logo" src="https://www.figma.com/api/mcp/asset/996940b3-66c7-47e9-b5f8-1eb95e982da8" alt="Vert" style="width:202px;height:75px;top:281px" />
+          <p class="sc-desc" style="top:351px;color:#000">VERT is a file conversion utility that uses WebAssembly to convert files on your device instead of a cloud.</p>
+          <span class="sc-stars" style="color:#000">14.1k⭐︎</span>
+        </div>
+
+        <!-- BAM -->
+        <div class="showcase-card bam-card" style="background:#282828">
+          <img class="bam-bg" src="https://www.figma.com/api/mcp/asset/294059b3-a6f6-479f-bac4-0f7843bde9a6" alt="" />
+          <img class="sc-screenshot" src="https://www.figma.com/api/mcp/asset/8701b77f-a1cf-4c93-8f33-ba4acf603245" alt="Biblically Accurate Macropad" style="width:288px;height:207px;top:6px;box-shadow:0 4px 100px rgba(234,255,0,0.3)" />
+          <div class="bam-title">THE<br />BIBLICALLY<br />ACCURATE<br />MACROPAD</div>
+          <p class="sc-desc bam-desc" style="top:338px;color:#fdd882">A very macro, macropad in the form<br />of a biblically accurate angel!<br />by Alex Tran</p>
+        </div>
+
+        <!-- Specter -->
+        <div class="showcase-card" style="background:#222034">
+          <img class="specter-game" src="https://www.figma.com/api/mcp/asset/87a7409f-1807-49b5-a60b-eb016477a12c" alt="Specter gameplay" />
+          <img class="sc-logo" src="https://www.figma.com/api/mcp/asset/61bdb663-4da2-4b22-ac91-f7168fc764de" alt="Specter" style="width:127px;height:41px;top:286px" />
+          <p class="sc-desc" style="top:335px;font-size:11px">A game about a knight bravely trying to escape the cave but he is haunted by his own ghost. His last gameplay shows up as a ghost in the next run.<br />Would he let this distract him or use it for his advantage? It's for you to decide.<br /><strong>By Ayessa</strong></p>
+        </div>
+
+        <!-- Blind Defusal -->
+        <div class="showcase-card" style="background:#c83430;overflow:hidden">
+          <img class="blind-noise" src="https://www.figma.com/api/mcp/asset/056a1be7-0285-4ed7-a559-60bb32ab3eb4" alt="" />
+          <img class="blind-photo" src="https://www.figma.com/api/mcp/asset/9e3190f6-8df1-4522-8d6a-664d1de89f6a" alt="Blind Defusal" />
+          <div class="blind-header">
+            <p class="blind-title">BLIND</p>
+            <p class="blind-title">DEFUSAL</p>
+            <p class="blind-subtitle">A two-player, cooperative "bomb defusal" game.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="manifesto-section">
+      <h2 class="manifesto-title">A manifesto...</h2>
+      <div class="manifesto-body">
+        <p>Some of us have always been overlooked, misunderstood, and underappreciated; looked at with wariness instead of wonder; set aside instead of embraced.</p>
+
+        <p>Throughout most of history, this has been the fate of the hacker. Though no society has ever suffered from having too many, and indeed many have failed their potential by nurturing too few, we've been slow to free hackers to do great things.</p>
+
+        <p>Hackers are doers. That's their glory, and their stigma. While there are no people more important to where we're going, we're still in desperate need of more—far, far more.</p>
+
+        <p>But for all their qualities—their drive, their creativity, their stubborn persistence—hackers have a branding problem. One that has more to do with us than them.</p>
+
+        <p class="bold">Hackers reflect us.</p>
+
+        <p>Hollywood and headlines have long been unkind to hackers. The popular image is of shadowy misfits who break into sensitive networks to steal things or hold them hostage—or just to prove that they can.</p>
+
+        <p>It's not that hackers don't do those things, or that those who do should have a different name. But when we distinguish between good and bad hackers as "white hats" or "black hats" we're missing the more basic point: the bad ones are just young people we failed, mostly by never asking them to do something great.</p>
+
+        <p>Hackers need challenges equal to their gifts, and opportunities equal to their ambitions. Else they'll grow frustrated and find themselves throwing their talents at whatever or whomever offers the most money or status—which can lead them to very dark and tragic places.</p>
+
+        <p>This is our problem as much as theirs. More, really. Hackers are a precious natural resource, the lifeblood of our best futures. While we can't create or micromanage them, we can—and must—support them in healthy directions.</p>
+
+        <p>Why?</p>
+
+        <p class="bold">Hackers run towards our hardest problems, with special energy and creativity, without needing to be asked.</p>
+
+        <p>Hackers, and really the hacker spirit, have long defied a single definition—which we can see reflected in our language. A project can be hacked together. An account can be hacked into. One might hack away at a solution. And that solution, if clever, might one day be called a hack. But different as these things seem, there's a common thread: a sense that there was once something in the way—perhaps friction, or bureaucracy, or groupthink—and now, thanks to the hacker's work, that obstacle is no longer there.</p>
+
+        <p>Hackers are reimaginers, with an incurable bias towards what's simpler, faster, and better.</p>
+
+        <p>The result can be beautiful or ugly, good or bad, sophisticated or crude. To have the signature of a hacker it merely has to make other clever people say "ah yes of course". Hacking is the magical ability to find the straightest line between two points—in spite of all the obstacles in the way, in spite of all the maps that say the best route is to go around.</p>
+
+        <p>A hacker has three essential qualities:</p>
+        <ol>
+          <li>They're never quite an employee. They can be managed, but rarely directed. They follow their own curiosity their own way—always honestly, often infuriatingly—along with their sense of taste for which problems are interesting and which aren't.</li>
+          <li>Code is their employee. It does exactly what's asked of it, brilliantly—if also roughly at first. Elegance tends to come after execution. The hacker's great pleasure is to look upon their creation like the god of the Old Testament and say "behold, it works".</li>
+          <li>They're bloodhounds for finding the better way to get something done, driven by a creativity that astounds—and often worries—those around them.</li>
+        </ol>
+
+        <p>A hacker is a romantic, a rebel with a most excellent cause: making this world a little less closed off, a little less boring, a little less designed by committee.</p>
+
+        <p>A hacker believes in good mischief, in being a little loose with the rules that don't matter so as to improve the outcomes that do.</p>
+
+        <p>Indeed, a hacker prides themselves on being a bit unruly. Because there is such a thing as ruly-ness, as being a slave to How Things Are Done. Hackers hate this. Sometimes it comes out in their appearance. Always it comes out in how they attack problems.</p>
+
+        <p>Hackers find unsolved challenges irresistible, which they hack away at by repeatedly asking the smart questions—the hows, the what ifs, the I wonders, the why nots—until they come up with scrappy, ingenious, totally unexpected solutions that the prematurely old among us lacked the energy and freedom to see or throw ourselves at.</p>
+
+        <p>We need that. Badly. As we always have.</p>
+
+        <p class="bold">Hackers belong to a proud lineage.</p>
+
+        <p>There's an unbroken chain of hackers stretching back to the first tools. While hackers today mostly use code, in days past they used hammers and lenses and slide rules—employing them in novel combinations and ways that others just didn't see.</p>
+
+        <p>Gutenberg didn't invent many—perhaps any—individual component(s) of the printing press. The Catholic Church had offered him salvation from bankruptcy, if only he could produce paper indulgences some cheaper way. Soon enough he'd reimagined how movable type and the pressure of a screw press could be combined to outdo the work of a thousand monks.</p>
+
+        <p>Sometimes it's about using existing tools in novel ways; other times it's about making new ones, or just rethinking the parts of the bigger picture that we wrongly assumed were fixed. The internet—and Silicon Valley around it—was built by hackers who used all those methods in turn. Someone figured out the silicon wafer, then someone in a garage down the street figured out a faster one. Then someone figured out a better way to make a wafer company.</p>
+
+        <p>Hackers can take many forms. All are programmers in some right. But some want to build the next unicorn, some want to just make some small corner of the world better, and <a href="https://en.wikipedia.org/wiki/Aaron_Swartz">some</a> want to use code to set something free. But what unites them all is a sense that a better future isn't just possible; it's possible through them.</p>
+
+        <p class="bold">If we don't support hackers, we don't grow.</p>
+
+        <p>Coding is an actual superpower. It turns people from consumers to creators; from those who engage with the world as it is to those who reshape the world to something better.</p>
+
+        <p>We're in a creation drought as a society, and have been for a while. Our young people are mostly building followings and personas, not things.</p>
+
+        <p>Building things is hard. Try to do something new—or to do an old thing a new way—and you'll get a quick education in That's Not How Things Are Done: the gravity well of committees and process manuals and best practices that confuse caution for wisdom.</p>
+
+        <p>One of history's great thinkers told <a href="https://fs.blog/chestertons-fence/">a famous story</a> about a fence blocking a path, and how one type of reformer would just destroy it while a wiser type would first ask why it was built.</p>
+
+        <p>The hacker would ask too. But the hacker would be less persuaded by bad answers.</p>
+
+        <p class="bold">We need to be willing to get out of their way.</p>
+
+        <p>Hackers don't want, or need, to be told. They'll naturally experiment, explore, and tinker; but always by working backwards from big questions and first principles, not forwards from second-hand maps that reflect yesterday's conditions and compromises.</p>
+
+        <p>Sometimes we struggle to allow them to. But we do this to our own disadvantage. Even if we think their approaches won't work, we're much better off for letting them try. At worst, they discover something new about the problem. At best, they actually go and solve them.</p>
+
+        <p>We should praise their spirit and offer them playgrounds for it—that are non-hierarchical, merit-based, and permissionless.</p>
+
+        <p>But we don't. And this starts very early on, thanks in part to a school system designed to produce factory workers for a bygone age. Most schools have become a bad simulation of real life in the modern economy. They're about performing success, not actually wrestling the bits and atoms of the world into a more sane and productive order.</p>
+
+        <p><em>This doesn't need to be how you spend your teenage years.</em> There's another path you can take, and another type of person you can be.</p>
+
+        <p>What colleges fear to admit is that they can't identify top talent from essays, scores, or interviews alone. If you want to prove yourself—not just to them, but to the companies doing the most interesting work in the world—you need to build. It doesn't matter what. It doesn't matter when you start. It matters that you start. And it's easier in the company of peers—who get you, who want to feed and feed off your energy, who want to shine just as badly.</p>
+
+        <p>You can be a lone wolf sometimes. But you'll go further in a pack.</p>
+
+        <p class="bold">The young have much to learn together, and much to teach us.</p>
+
+        <p>Hackers can't be taught really. They take ownership over their own education. When they find an interesting problem, they figure out what they need to learn and they pursue it with an enthusiasm that we mostly know now only from long memory. We can ensure that the available curriculum is good; we can't make them read it, nor determine how they'll read it.</p>
+
+        <p>But this isn't to say they aren't teachable, at least in the sense of taking direction and feedback. They just see the world differently. As we should hope they do.</p>
+
+        <p>The great challenges of our times were shaped in part by our responses to them. If we truly want to solve them, we need to be willing to turn them over to those who perceive them differently, who can approach them from new angles, with more energy and less baggage.</p>
+
+        <p>Put another way, we need to let hackers hack.</p>
+
+        <p>So consider this a giant sign in the window: Hackers Wanted. We see you, whether you're in a Bay Area garage or a rural village that the rest of the world can't find on the map. We value you. We want to stand alongside you as you build things—crazy, useful, beautiful things; things we may not even understand until you teach us.</p>
+      </div>
+    </section>
+
+    <section class="cta-end">
+      <h2 class="cta-end-title">The door is open.</h2>
+      <a class="fellowship-btn" href="/apply">Apply Now</a>
+    </section>
+
+    <style>
+      @font-face {
+        font-family: 'Glyseric';
+        src: url('/Glyseric.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      .fellowship {
+        background: #0c0c0b;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 36px;
+        padding: 155px 32px 200px;
+      }
+
+      .fellowship-title {
+        font-family: 'Young Serif', serif;
+        font-size: 50px;
+        color: #eee;
+        text-align: center;
+        max-width: 1331px;
+        margin: 0;
+        font-weight: normal;
+        line-height: normal;
+      }
+
+      .fellowship-body {
+        font-family: 'Glyseric', sans-serif;
+        font-size: 36px;
+        color: rgba(238, 238, 238, 0.8);
+        text-align: center;
+        max-width: 1122px;
+        line-height: normal;
+        margin: 0;
+      }
+
+      .fellowship-body p {
+        margin: 0 0 1em;
+      }
+
+      .fellowship-body p:last-child {
+        margin-bottom: 0;
+      }
+
+      .fellowship-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 326px;
+        height: 65px;
+        border: 2px solid #fff;
+        border-radius: 9999px;
+        font-size: 36px;
+        font-family: 'Glyseric', sans-serif;
+        color: #fff;
+        text-decoration: none;
+        transition: background 0.5s, color 0.5s;
+      }
+
+      .fellowship-btn:hover {
+        background: #fff;
+        color: #0c0c0b;
+      }
+
+      /* Programs section */
+      .programs {
+        background: #0c0c0b;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        align-items: center;
+        padding: 0 137px 200px;
+      }
+
+      /* Headliner */
+      .programs-headline {
+        font-family: 'Young Serif', serif;
+        font-size: 48px;
+        color: #eee;
+        line-height: normal;
+        font-weight: normal;
+        margin: 0;
+        max-width: 1169px;
+        width: 100%;
+      }
+
+      .programs-headline .red {
+        color: #ec3750;
+      }
+
+      .programs-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+        width: 100%;
+        max-width: 1644px;
+      }
+
+      .program-card {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+      }
+
+      .program-card-img {
+        width: 100%;
+        height: 505px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .program-card-logo {
+        height: 90px;
+        object-fit: contain;
+      }
+
+      .program-card-desc {
+        font-family: 'Glyseric', sans-serif;
+        font-size: 24px;
+        color: #fff;
+        line-height: normal;
+        margin: 0;
+        width: 100%;
+      }
+
+      /* Midnight logo */
+      .midnight-logo {
+        position: relative;
+        height: 84px;
+        width: 306px;
+      }
+
+      .midnight-logo .oblique {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .midnight-logo .front {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-4.26deg);
+        height: 67px;
+        width: 230px;
+      }
+
+      /* Additional programs */
+      .programs-more {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        max-width: 1646px;
+      }
+
+      .programs-more-title {
+        font-family: 'Young Serif', serif;
+        font-size: 36px;
+        color: #eee;
+        line-height: normal;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      .programs-more-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        width: 100%;
+      }
+
+      .mini-card {
+        position: relative;
+        height: 190px;
+        overflow: hidden;
+        background: #d9d9d9;
+      }
+
+      .mini-card img.bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .mini-card img.logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .mini-card.sleepover {
+        background: #dbdcf7;
+      }
+
+      .mini-card.campfire-mini {
+        background: #fff;
+      }
+
+      /* Gap Year Life section */
+      .gapyear {
+        background: #0c0c0b;
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+        align-items: center;
+        padding: 0 137px 200px;
+      }
+
+      .gapyear-title {
+        font-family: 'Young Serif', serif;
+        font-size: 48px;
+        color: #eee;
+        line-height: normal;
+        font-weight: normal;
+        margin: 0;
+        max-width: 1628px;
+        width: 100%;
+      }
+
+      .gapyear-grid {
+        position: relative;
+        width: 100%;
+        max-width: 1628px;
+        height: 1459px;
+      }
+
+      .quadrant {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .quadrant.work {
+        left: 0;
+        top: 0;
+        width: 832px;
+      }
+
+      .quadrant.vermont {
+        right: 0;
+        top: 0;
+        width: 700px;
+      }
+
+      .quadrant.projects {
+        left: 0;
+        bottom: 36px;
+        width: 700px;
+      }
+
+      .quadrant.travel {
+        right: 0;
+        bottom: 36px;
+        width: 832px;
+        align-items: flex-end;
+      }
+
+      .collage {
+        position: relative;
+      }
+
+      .collage img {
+        position: absolute;
+        object-fit: cover;
+      }
+
+      .work-photos {
+        width: 832px;
+        height: 582px;
+      }
+
+      .vermont-photos {
+        width: 700px;
+        height: 582px;
+      }
+
+      .projects-photos {
+        width: 700px;
+        height: 471px;
+      }
+
+      .travel-photos {
+        width: 832px;
+        height: 471px;
+      }
+
+      .quadrant-desc {
+        font-family: 'Glyseric', sans-serif;
+        font-size: 40px;
+        color: #fff;
+        line-height: normal;
+        margin: 0;
+      }
+
+      .quadrant-desc.right {
+        text-align: right;
+      }
+
+      /* Teens Built section */
+      .teens-built {
+        background: #0c0c0b;
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+        align-items: center;
+        padding: 0 137px 200px;
+      }
+
+      .teens-built-title {
+        font-family: 'Young Serif', serif;
+        font-size: 48px;
+        color: #eee;
+        line-height: normal;
+        font-weight: normal;
+        margin: 0;
+        max-width: 1648px;
+        width: 100%;
+      }
+
+      .teens-built-title .red {
+        color: #ec3750;
+      }
+
+      .teens-built-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 36px;
+        width: 100%;
+        max-width: 1648px;
+      }
+
+      .showcase-card {
+        position: relative;
+        height: 412px;
+        overflow: hidden;
+      }
+
+      .sc-screenshot {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        object-fit: cover;
+      }
+
+      .sc-logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        object-fit: contain;
+      }
+
+      .sc-desc {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 402px;
+        font-family: 'Inter', sans-serif;
+        font-size: 12px;
+        color: #fff;
+        text-align: center;
+        line-height: normal;
+        margin: 0;
+      }
+
+      .sc-stars {
+        position: absolute;
+        top: 15px;
+        right: 14px;
+        font-family: 'Phantom Sans', sans-serif;
+        font-size: 15px;
+        color: #fff;
+        opacity: 0.85;
+      }
+
+      /* BAM card */
+      .bam-bg {
+        position: absolute;
+        left: -17px;
+        top: -189px;
+        width: 656px;
+        height: 919px;
+        object-fit: cover;
+      }
+
+      .bam-card::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.8) 32%, rgba(0,0,0,0) 80%);
+        pointer-events: none;
+      }
+
+      .bam-card .sc-screenshot,
+      .bam-card .bam-title,
+      .bam-card .sc-desc {
+        z-index: 1;
+      }
+
+      .bam-title {
+        position: absolute;
+        top: 223px;
+        left: 185px;
+        width: 156px;
+        font-family: 'jsMath-cmti10', serif;
+        font-size: 24px;
+        font-style: italic;
+        color: #fff;
+        text-shadow: 0 0 10px rgba(0,0,0,0.7);
+        line-height: normal;
+        z-index: 1;
+      }
+
+      .bam-desc {
+        font-family: 'Jua', sans-serif;
+        font-size: 16px;
+      }
+
+      /* Specter card */
+      .specter-game {
+        position: absolute;
+        left: -14px;
+        top: -12px;
+        width: 540px;
+        height: 280px;
+        object-fit: cover;
+      }
+
+      /* Blind Defusal card */
+      .blind-noise {
+        position: absolute;
+        left: -139px;
+        top: -59px;
+        width: 1126px;
+        height: 613px;
+        object-fit: cover;
+        opacity: 0.15;
+      }
+
+      .blind-photo {
+        position: absolute;
+        left: -21px;
+        top: -100px;
+        width: 552px;
+        height: 368px;
+        object-fit: cover;
+        transform: rotate(-1.14deg);
+      }
+
+      .blind-header {
+        position: absolute;
+        left: 83px;
+        top: 223px;
+      }
+
+      .blind-title {
+        font-family: 'Retro Gaming', sans-serif;
+        font-size: 73px;
+        color: #f8f2da;
+        line-height: normal;
+        margin: 0;
+      }
+
+      .blind-subtitle {
+        font-family: 'Anonymous Pro', monospace;
+        font-size: 15px;
+        color: #f8f2da;
+        text-transform: uppercase;
+        margin: 8px 0 0;
+      }
+
+      /* Manifesto section */
+      .manifesto-section {
+        background: #0c0c0b;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 36px;
+        padding: 0 137px 200px;
+      }
+
+      .manifesto-title {
+        font-family: 'Young Serif', serif;
+        font-size: 48px;
+        color: #eee;
+        text-align: center;
+        line-height: normal;
+        font-weight: normal;
+        margin: 0;
+        max-width: 788px;
+      }
+
+      .manifesto-body {
+        font-family: 'Glyseric', sans-serif;
+        font-size: 24px;
+        color: #fff;
+        line-height: normal;
+        max-width: 1107px;
+        width: 100%;
+      }
+
+      .manifesto-body p {
+        margin: 0 0 1em;
+      }
+
+      .manifesto-body p:last-child {
+        margin-bottom: 0;
+      }
+
+      .manifesto-body .bold {
+        font-family: 'PT Serif', serif;
+        font-weight: bold;
+      }
+
+      .manifesto-body em {
+        font-family: 'PT Serif', serif;
+        font-style: italic;
+      }
+
+      .manifesto-body ol {
+        margin: 0 0 1em;
+        padding-left: 1.5em;
+      }
+
+      .manifesto-body li {
+        margin-bottom: 0.5em;
+      }
+
+      .manifesto-body a {
+        color: #fff;
+        text-decoration: underline;
+      }
+
+      /* CTA end section */
+      .cta-end {
+        background: #0c0c0b;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 36px;
+        padding: 0 32px 200px;
+      }
+
+      .cta-end-title {
+        font-family: 'Young Serif', serif;
+        font-size: 128px;
+        color: #fff;
+        text-align: center;
+        line-height: normal;
+        font-weight: normal;
+        margin: 0;
+      }
+    </style>
+  </body>
+</html>
