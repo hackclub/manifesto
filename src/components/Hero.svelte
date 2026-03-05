@@ -275,7 +275,7 @@
   .hero-content {
     position: absolute;
     right: 63px;
-    bottom: 65px;
+    bottom: 120px;
     width: 340px;
     display: flex;
     flex-direction: column;

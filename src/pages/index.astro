@@ -155,7 +155,6 @@ import Hero from '../components/Hero.svelte';
       <h2 class="teens-built-title">This past year, Gap Years ran programs that <span class="red">helped teens build</span>...</h2>
       <div class="teens-built-grid">
 
-        <!-- DoomPDF -->
         <div class="sc sc-doompdf">
           <span class="sc-stars">3.7k⭐︎</span>
           <div class="sc-inner">
@@ -165,27 +164,24 @@ import Hero from '../components/Hero.svelte';
           </div>
         </div>
 
-        <!-- LibrePods -->
         <div class="sc sc-librepods">
           <span class="sc-stars sc-stars-dark">25.7k⭐︎</span>
-          <div class="sc-inner">
+          <div class="sc-inner sc-inner-tight">
             <img class="sc-librepods-screenshot" src="/images/librepods-screenshot.png" alt="LibrePods" />
             <img class="sc-librepods-logo" src="/images/librepods-logo.png" alt="LibrePods" />
             <p class="sc-desc sc-desc-dark">Airpods liberated from Apple's ecosystem</p>
           </div>
         </div>
 
-        <!-- Vert -->
         <div class="sc sc-vert">
           <span class="sc-stars sc-stars-dark">14.1k⭐︎</span>
-          <div class="sc-inner">
+          <div class="sc-inner sc-inner-med">
             <img class="sc-vert-screenshot" src="/images/vert-screenshot.png" alt="Vert screenshot" />
             <img class="sc-vert-logo" src="/images/vert-logo.png" alt="Vert" />
             <p class="sc-desc sc-desc-dark">VERT is a file conversion utility that uses WebAssembly to convert files on your device instead of a cloud.</p>
           </div>
         </div>
 
-        <!-- BAM -->
         <div class="sc sc-bam">
           <img class="sc-bam-bg" src="/images/bam-bg.png" alt="" />
           <div class="sc-bam-gradient"></div>
@@ -196,9 +192,8 @@ import Hero from '../components/Hero.svelte';
           </div>
         </div>
 
-        <!-- Specter -->
         <div class="sc sc-specter">
-          <img class="sc-specter-gameplay" src="/images/specter-gameplay.svg" alt="Specter gameplay" />
+          <img class="sc-specter-gameplay" src="/images/specter-gameplay.png" alt="Specter gameplay" />
           <div class="sc-specter-info">
             <img class="sc-specter-logo" src="/images/specter-logo.png" alt="Specter" />
             <div class="sc-specter-text">
@@ -208,14 +203,13 @@ import Hero from '../components/Hero.svelte';
           </div>
         </div>
 
-        <!-- Blind Defusal -->
         <div class="sc sc-blind">
           <img class="sc-blind-noise" src="/images/blind-defusal-noise.png" alt="" />
           <div class="sc-inner sc-blind-inner">
-            <img class="sc-blind-photo" src="/images/blind-defusal-photo.png" alt="Blind Defusal" />
+            <img class="sc-blind-screenshot" src="/images/blind-defusal-screenshot.png" alt="Blind Defusal" />
             <div class="sc-blind-info">
               <img class="sc-blind-logo" src="/images/blind-defusal-logo.svg" alt="Blind Defusal" />
-              <p class="sc-blind-desc">A two-player, cooperative "bomb defusal" game.</p>
+              <p class="sc-blind-desc">A two-player, cooperative<br />"bomb defusal" game.</p>
             </div>
           </div>
         </div>
@@ -343,7 +337,7 @@ import Hero from '../components/Hero.svelte';
         flex-direction: column;
         align-items: center;
         gap: 36px;
-        padding: 155px 32px 200px;
+        padding: 155px 32px 100px;
       }
 
       .fellowship-title {
@@ -402,13 +396,13 @@ import Hero from '../components/Hero.svelte';
         flex-direction: column;
         gap: 32px;
         align-items: center;
-        padding: 60px 137px 200px;
+        padding: 60px 137px 100px;
       }
 
       /* Headliner */
       .programs-headline {
         font-family: 'Young Serif', serif;
-        font-size: 40px;
+        font-size: 30px;
         color: #eee;
         line-height: normal;
         font-weight: normal;
@@ -560,12 +554,12 @@ import Hero from '../components/Hero.svelte';
         flex-direction: column;
         gap: 36px;
         align-items: center;
-        padding: 0 137px 200px;
+        padding: 0 137px 100px;
       }
 
       .gapyear-title {
         font-family: 'Young Serif', serif;
-        font-size: 40px;
+        font-size: 30px;
         color: #eee;
         line-height: normal;
         font-weight: normal;
@@ -625,12 +619,12 @@ import Hero from '../components/Hero.svelte';
         display: flex;
         flex-direction: column;
         gap: 36px;
-        padding: 0 136px 200px;
+        padding: 0 136px 100px;
       }
 
       .teens-built-title {
         font-family: 'Young Serif', serif;
-        font-size: 48px;
+        font-size: 30px;
         color: #eee;
         line-height: normal;
         font-weight: normal;
@@ -651,6 +645,7 @@ import Hero from '../components/Hero.svelte';
       .sc {
         position: relative;
         overflow: hidden;
+        height: 400px;
       }
 
       .sc-inner {
@@ -660,8 +655,11 @@ import Hero from '../components/Hero.svelte';
         justify-content: center;
         gap: 20px;
         padding: 20px;
-        height: 412px;
+        height: 100%;
       }
+
+      .sc-inner-tight { gap: 4px; }
+      .sc-inner-med { gap: 8px; }
 
       .sc-stars {
         position: absolute;
@@ -692,6 +690,7 @@ import Hero from '../components/Hero.svelte';
 
       .sc-doompdf-screenshot {
         width: 301px;
+        max-width: 100%;
         height: 230px;
         object-fit: cover;
         border-radius: 8px;
@@ -705,8 +704,6 @@ import Hero from '../components/Hero.svelte';
 
       /* ── LibrePods ── */
       .sc-librepods { background: #fff; }
-
-      .sc-librepods .sc-inner { gap: 4px; }
 
       .sc-librepods-screenshot {
         width: 106px;
@@ -723,10 +720,9 @@ import Hero from '../components/Hero.svelte';
       /* ── Vert ── */
       .sc-vert { background: #ff83fa; }
 
-      .sc-vert .sc-inner { gap: 8px; }
-
       .sc-vert-screenshot {
         width: 319px;
+        max-width: 100%;
         height: 230px;
         object-fit: cover;
       }
@@ -738,8 +734,6 @@ import Hero from '../components/Hero.svelte';
       }
 
       /* ── BAM ── */
-      .sc-bam { position: relative; }
-
       .sc-bam-bg {
         position: absolute;
         inset: 0;
@@ -758,13 +752,13 @@ import Hero from '../components/Hero.svelte';
       .sc-bam-inner {
         position: relative;
         z-index: 1;
-        height: auto;
         padding: 6px 20px;
         gap: 8px;
       }
 
       .sc-bam-screenshot {
         width: 288px;
+        max-width: 100%;
         height: 207px;
         object-fit: cover;
         box-shadow: 0 4px 100px rgba(234,255,0,0.3);
@@ -772,6 +766,7 @@ import Hero from '../components/Hero.svelte';
 
       .sc-bam-logo {
         width: 152px;
+        height: 95px;
         object-fit: contain;
       }
 
@@ -790,7 +785,7 @@ import Hero from '../components/Hero.svelte';
 
       .sc-specter-gameplay {
         width: 100%;
-        aspect-ratio: 1050 / 554;
+        flex: 1;
         object-fit: cover;
         display: block;
       }
@@ -801,6 +796,7 @@ import Hero from '../components/Hero.svelte';
         align-items: center;
         gap: 7px;
         padding: 0 20px;
+        flex-shrink: 0;
         height: 135px;
       }
 
@@ -828,7 +824,6 @@ import Hero from '../components/Hero.svelte';
       /* ── Blind Defusal ── */
       .sc-blind {
         background: #c83430;
-        position: relative;
       }
 
       .sc-blind-noise {
@@ -844,13 +839,12 @@ import Hero from '../components/Hero.svelte';
       .sc-blind-inner {
         position: relative;
         z-index: 1;
-        height: auto;
         padding: 11px 54px;
         gap: 0;
         justify-content: center;
       }
 
-      .sc-blind-photo {
+      .sc-blind-screenshot {
         width: 100%;
         aspect-ratio: 832 / 463;
         object-fit: cover;
@@ -865,8 +859,9 @@ import Hero from '../components/Hero.svelte';
       }
 
       .sc-blind-logo {
-        width: 326px;
-        height: 100px;
+        width: 240px;
+        max-width: 100%;
+        height: 72px;
         object-fit: contain;
       }
 
@@ -888,7 +883,7 @@ import Hero from '../components/Hero.svelte';
         flex-direction: column;
         align-items: center;
         gap: 36px;
-        padding: 0 137px 200px;
+        padding: 0 137px 100px;
       }
 
       .manifesto-title {
@@ -950,7 +945,7 @@ import Hero from '../components/Hero.svelte';
         flex-direction: column;
         align-items: center;
         gap: 36px;
-        padding: 0 32px 200px;
+        padding: 0 32px 100px;
       }
 
       .cta-end-title {
@@ -967,18 +962,18 @@ import Hero from '../components/Hero.svelte';
 
       /* Tablet: ≤1200px */
       @media (max-width: 1200px) {
-        .programs { padding: 48px 48px 120px; }
-        .gapyear { padding: 0 48px 120px; }
-        .teens-built { padding: 0 48px 120px; }
-        .manifesto-section { padding: 0 48px 120px; }
-        .fellowship { padding: 100px 48px 120px; }
+        .programs { padding: 48px 48px 80px; }
+        .gapyear { padding: 0 48px 80px; }
+        .teens-built { padding: 0 48px 80px; }
+        .manifesto-section { padding: 0 48px 80px; }
+        .fellowship { padding: 80px 48px 80px; }
 
         .fellowship-title { font-size: 36px; }
         .fellowship-body { font-size: 24px; }
 
-        .programs-headline { font-size: 32px; }
-        .gapyear-title { font-size: 32px; }
-        .teens-built-title { font-size: 36px; }
+        .programs-headline { font-size: 26px; }
+        .gapyear-title { font-size: 26px; }
+        .teens-built-title { font-size: 26px; }
 
         .programs-grid { grid-template-columns: 1fr 1fr; }
 
@@ -986,7 +981,7 @@ import Hero from '../components/Hero.svelte';
 
         .teens-built-grid { grid-template-columns: repeat(2, 1fr); }
 
-        .sc-inner { height: 360px; }
+        .sc { height: 360px; }
         .sc-doompdf-screenshot { width: 240px; height: 180px; }
         .sc-librepods-screenshot { width: 85px; height: 180px; }
         .sc-vert-screenshot { width: 260px; height: 180px; }
@@ -999,21 +994,21 @@ import Hero from '../components/Hero.svelte';
 
       /* Small tablet / large phone: ≤768px */
       @media (max-width: 768px) {
-        .programs { padding: 36px 24px 80px; }
-        .gapyear { padding: 0 24px 80px; }
-        .teens-built { padding: 0 24px 80px; }
-        .manifesto-section { padding: 0 24px 80px; }
-        .fellowship { padding: 80px 24px 80px; }
-        .cta-end { padding: 0 24px 120px; }
+        .programs { padding: 36px 24px 60px; }
+        .gapyear { padding: 0 24px 60px; }
+        .teens-built { padding: 0 24px 60px; }
+        .manifesto-section { padding: 0 24px 60px; }
+        .fellowship { padding: 60px 24px 60px; }
+        .cta-end { padding: 0 24px 80px; }
 
         .fellowship-title { font-size: 28px; }
         .fellowship-body { font-size: 20px; }
         .fellowship-btn { width: 180px; height: 38px; font-size: 18px; }
 
-        .programs-headline { font-size: 24px; }
-        .gapyear-title { font-size: 24px; }
-        .teens-built-title { font-size: 28px; }
-        .manifesto-title { font-size: 24px; }
+        .programs-headline { font-size: 22px; }
+        .gapyear-title { font-size: 22px; }
+        .teens-built-title { font-size: 22px; }
+        .manifesto-title { font-size: 22px; }
         .manifesto-body { font-size: 13.5px; }
 
         .programs-grid { grid-template-columns: 1fr; }
@@ -1030,7 +1025,7 @@ import Hero from '../components/Hero.svelte';
         .quadrant-desc.right { text-align: left; }
 
         .teens-built-grid { grid-template-columns: 1fr; }
-        .sc-inner { height: auto; min-height: 350px; }
+        .sc { height: auto; min-height: 350px; }
         .sc-blind-inner { padding: 11px 24px; }
         .sc-blind-desc { white-space: normal; }
 
@@ -1041,26 +1036,26 @@ import Hero from '../components/Hero.svelte';
 
       /* Phone: ≤480px */
       @media (max-width: 480px) {
-        .programs { padding: 24px 16px 60px; }
-        .gapyear { padding: 0 16px 60px; }
-        .teens-built { padding: 0 16px 60px; }
-        .manifesto-section { padding: 0 16px 60px; }
-        .fellowship { padding: 60px 16px 60px; }
-        .cta-end { padding: 0 16px 80px; }
+        .programs { padding: 24px 16px 48px; }
+        .gapyear { padding: 0 16px 48px; }
+        .teens-built { padding: 0 16px 48px; }
+        .manifesto-section { padding: 0 16px 48px; }
+        .fellowship { padding: 48px 16px 48px; }
+        .cta-end { padding: 0 16px 60px; }
 
         .fellowship-title { font-size: 22px; }
         .fellowship-body { font-size: 16px; }
         .fellowship-btn { width: 150px; height: 33px; font-size: 15px; }
 
-        .programs-headline { font-size: 20px; }
-        .gapyear-title { font-size: 20px; }
-        .teens-built-title { font-size: 22px; }
+        .programs-headline { font-size: 18px; }
+        .gapyear-title { font-size: 18px; }
+        .teens-built-title { font-size: 18px; }
+        .manifesto-title { font-size: 18px; }
         .sc-doompdf-screenshot { width: 200px; height: 150px; }
         .sc-librepods-screenshot { width: 70px; height: 150px; }
         .sc-vert-screenshot { width: 200px; height: 150px; }
         .sc-bam-screenshot { width: 180px; height: 130px; }
         .sc-blind-logo { width: 220px; height: 70px; }
-        .manifesto-title { font-size: 18px; }
         .manifesto-body { font-size: 12px; }
 
         .programs-more-grid { grid-template-columns: 1fr; }
