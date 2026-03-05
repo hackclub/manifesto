@@ -313,12 +313,14 @@ import Hero from '../components/Hero.svelte';
         <p>Put another way, we need to let hackers hack.</p>
 
         <p>So consider this a giant sign in the window: Hackers Wanted. We see you, whether you're in a Bay Area garage or a rural village that the rest of the world can't find on the map. We value you. We want to stand alongside you as you build things—crazy, useful, beautiful things; things we may not even understand until you teach us.</p>
-      </div>
-    </section>
 
-    <section class="cta-end">
-      <h2 class="cta-end-title">The door is open.</h2>
-      <a class="fellowship-btn" href="/apply">Apply Now</a>
+        <div class="cta-end">
+          <h2 class="cta-end-title">The door is open.</h2>
+          <a class="fellowship-btn" href="/apply">Apply Now</a>
+        </div>
+
+        <p>Love,<br />Hack Club</p>
+      </div>
     </section>
 
     <style>
@@ -942,12 +944,15 @@ import Hero from '../components/Hero.svelte';
 
       /* CTA end section */
       .cta-end {
-        background: #0c0c0b;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 36px;
-        padding: 0 32px 100px;
+        gap: 18px;
+        margin: 2em 0;
+      }
+
+      .cta-end .fellowship-btn {
+        text-decoration: none;
       }
 
       .cta-end-title {
@@ -958,6 +963,15 @@ import Hero from '../components/Hero.svelte';
         line-height: normal;
         font-weight: normal;
         margin: 0;
+      }
+
+      .cta-signoff {
+        font-family: 'Glyseric', 'Newsreader', sans-serif;
+        font-size: 1rem;
+        color: #ddd;
+        line-height: 1.7;
+        margin: 0;
+        text-align: center;
       }
 
       /* ── Responsive ── */
@@ -1001,7 +1015,7 @@ import Hero from '../components/Hero.svelte';
         .teens-built { padding: 0 24px 60px; }
         .manifesto-section { padding: 0 24px 60px; }
         .fellowship { padding: 60px 24px 60px; }
-        .cta-end { padding: 0 24px 80px; }
+        .cta-end { padding: 0 24px 0; }
 
         .fellowship-title { font-size: 28px; }
         .fellowship-body { font-size: 20px; }
@@ -1043,7 +1057,7 @@ import Hero from '../components/Hero.svelte';
         .teens-built { padding: 0 16px 48px; }
         .manifesto-section { padding: 0 16px 48px; }
         .fellowship { padding: 48px 16px 48px; }
-        .cta-end { padding: 0 16px 60px; }
+        .cta-end { padding: 0 16px 0; }
 
         .fellowship-title { font-size: 22px; }
         .fellowship-body { font-size: 16px; }
