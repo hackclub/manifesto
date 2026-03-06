@@ -98,7 +98,7 @@
   const wiserTokens = tokens.slice(wiserStartIdx);
 
   let scale = $state(1);
-  let scrollY = $state(0);
+  let scrollY = $state(typeof window !== 'undefined' ? window.scrollY : 0);
   let introComplete = $state(false);
   let vh = $state(1);
 
