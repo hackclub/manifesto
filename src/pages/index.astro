@@ -925,10 +925,22 @@ import { APPLY_URL } from '../config';
       }
 
       .cta-end .fellowship-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 245px;
+        height: 49px;
+        border: 2px solid #fff;
+        border-radius: 9999px;
+        font-size: 21px;
+        font-family: 'Glyseric', 'Newsreader', sans-serif;
+        color: #fff;
         text-decoration: none;
+        transition: background 0.5s, color 0.5s;
       }
 
       .cta-end .fellowship-btn:hover {
+        background: #fff;
         color: #1c1c1a;
       }
 
@@ -1065,6 +1077,7 @@ import { APPLY_URL } from '../config';
         .program-card { gap: 12px; }
 
         .cta-end-title { font-size: 27px; }
+        .cta-end .fellowship-btn { width: 150px; height: 33px; font-size: 15px; }
 
         .programs-more-title { font-size: 16px; }
       }
