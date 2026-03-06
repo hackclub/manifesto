@@ -52,6 +52,13 @@ const og = OG.index;
       html { scroll-behavior: smooth; }
       html, body { margin: 0; padding: 0; background: #1c1c1a; }
     </style>
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script is:inline async src="https://plausible.io/js/pa-k-YXOcXOP52Orhkrr10Tq.js"></script>
+    <script is:inline>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init()
+    </script>
   </head>
   <body>
     <Hero client:load applyUrl={APPLY_URL} />
