@@ -1,6 +1,9 @@
 ---
 import Hero from '../components/Hero.svelte';
 import { APPLY_URL } from '../config';
+
+const DEADLINE = new Date('2026-03-20T23:59:59');
+const daysRemaining = Math.max(0, Math.ceil((DEADLINE.getTime() - Date.now()) / 86400000));
 ---
 <!doctype html>
 <html lang="en">
@@ -211,7 +214,7 @@ import { APPLY_URL } from '../config';
     <section class="manifesto-section">
       <div class="cta-end">
         <h2 class="cta-end-title">The door is open.</h2>
-        <a class="fellowship-btn" href={APPLY_URL} target="_blank" rel="noopener noreferrer">Apply Now</a>
+        <a class="fellowship-btn" href={APPLY_URL} target="_blank" rel="noopener noreferrer">Apply Now ({daysRemaining} days remaining)</a>
         <div class="fellowship-links">
           <a class="fellowship-link-btn" href="https://notes.deven.dev/posts/the-plan-for-hack-club-world-dominance" target="_blank" rel="noopener noreferrer">How Hack Club works</a>
           <a class="fellowship-link-btn" href="/manifesto">Read the Hacker Manifesto</a>
@@ -853,7 +856,8 @@ import { APPLY_URL } from '../config';
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 245px;
+        width: fit-content;
+        padding: 0 32px;
         height: 49px;
         border: 2px solid #fff;
         border-radius: 9999px;
@@ -1002,7 +1006,7 @@ import { APPLY_URL } from '../config';
         .program-card { gap: 12px; }
 
         .cta-end-title { font-size: 27px; }
-        .cta-end .fellowship-btn { width: 150px; height: 33px; font-size: 15px; }
+        .cta-end .fellowship-btn { width: fit-content; padding: 0 20px; height: 33px; font-size: 15px; }
 
         .programs-more-title { font-size: 16px; }
       }

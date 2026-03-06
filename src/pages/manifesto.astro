@@ -1,6 +1,9 @@
 ---
 import { APPLY_URL } from '../config';
 
+const DEADLINE = new Date('2026-03-20T23:59:59');
+const daysRemaining = Math.max(0, Math.ceil((DEADLINE.getTime() - Date.now()) / 86400000));
+
 const photoRow1 = [
   '/manifesto/photos/row1-1.jpg',
   '/manifesto/photos/row2-1.jpg',
@@ -263,7 +266,7 @@ const holdImages = [
     <footer class="cta-footer">
       <div class="cta-section">
         <h2 class="cta-title">The door is open.</h2>
-        <a class="apply-btn" href={APPLY_URL} target="_blank" rel="noopener noreferrer">Apply Now</a>
+        <a class="apply-btn" href={APPLY_URL} target="_blank" rel="noopener noreferrer">Apply Now ({daysRemaining} days remaining)</a>
       </div>
       <p class="signoff">Love,<br />Hack Club</p>
     </footer>
@@ -524,7 +527,8 @@ const holdImages = [
         display: flex;
         align-items: center;
         justify-content: center;
-        width: clamp(160px, 22vw, 326px);
+        width: fit-content;
+        padding: 0 clamp(20px, 3vw, 40px);
         height: clamp(40px, 4.5vw, 65px);
         border: 2px solid #fff;
         border-radius: 9999px;
