@@ -253,7 +253,9 @@
           <img class="flag" src="/hero/flag.svg" alt="Hack Club" loading="eager" fetchpriority="high" />
           <p class="headline">hackers wanted.</p>
         </div>
-        <p class="hero-desc">Hack Club is hiring 40 teenagers on a paid gap year to build the next generation of Hack Club's programs.<br /><span class="scroll-hint">Scroll down to read <span class="scroll-arrow">↓</span></span></p>
+        <p class="hero-desc">Hack Club is hiring 40 teenagers on a paid gap year to build the next generation of Hack Club's programs.</p>
+        <a class="fellowship-link-btn hero-apply-btn" href={applyUrl} target="_blank" rel="noopener noreferrer">Apply Now ({daysRemaining} days remaining)</a>
+        <span class="scroll-hint">Scroll down to read <span class="scroll-arrow">↓</span></span>
       </div>
     </div>
 
@@ -379,7 +381,7 @@
 
   .hero-desc {
     font-family: 'Glyseric', 'Newsreader', sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     color: #fff;
     line-height: 1.4;
     margin: 0;
@@ -452,6 +454,7 @@
     gap: 36px;
     padding: 0 32px;
     opacity: 0;
+    pointer-events: none;
   }
 
   .fellowship-title {
@@ -531,6 +534,20 @@
   .fellowship-link-btn:hover {
     border-color: #fff;
     color: #fff;
+  }
+
+  .hero-apply-btn {
+    align-self: flex-start;
+    pointer-events: auto;
+    border-width: 2px;
+    border-color: #fff;
+    color: #fff;
+    transition: background 0.5s, color 0.5s;
+  }
+
+  .hero-apply-btn:hover {
+    background: #fff;
+    color: #1c1c1a;
   }
 
   .fellowship-scroll-hint {
