@@ -1,6 +1,15 @@
 <script>
   let { applyUrl = '#' } = $props();
 
+  const DEADLINE = new Date('2026-03-20T23:59:59');
+  let daysRemaining = $state(Math.max(0, Math.ceil((DEADLINE - new Date()) / 86400000)));
+  $effect(() => {
+    const id = setInterval(() => {
+      daysRemaining = Math.max(0, Math.ceil((DEADLINE - new Date()) / 86400000));
+    }, 60000);
+    return () => clearInterval(id);
+  });
+
   // cx/cy = offset from center of 1920×1065 Figma frame, w/h = px dimensions
   const tiles = [
     // top band
@@ -255,12 +264,12 @@
     <div class="fellowship" style:opacity={fellowshipFadeIn}>
       <h2 class="fellowship-title">Introducing the Hack Club Gap Year Fellowship</h2>
       <div class="fellowship-body">
-        <p>This is a paid full-time in person role at Hack Club HQ. $50k/year + healthcare & benefits. It's intended to be something you do for a year before you go to college or whatever your plans are after high school, but if you are on an alternate schooling path that works too!</p>
-        <p>The job is to design and execute on the next generation of You Ship, we ships!</p>
+        <p>This is a paid full-time in person role at Hack Club HQ. $50k/year + $2k hardware + healthcare & benefits. It's intended to be something you do for a year before you go to college or whatever your plans are after high school, but if you are on an alternate schooling path that works too!</p>
+        <p>The job is to design and execute on the next generation of You Ship, We Ships!</p>
         <p>The people who have this job today are all of the Hack Club staff you see running programs. This is the next batch of people running Hack Club!</p>
       </div>
       <div class="fellowship-cta">
-        <a class="fellowship-btn" href={applyUrl} target="_blank" rel="noopener noreferrer">Apply Now</a>
+        <a class="fellowship-btn" href={applyUrl} target="_blank" rel="noopener noreferrer">Apply Now ({daysRemaining} days remaining)</a>
         <div class="fellowship-links">
           <a class="fellowship-link-btn" href="https://notes.deven.dev/posts/the-plan-for-hack-club-world-dominance" target="_blank" rel="noopener noreferrer">How Hack Club works</a>
           <a class="fellowship-link-btn" href="/manifesto">Read the Hacker Manifesto</a>
@@ -478,7 +487,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 245px;
+    width: 340px;
     height: 49px;
     border: 2px solid #fff;
     border-radius: 9999px;
