@@ -83,6 +83,10 @@ const holdImages = [
     <div class="hero">
       <div class="hero-inner">
         <h1 class="hero-title">Hackers Wanted.</h1>
+        <div class="hero-meta">
+          <p class="hero-tagline">An expression of the Hack Club Philosophy</p>
+          <p class="hero-reading-time"><em>Reading Time: 8 minutes</em></p>
+        </div>
         <p class="hero-subtitle">
           Some people are allergic to unthinking rules and bad systems.<br />
           A few also have the talent and vision to will something better into being:<br />
@@ -338,7 +342,7 @@ const holdImages = [
 
       .row-2 {
         top: clamp(50px, 10.5vw, 201px);
-        left: clamp(-80px, -18vw, -345px);
+        left: clamp(-120px, -22vw, -420px);
       }
 
       /* ── Hero Text ── */
@@ -352,7 +356,7 @@ const holdImages = [
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: clamp(20px, 2.5vw, 40px);
+        gap: clamp(16px, 2vw, 32px);
       }
 
       .hero-title {
@@ -361,6 +365,31 @@ const holdImages = [
         font-weight: normal;
         color: #fff;
         line-height: 1;
+        margin: 0;
+        text-align: center;
+      }
+
+      .hero-meta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        margin-top: -8px;
+        margin-bottom: 8px;
+      }
+
+      .hero-tagline {
+        font-family: 'Glyseric', 'Newsreader', Georgia, serif;
+        font-size: clamp(14px, 1.5vw, 22px);
+        color: rgba(255, 255, 255, 0.5);
+        margin: 0;
+        text-align: center;
+      }
+
+      .hero-reading-time {
+        font-family: 'PT Serif', Georgia, serif;
+        font-size: clamp(12px, 1.2vw, 18px);
+        color: rgba(255, 255, 255, 0.35);
         margin: 0;
         text-align: center;
       }
