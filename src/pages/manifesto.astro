@@ -95,7 +95,7 @@ const holdImages = [
           A few also have the talent and vision to will something better into being:<br />
           <span class="hero-hackers">hackers</span>.<br />
           We can either embrace them and reap the magic, or alienate them and
-          suffer the loss. <u>It's time we chose the wiser path.</u>
+          suffer the loss.<br /><u>It's time we chose the wiser path.</u>
         </p>
       </div>
     </div>
@@ -318,6 +318,7 @@ const holdImages = [
       /* ── Photo Collage ── */
       .collage {
         position: relative;
+        margin-top: 48px;
         height: clamp(480px, 40vw, 720px);
         overflow: hidden;
         pointer-events: none;
@@ -633,6 +634,7 @@ const holdImages = [
 
       /* ── Mobile ── */
       @media (max-width: 600px) {
+        .collage { height: 230px; }
         .hero { padding: 24px 20px 40px; }
         .manifesto { padding: 0 20px 60px; }
         .divider-wrap { padding: 0 20px; margin-bottom: 40px; }

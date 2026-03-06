@@ -61,10 +61,11 @@
   const diagonals = tiles.map(({ cx, cy }) => cx + cy);
   const minDiag = Math.min(...diagonals);
   const maxDiag = Math.max(...diagonals);
-  const INITIAL_DELAY = 0.4;
-  const MAX_DELAY = 3.2;
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const INITIAL_DELAY = isMobile ? 0 : 0.4;
+  const MAX_DELAY = isMobile ? 2.4 : 3.2;
   const FADE_DURATION = 1.2;
-
+  const SKIP_AHEAD = isMobile ? MAX_DELAY * 0.375 : 0;
   const CX = 960, CY = 532.5; // center of 1920×1065
 
   // Normalized wave position per tile: 0 = top-left (first in), 1 = bottom-right (last in)
@@ -72,7 +73,7 @@
 
   function tileStyle(cx, cy, w, h) {
     const diag = cx + cy;
-    const delay = (INITIAL_DELAY + (diag - minDiag) / (maxDiag - minDiag) * MAX_DELAY).toFixed(3);
+    const delay = (INITIAL_DELAY + (diag - minDiag) / (maxDiag - minDiag) * MAX_DELAY - SKIP_AHEAD).toFixed(3);
     return [
       `left:${CX + cx}px`,
       `top:${CY + cy}px`,
@@ -121,7 +122,7 @@
     const id = setTimeout(() => {
       introComplete = true;
       document.body.style.overflow = '';
-    }, (INITIAL_DELAY + MAX_DELAY + FADE_DURATION) * 1000);
+    }, (INITIAL_DELAY + MAX_DELAY + FADE_DURATION - SKIP_AHEAD) * 1000);
     return () => {
       clearTimeout(id);
       document.body.style.overflow = '';
@@ -177,9 +178,9 @@
     return Math.max(0, Math.min(1, 1 - (tilePhase - start) / FADE_W));
   }
 
-  // Hero content fades out quickly
+  // Hero content fades out with tiles
   let heroContentOpacity = $derived(
-    !introComplete ? undefined : Math.max(0, 1 - tilePhase * 3)
+    !introComplete ? undefined : Math.max(0, 1 - tilePhase)
   );
 
   // Segment-based reveal: each sentence fades in independently, with holds between
@@ -566,6 +567,10 @@
     .fellowship-body { font-size: 24px; }
   }
 
+  @media (max-width: 768px) {
+    .hero-content { animation-delay: 1.5s; }
+  }
+
   @media (max-width: 480px) {
     .manifesto-text {
       font-size: 13.5px;
@@ -573,6 +578,6 @@
     }
     .fellowship-title { font-size: 22px; }
     .fellowship-body { font-size: 16px; }
-    .fellowship-btn { width: 150px; height: 33px; font-size: 15px; }
+    .fellowship-btn { width: auto; padding: 8px 20px; height: auto; font-size: 14px; white-space: nowrap; }
   }
 </style>
