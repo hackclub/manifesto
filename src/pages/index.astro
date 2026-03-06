@@ -35,17 +35,7 @@ import { APPLY_URL } from '../config';
     </style>
   </head>
   <body>
-    <Hero client:load />
-
-    <section class="fellowship">
-      <h2 class="fellowship-title">Introducing the Hack Club Gap Year Fellowship</h2>
-      <div class="fellowship-body">
-        <p>This is a full-time job at Hack Club HQ in Shelburne, Vermont. It's intended to be something you do for a year before you go to college or whatever your plans are after high school, but if you are on an alternate schooling path that works too!</p>
-        <p>The job is to design and execute on the next generation of You Ship, we ships!</p>
-        <p>The people who have this job today are all of the Hack Club staff you see running programs. This is the next batch of people running Hack Club!</p>
-      </div>
-      <a class="fellowship-btn" href={APPLY_URL} target="_blank" rel="noopener noreferrer">Apply Now</a>
-    </section>
+    <Hero client:load applyUrl={APPLY_URL} />
 
     <section class="programs">
       <h2 class="programs-headline">
@@ -335,64 +325,6 @@ import { APPLY_URL } from '../config';
         font-weight: normal;
         font-style: normal;
         font-display: swap;
-      }
-
-      .fellowship {
-        background: #1c1c1a;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 36px;
-        padding: 155px 32px 100px;
-      }
-
-      .fellowship-title {
-        font-family: 'Young Serif', serif;
-        font-size: 42px;
-        color: #eee;
-        text-align: center;
-        max-width: 1331px;
-        margin: 0;
-        font-weight: normal;
-        line-height: normal;
-      }
-
-      .fellowship-body {
-        font-family: 'Glyseric', 'Newsreader', sans-serif;
-        font-size: 28px;
-        color: rgba(238, 238, 238, 0.8);
-        text-align: center;
-        max-width: 1122px;
-        line-height: normal;
-        margin: 0;
-      }
-
-      .fellowship-body p {
-        margin: 0 0 1em;
-      }
-
-      .fellowship-body p:last-child {
-        margin-bottom: 0;
-      }
-
-      .fellowship-btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 245px;
-        height: 49px;
-        border: 2px solid #fff;
-        border-radius: 9999px;
-        font-size: 21px;
-        font-family: 'Glyseric', 'Newsreader', sans-serif;
-        color: #fff;
-        text-decoration: none;
-        transition: background 0.5s, color 0.5s;
-      }
-
-      .fellowship-btn:hover {
-        background: #fff;
-        color: #1c1c1a;
       }
 
       /* Programs section */
@@ -1043,11 +975,6 @@ import { APPLY_URL } from '../config';
         .gapyear { padding: 0 48px 80px; }
         .teens-built { padding: 0 48px 80px; }
         .manifesto-section { padding: 0 48px 80px; }
-        .fellowship { padding: 80px 48px 80px; }
-
-        .fellowship-title { font-size: 36px; }
-        .fellowship-body { font-size: 24px; }
-
         .programs-headline { font-size: 26px; }
         .gapyear-title { font-size: 26px; }
         .teens-built-title { font-size: 26px; }
@@ -1075,12 +1002,7 @@ import { APPLY_URL } from '../config';
         .gapyear { padding: 0 24px 60px; }
         .teens-built { padding: 0 24px 60px; }
         .manifesto-section { padding: 0 24px 60px; }
-        .fellowship { padding: 60px 24px 60px; }
         .cta-end { padding: 0 24px 0; }
-
-        .fellowship-title { font-size: 28px; }
-        .fellowship-body { font-size: 20px; }
-        .fellowship-btn { width: 180px; height: 38px; font-size: 18px; }
 
         .programs-headline { font-size: 22px; }
         .gapyear-title { font-size: 22px; }
@@ -1117,12 +1039,7 @@ import { APPLY_URL } from '../config';
         .gapyear { padding: 0 16px 48px; }
         .teens-built { padding: 0 16px 48px; }
         .manifesto-section { padding: 0 16px 48px; }
-        .fellowship { padding: 48px 16px 48px; }
         .cta-end { padding: 0 16px 0; }
-
-        .fellowship-title { font-size: 22px; }
-        .fellowship-body { font-size: 16px; }
-        .fellowship-btn { width: 150px; height: 33px; font-size: 15px; }
 
         .programs-headline { font-size: 18px; }
         .gapyear-title { font-size: 18px; }

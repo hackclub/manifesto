@@ -1,4 +1,6 @@
 <script>
+  let { applyUrl = '#' } = $props();
+
   // cx/cy = offset from center of 1920×1065 Figma frame, w/h = px dimensions
   const tiles = [
     // top band
@@ -139,13 +141,22 @@
   const WORD_DURATION = 2.5;     // how long the word reveal takes
   const UNDERLINE_GAP = 0.1;     // pause before underline starts
   const UNDERLINE_DURATION = 0.3;// how long the underline sweep takes
+  const MANIFESTO_HOLD = 0.3;   // hold after underline before fading out
+  const MANIFESTO_FADE = 0.4;   // manifesto fade-out duration
+  const FELLOWSHIP_FADE = 0.5;  // fellowship fade-in duration
+  const FELLOWSHIP_HOLD = 0.3;  // hold after fellowship fades in
 
   const WORD_END = WORD_START + WORD_DURATION;
   const UNDERLINE_START = WORD_END + UNDERLINE_GAP;
+  const UNDERLINE_END = UNDERLINE_START + UNDERLINE_DURATION;
+  const MANIFESTO_FADE_START = UNDERLINE_END + MANIFESTO_HOLD;
+  const FELLOWSHIP_START = MANIFESTO_FADE_START + MANIFESTO_FADE * 0.3; // overlap slightly
 
   let tilePhase = $derived(Math.max(0, Math.min(1, scrollY / (vh * TILE_FADE))));
   let wordPhase = $derived(Math.max(0, Math.min(1, (scrollY - vh * WORD_START) / (vh * WORD_DURATION))));
   let underlinePhase = $derived(Math.max(0, Math.min(1, (scrollY - vh * UNDERLINE_START) / (vh * UNDERLINE_DURATION))));
+  let manifestoFadeOut = $derived(Math.max(0, Math.min(1, (scrollY - vh * MANIFESTO_FADE_START) / (vh * MANIFESTO_FADE))));
+  let fellowshipFadeIn = $derived(Math.max(0, Math.min(1, (scrollY - vh * FELLOWSHIP_START) / (vh * FELLOWSHIP_FADE))));
 
   // Reverse wave: bottom-right (wave=1) fades first, top-left (wave=0) fades last
   function tileOpacity(index) {
@@ -237,8 +248,21 @@
       </div>
     </div>
 
-    <div class="manifesto">
+    <div class="manifesto" style:opacity={1 - manifestoFadeOut}>
       <p class="manifesto-text">{#each preWiserTokens as t, i}{#if t.br}<br />{:else}<span class="word{t.cls ? ` ${t.cls}` : ''}" style:opacity={wordOpacity(t.idx)}>{t.text}{#if i < preWiserTokens.length - 1 && !preWiserTokens[i + 1].br}{' '}{/if}</span>{/if}{/each}<span class="wiser-group" style="background-size:{underlinePhase * 100}% 2px">{#each wiserTokens as t, i}<span class="word wiser" style:opacity={wordOpacity(t.idx)}>{t.text}{#if i < wiserTokens.length - 1}{' '}{/if}</span>{/each}</span></p>
+    </div>
+
+    <div class="fellowship" style:opacity={fellowshipFadeIn}>
+      <h2 class="fellowship-title">Introducing the Hack Club Gap Year Fellowship</h2>
+      <div class="fellowship-body">
+        <p>This is a full-time job at Hack Club HQ in Shelburne, Vermont. It's intended to be something you do for a year before you go to college or whatever your plans are after high school, but if you are on an alternate schooling path that works too!</p>
+        <p>The job is to design and execute on the next generation of You Ship, we ships!</p>
+        <p>The people who have this job today are all of the Hack Club staff you see running programs. This is the next batch of people running Hack Club!</p>
+      </div>
+      <div class="fellowship-cta">
+        <a class="fellowship-btn" href={applyUrl} target="_blank" rel="noopener noreferrer">Apply Now</a>
+        <span class="fellowship-scroll-hint">scroll to keep reading <span class="scroll-arrow">↓</span></span>
+      </div>
     </div>
   </div>
 </section>
@@ -256,7 +280,7 @@
 
   .hero {
     position: relative;
-    height: 440dvh;
+    height: 570dvh;
     background: #1c1c1a;
   }
 
@@ -404,12 +428,90 @@
     padding-bottom: 4px;
   }
 
+  /* Fellowship overlay */
+  .fellowship {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    padding: 0 32px;
+    opacity: 0;
+  }
+
+  .fellowship-title {
+    font-family: 'Young Serif', serif;
+    font-size: 42px;
+    color: #eee;
+    text-align: center;
+    max-width: 1331px;
+    margin: 0;
+    font-weight: normal;
+    line-height: normal;
+  }
+
+  .fellowship-body {
+    font-family: 'Glyseric', 'Newsreader', sans-serif;
+    font-size: 28px;
+    color: rgba(238, 238, 238, 0.8);
+    text-align: center;
+    max-width: 1122px;
+    line-height: normal;
+    margin: 0;
+  }
+
+  .fellowship-body p {
+    margin: 0 0 1em;
+  }
+
+  .fellowship-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .fellowship-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 245px;
+    height: 49px;
+    border: 2px solid #fff;
+    border-radius: 9999px;
+    font-size: 21px;
+    font-family: 'Glyseric', 'Newsreader', sans-serif;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.5s, color 0.5s;
+    pointer-events: auto;
+  }
+
+  .fellowship-btn:hover {
+    background: #fff;
+    color: #1c1c1a;
+  }
+
+  .fellowship-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .fellowship-scroll-hint {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    font-family: 'Glyseric', 'Newsreader', sans-serif;
+  }
+
   @media (max-width: 768px) {
     .manifesto-text {
       font-size: 18px;
       max-width: 90vw;
       padding: 0 16px;
     }
+    .fellowship-title { font-size: 36px; }
+    .fellowship-body { font-size: 24px; }
   }
 
   @media (max-width: 480px) {
@@ -417,5 +519,8 @@
       font-size: 13.5px;
       line-height: 1.4;
     }
+    .fellowship-title { font-size: 22px; }
+    .fellowship-body { font-size: 16px; }
+    .fellowship-btn { width: 150px; height: 33px; font-size: 15px; }
   }
 </style>
