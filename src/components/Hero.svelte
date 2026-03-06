@@ -1,5 +1,4 @@
 <script>
-  let { applyUrl = "" } = $props();
   // cx/cy = offset from center of 1920×1065 Figma frame, w/h = px dimensions
   const tiles = [
     // top band
@@ -205,7 +204,7 @@
           <img class="flag" src="/hero/flag.svg" alt="Hack Club" loading="eager" fetchpriority="high" />
           <p class="headline">hackers wanted.</p>
         </div>
-        <a class="apply-btn" href={applyUrl} target="_blank" rel="noopener noreferrer">Apply Now</a>
+        <p class="hero-desc">Join a team of 40 of the most ambitious young people that will help build Hack Club for the next year.<br /><span class="scroll-hint">Scroll down to read <span class="scroll-arrow">↓</span></span></p>
       </div>
     </div>
 
@@ -276,14 +275,14 @@
   .hero-content {
     position: absolute;
     right: 63px;
-    bottom: 120px;
+    bottom: 65px;
     width: 340px;
     display: flex;
     flex-direction: column;
     gap: 8px;
     opacity: 0;
     animation: fadeIn 1.2s ease-out forwards;
-    animation-delay: 2.2s;
+    animation-delay: 3s;
   }
 
   .hero-content.intro-done {
@@ -312,26 +311,30 @@
     margin: 0;
   }
 
-  .apply-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 8px 0;
-    border: 2px solid #fff;
-    border-radius: 9999px;
-    font-size: 20px;
+  .hero-desc {
     font-family: 'Glyseric', 'Newsreader', sans-serif;
+    font-size: 20px;
     color: #fff;
-    text-decoration: none;
-    letter-spacing: 0.03em;
-    box-sizing: border-box;
-    transition: background 0.5s, color 0.5s;
+    line-height: 1.4;
+    margin: 0;
   }
 
-  .apply-btn:hover {
-    background: #fff;
-    color: #1c1c1a;
+  .scroll-hint {
+    color: rgba(255, 255, 255, 0.6);
+    opacity: 0;
+    animation: fadeIn 1s ease-out 4s forwards;
+  }
+
+  @keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(4px); }
+    100% { transform: translateY(0); }
+  }
+
+  .scroll-arrow {
+    display: inline-block;
+    animation: bounce 1.5s ease-in-out infinite;
+    animation-delay: 5s;
   }
 
   /* Manifesto overlay */
