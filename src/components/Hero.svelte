@@ -274,8 +274,8 @@
       <div class="fellowship-cta">
         <a class="fellowship-btn" href={applyUrl} target="_blank" rel="noopener noreferrer">Apply Now ({daysRemaining} days remaining)</a>
         <div class="fellowship-links">
-          <a class="fellowship-link-btn" href="https://notes.deven.dev/posts/the-plan-for-hack-club-world-dominance" target="_blank" rel="noopener noreferrer">How Hack Club works</a>
-          <a class="fellowship-link-btn" href="/manifesto">Read the Hacker Manifesto</a>
+          <a class="fellowship-link-btn" href="https://notes.deven.dev/posts/the-plan-for-hack-club-world-dominance" target="_blank" rel="noopener noreferrer">How Hack Club works ↗</a>
+          <a class="fellowship-link-btn" href="/manifesto">Read the Hacker Manifesto ↗</a>
         </div>
         <span class="fellowship-scroll-hint">scroll to keep reading <span class="scroll-arrow">↓</span></span>
       </div>
@@ -522,18 +522,19 @@
 
   .fellowship-link-btn {
     padding: 6px 16px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 2px solid #ec3750;
     border-radius: 9999px;
-    color: rgba(255, 255, 255, 0.7);
+    color: #ec3750;
     font-size: 13px;
     font-family: 'Glyseric', 'Newsreader', sans-serif;
     text-decoration: none;
-    transition: border-color 0.2s ease, color 0.2s ease;
+    transition: background 0.3s, border-color 0.3s, color 0.3s;
     pointer-events: auto;
   }
 
   .fellowship-link-btn:hover {
-    border-color: #fff;
+    background: #ec3750;
+    border-color: #ec3750;
     color: #fff;
   }
 

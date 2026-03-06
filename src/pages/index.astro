@@ -216,14 +216,15 @@ const daysRemaining = Math.max(0, Math.ceil((DEADLINE.getTime() - Date.now()) / 
         <h2 class="cta-end-title">The door is open.</h2>
         <a class="fellowship-btn" href={APPLY_URL} target="_blank" rel="noopener noreferrer">Apply Now ({daysRemaining} days remaining)</a>
         <div class="fellowship-links">
-          <a class="fellowship-link-btn" href="https://notes.deven.dev/posts/the-plan-for-hack-club-world-dominance" target="_blank" rel="noopener noreferrer">How Hack Club works</a>
-          <a class="fellowship-link-btn" href="/manifesto">Read the Hacker Manifesto</a>
+          <a class="fellowship-link-btn" href="https://notes.deven.dev/posts/the-plan-for-hack-club-world-dominance" target="_blank" rel="noopener noreferrer">How Hack Club works ↗</a>
+          <a class="fellowship-link-btn" href="/manifesto">Read the Hacker Manifesto ↗</a>
         </div>
       </div>
     </section>
 
     <footer class="site-footer">
-      <p>&copy; 2026 <a href="https://hackclub.com" target="_blank" rel="noopener">Hack Club</a>. 501(c)(3) nonprofit (EIN: 81-2908499) Site design by Manitej Boorgu (2025 - 26 Gap Year, from Houston, TX)</p>
+      <p>&copy; 2026 <a href="https://hackclub.com" target="_blank" rel="noopener">Hack Club</a>. 501(c)(3) nonprofit (EIN: 81-2908499)</p>
+      <p>Site designed with &lt;3 by Manitej Boorgu (2025 - 26 Gap Year, from Houston, TX)</p>
     </footer>
 
     <style>
@@ -829,17 +830,18 @@ const daysRemaining = Math.max(0, Math.ceil((DEADLINE.getTime() - Date.now()) / 
 
       .fellowship-link-btn {
         padding: 6px 16px;
-        border: 1px solid rgba(255, 255, 255, 0.4);
+        border: 2px solid #ec3750;
         border-radius: 9999px;
-        color: rgba(255, 255, 255, 0.7);
+        color: #ec3750;
         text-decoration: none;
         font-family: 'Glyseric', 'Newsreader', sans-serif;
-        font-size: 16px;
-        transition: border-color 0.2s ease, color 0.2s ease;
+        font-size: 13px;
+        transition: background 0.3s, border-color 0.3s, color 0.3s;
       }
 
       .fellowship-link-btn:hover {
-        border-color: #fff;
+        background: #ec3750;
+        border-color: #ec3750;
         color: #fff;
       }
 
