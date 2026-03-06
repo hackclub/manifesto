@@ -245,7 +245,7 @@ const og = OG.index;
 
     <footer class="site-footer">
       <p>&copy; 2026 <a href="https://hackclub.com" target="_blank" rel="noopener">Hack Club</a>. 501(c)(3) nonprofit (EIN: 81-2908499)</p>
-      <p>Site designed with &lt;3 by Manitej Boorgu (2025 - 26 Gap Year, from Houston, TX)</p>
+      <p>Site designed with &lt;3 by Manitej Boorgu (2025 - 26 Gap Year, from Houston, TX). <a href="/designer-note" class="designer-note-link">A designer's note →</a></p>
     </footer>
 
     <style>
@@ -931,6 +931,34 @@ const og = OG.index;
       .site-footer a {
         color: #888;
         text-decoration: underline;
+        transition: color 0.2s ease;
+      }
+
+      .site-footer a:hover {
+        color: #fff;
+      }
+
+      @keyframes footerPulse {
+        0% { background-position: 100% center; }
+        100% { background-position: 0% center; }
+      }
+
+      .designer-note-link {
+        background: linear-gradient(to right, #888 20%, #bbb 50%, #888 80%);
+        background-size: 500% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-decoration-color: #888;
+        animation: footerPulse 5s ease-in-out infinite;
+        transition: text-decoration-color 0.2s ease;
+      }
+
+      .designer-note-link:hover {
+        animation: none;
+        background: none;
+        -webkit-text-fill-color: #fff;
+        text-decoration-color: #fff;
       }
 
       /* ── Responsive ── */
