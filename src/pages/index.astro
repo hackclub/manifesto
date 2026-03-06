@@ -1,17 +1,32 @@
 ---
 import Hero from '../components/Hero.svelte';
-import { APPLY_URL } from '../config';
+import { APPLY_URL, SITE_URL, OG } from '../config';
 
 const DEADLINE = new Date('2026-03-20T23:59:59');
 const daysRemaining = Math.max(0, Math.ceil((DEADLINE.getTime() - Date.now()) / 86400000));
+const og = OG.index;
 ---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Hacker Manifesto</title>
+    <title>{og.title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta name="description" content={og.description} />
+    <meta property="og:title" content={og.title} />
+    <meta property="og:description" content={og.description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={SITE_URL} />
+    <meta property="og:image" content={`${SITE_URL}${og.image}`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Hack Club Gap Year Fellowship" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={og.title} />
+    <meta name="twitter:description" content={og.description} />
+    <meta name="twitter:image" content={`${SITE_URL}${og.image}`} />
 
     <!-- Preload fonts -->
     <link rel="preload" as="font" href="/Glyseric.woff2" type="font/woff2" crossorigin />
@@ -20,7 +35,6 @@ const daysRemaining = Math.max(0, Math.ceil((DEADLINE.getTime() - Date.now()) / 
     <link rel="preload" as="image" href="/hero/11.webp" type="image/webp" />
     <link rel="preload" as="image" href="/hero/04.webp" type="image/webp" />
     <link rel="preload" as="image" href="/hero/flag.svg" type="image/svg+xml" />
-    <!-- Preload Young Serif font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&family=Inter:ital,wght@0,400;1,400&family=Jua&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=PT+Serif:ital,wght@0,700;1,400&family=Young+Serif&display=swap" rel="stylesheet" />
