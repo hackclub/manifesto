@@ -1,5 +1,5 @@
 export const APPLY_URL = "https://forms.hackclub.com/t/isRvULMQR3us";
-export const SITE_URL = "https://hackclub.com/gap-year";
+export const SITE_URL = "https://manifesto.hackclub.dev/";
 
 export const OG = {
   index: {
