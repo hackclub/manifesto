@@ -3,12 +3,12 @@ import { APPLY_URL } from '../config';
 
 const photoRow1 = [
   '/manifesto/photos/row1-1.jpg',
-  '/manifesto/photos/row1-2.jpg',
+  '/manifesto/photos/row2-1.jpg',
 ];
 const photoRow2 = [
-  '/manifesto/photos/row2-1.jpg',
-  '/manifesto/photos/row2-2.jpg',
+  '/manifesto/photos/row1-2.jpg',
   '/manifesto/photos/row2-3.jpg',
+  '/manifesto/photos/row2-2.jpg',
 ];
 const holdImages = [
   {
@@ -72,10 +72,10 @@ const holdImages = [
     <!-- Photo collage -->
     <div class="collage">
       <div class="photo-row row-1">
-        {photoRow1.map((src) => <img class="photo" src={src} alt="" />)}
+        {photoRow1.map((src, i) => <img class="photo" src={src} alt="" style={`--photo-i: ${i}`} />)}
       </div>
       <div class="photo-row row-2">
-        {photoRow2.map((src) => <img class="photo" src={src} alt="" />)}
+        {photoRow2.map((src, i) => <img class="photo" src={src} alt="" style={`--photo-i: ${photoRow1.length + i}`} />)}
       </div>
     </div>
 
@@ -327,12 +327,20 @@ const holdImages = [
         gap: clamp(60px, 15vw, 300px);
       }
 
+      @keyframes photoFadeIn {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+      }
+
       .photo {
         width: clamp(220px, 35vw, 670px);
         height: clamp(165px, 26vw, 505px);
         object-fit: cover;
         flex-shrink: 0;
         display: block;
+        opacity: 0;
+        animation: photoFadeIn 0.7s ease forwards;
+        animation-delay: calc(var(--photo-i, 0) * 0.18s);
       }
 
       .row-1 {
