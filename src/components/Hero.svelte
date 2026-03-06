@@ -82,16 +82,18 @@
   ];
 
   let wordIdx = 0;
-  let hackersIdx = 0;
+  let wiserIdx = 0;
   const tokens = manifestoSrc.map(item => {
     if (item === 'br') return { br: true };
     const cls = Array.isArray(item) ? item[1] : '';
     const text = Array.isArray(item) ? item[0] : item;
     const idx = wordIdx++;
-    if (cls === 'hackers') hackersIdx = idx;
-    return { text, cls, idx };
+    const wi = cls === 'wiser' ? wiserIdx++ : -1;
+    return { text, cls, idx, wi };
   });
-  const wordCount = wordIdx;
+  const wiserStartIdx = tokens.findIndex(t => t.cls === 'wiser');
+  const preWiserTokens = tokens.slice(0, wiserStartIdx);
+  const wiserTokens = tokens.slice(wiserStartIdx);
 
   let scale = $state(1);
   let scrollY = $state(0);
@@ -131,13 +133,19 @@
     return () => window.removeEventListener('scroll', onScroll);
   });
 
-  // Scroll phases (in viewport-heights of scroll distance):
-  //   0–1vh:     tile reverse wave fade-out
-  //   1–2vh:     word-by-word manifesto reveal
-  //   2–2.3vh:   underline animation on "wiser" phrase
-  let tilePhase = $derived(Math.max(0, Math.min(1, scrollY / vh)));
-  let wordPhase = $derived(Math.max(0, Math.min(1, (scrollY - vh) / vh)));
-  let underlinePhase = $derived(Math.max(0, Math.min(1, (scrollY - vh * 2) / (vh * 0.3))));
+  // Scroll timeline config (all values in viewport-heights)
+  const TILE_FADE = 0.6;         // how long the tile fade-out takes
+  const WORD_START = TILE_FADE;  // words start right after tiles finish
+  const WORD_DURATION = 2.5;     // how long the word reveal takes
+  const UNDERLINE_GAP = 0.1;     // pause before underline starts
+  const UNDERLINE_DURATION = 0.3;// how long the underline sweep takes
+
+  const WORD_END = WORD_START + WORD_DURATION;
+  const UNDERLINE_START = WORD_END + UNDERLINE_GAP;
+
+  let tilePhase = $derived(Math.max(0, Math.min(1, scrollY / (vh * TILE_FADE))));
+  let wordPhase = $derived(Math.max(0, Math.min(1, (scrollY - vh * WORD_START) / (vh * WORD_DURATION))));
+  let underlinePhase = $derived(Math.max(0, Math.min(1, (scrollY - vh * UNDERLINE_START) / (vh * UNDERLINE_DURATION))));
 
   // Reverse wave: bottom-right (wave=1) fades first, top-left (wave=0) fades last
   function tileOpacity(index) {
@@ -154,26 +162,47 @@
     !introComplete ? undefined : Math.max(0, 1 - tilePhase * 3)
   );
 
-  // Per-word opacity with hold on "hackers."
-  // Remap wordPhase to pause after "hackers." is fully visible
-  // Ensure hackers is fully opaque at hold point: its start + WORD_FADE
-  const WORD_FADE = 3 / wordCount;
-  const hackersStart = (hackersIdx / wordCount) * (1 - WORD_FADE);
-  const hackersNorm = hackersStart + WORD_FADE;
-  const HOLD = 0.2; // fraction of scroll spent holding
+  // Segment-based reveal: each sentence fades in independently, with holds between
+  const segments = [
+    { start: 0,  end: 9,  holdAfter: 0.07, weight: 10 }, // "Some people ... systems."
+    { start: 10, end: 23, holdAfter: 0.07, weight: 14 }, // "A few ... being:"
+    { start: 24, end: 24, holdAfter: 0.14, weight: 3 },  // "hackers." (extra weight for smooth fade)
+    { start: 25, end: 40, holdAfter: 0.07, weight: 16 }, // "We can ... loss."
+    { start: 41, end: 47, holdAfter: 0,    weight: 7 },  // "It's time ... path."
+  ];
+
+  const totalHold = segments.reduce((s, seg) => s + seg.holdAfter, 0);
+  const activeRange = 1 - totalHold;
+  const totalWeight = segments.reduce((s, seg) => s + seg.weight, 0);
+
+  // Pre-compute raw-phase boundaries for each segment
+  let _cursor = 0;
+  const segBounds = segments.map(seg => {
+    const rawActive = (seg.weight / totalWeight) * activeRange;
+    const rawStart = _cursor;
+    const rawEnd = _cursor + rawActive;
+    const rawHoldEnd = rawEnd + seg.holdAfter;
+    _cursor = rawHoldEnd;
+    return { ...seg, rawStart, rawEnd, rawHoldEnd };
+  });
 
   function wordOpacity(wordIndex) {
     if (wordPhase === 0) return 0;
-    let phase;
-    if (wordPhase <= hackersNorm + HOLD) {
-      // Before and during hold: only reveal words up to hackers
-      if (wordIndex > hackersIdx) return 0;
-      phase = Math.min(wordPhase, hackersNorm);
-    } else {
-      phase = hackersNorm + (wordPhase - hackersNorm - HOLD) / (1 - hackersNorm - HOLD) * (1 - hackersNorm);
-    }
-    const start = (wordIndex / wordCount) * (1 - WORD_FADE);
-    return Math.max(0, Math.min(1, (phase - start) / WORD_FADE));
+
+    // Find which segment this word belongs to
+    const seg = segBounds.find(s => wordIndex >= s.start && wordIndex <= s.end);
+    if (!seg || wordPhase < seg.rawStart) return 0;
+
+    // Local progress within this segment (0→1)
+    const localPhase = Math.min(1, (wordPhase - seg.rawStart) / (seg.rawEnd - seg.rawStart));
+
+    // Per-word fade within the segment
+    const segSize = seg.end - seg.start + 1;
+    const localIdx = wordIndex - seg.start;
+    const localFade = Math.min(1, 3 / segSize);
+    const localStart = (localIdx / segSize) * (1 - localFade);
+
+    return Math.max(0, Math.min(1, (localPhase - localStart) / localFade));
   }
 </script>
 
@@ -209,7 +238,7 @@
     </div>
 
     <div class="manifesto">
-      <p class="manifesto-text">{#each tokens as t, i}{#if t.br}<br />{:else}<span class="word{t.cls ? ` ${t.cls}` : ''}" style:opacity={wordOpacity(t.idx)} style:text-decoration-color={t.cls === 'wiser' ? `rgba(238, 238, 238, ${underlinePhase})` : undefined}>{t.text}{#if i < tokens.length - 1 && !tokens[i + 1].br}{' '}{/if}</span>{/if}{/each}</p>
+      <p class="manifesto-text">{#each preWiserTokens as t, i}{#if t.br}<br />{:else}<span class="word{t.cls ? ` ${t.cls}` : ''}" style:opacity={wordOpacity(t.idx)}>{t.text}{#if i < preWiserTokens.length - 1 && !preWiserTokens[i + 1].br}{' '}{/if}</span>{/if}{/each}<span class="wiser-group" style="background-size:{underlinePhase * 100}% 2px">{#each wiserTokens as t, i}<span class="word wiser" style:opacity={wordOpacity(t.idx)}>{t.text}{#if i < wiserTokens.length - 1}{' '}{/if}</span>{/each}</span></p>
     </div>
   </div>
 </section>
@@ -227,7 +256,7 @@
 
   .hero {
     position: relative;
-    height: 330dvh;
+    height: 440dvh;
     background: #1c1c1a;
   }
 
@@ -367,10 +396,12 @@
     color: #ec5750;
   }
 
-  .wiser {
-    text-decoration: underline;
-    text-decoration-color: transparent;
-    text-underline-offset: 4px;
+  .wiser-group {
+    background-image: linear-gradient(#eee, #eee);
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    padding-bottom: 4px;
   }
 
   @media (max-width: 768px) {
