@@ -13,8 +13,8 @@ export const OG = {
     image: "/og.png",
   },
   designerNote: {
-    title: "A designer’s note - Manitej Boorgu",
-    description: "A personal note from Manitej, the designer of this site, on the gap year and what it means to him.",
+    title: "Hackers Wanted. - a designer's note",
+    description: "Hack Club is hiring 40 teenagers on a paid gap year to build the next generation of Hack Club’s programs.",
     image: "/og.png",
   },
 };
