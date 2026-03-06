@@ -261,7 +261,10 @@
       </div>
       <div class="fellowship-cta">
         <a class="fellowship-btn" href={applyUrl} target="_blank" rel="noopener noreferrer">Apply Now</a>
-        <p class="fellowship-subtext"><a href="https://notes.deven.dev/posts/the-plan-for-hack-club-world-dominance" target="_blank" rel="noopener noreferrer">How Hack Club works</a> · Read the Hacker Manifesto</p>
+        <div class="fellowship-links">
+          <a class="fellowship-link-btn" href="https://notes.deven.dev/posts/the-plan-for-hack-club-world-dominance" target="_blank" rel="noopener noreferrer">How Hack Club works</a>
+          <a class="fellowship-link-btn" href="/manifesto">Read the Hacker Manifesto</a>
+        </div>
         <span class="fellowship-scroll-hint">scroll to keep reading <span class="scroll-arrow">↓</span></span>
       </div>
     </div>
@@ -499,21 +502,26 @@
     gap: 16px;
   }
 
-  .fellowship-subtext {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 15px;
+  .fellowship-links {
+    display: flex;
+    gap: 10px;
+  }
+
+  .fellowship-link-btn {
+    padding: 6px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 9999px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
     font-family: 'Glyseric', 'Newsreader', sans-serif;
-    margin: 0;
+    text-decoration: none;
+    transition: border-color 0.2s ease, color 0.2s ease;
+    pointer-events: auto;
   }
 
-  .fellowship-subtext a {
-    color: rgba(255, 255, 255, 0.6);
-    text-decoration: underline;
-    transition: color 0.2s ease;
-  }
-
-  .fellowship-subtext a:hover {
-    color: rgba(255, 255, 255, 0.8);
+  .fellowship-link-btn:hover {
+    border-color: #fff;
+    color: #fff;
   }
 
   .fellowship-scroll-hint {

@@ -1,0 +1,601 @@
+---
+import { APPLY_URL } from '../config';
+
+const photoRow1 = [
+  '/manifesto/photos/row1-1.jpg',
+  '/manifesto/photos/row1-2.jpg',
+];
+const photoRow2 = [
+  '/manifesto/photos/row2-1.jpg',
+  '/manifesto/photos/row2-2.jpg',
+  '/manifesto/photos/row2-3.jpg',
+];
+const holdImages = [
+  {
+    src: '/manifesto/hold/hold-1.jpg',
+    caption: 'Sam (18, Ottawa, CA) and Euan (18, United Kingdom) working on a program launch at Hack Club HQ in Shelburne! ',
+  },
+  {
+    src: '/manifesto/hold/hold-2.jpg',
+    caption: 'The Hack Club team lounging around HQ\'s living room.',
+  },
+  {
+    src: '/manifesto/hold/hold-3.jpg',
+    caption: 'Hack Clubbers building their games together during Hack Club\'s Juice event in Shanghai.',
+  },
+  {
+    src: '/manifesto/hold/hold-4.png',
+    caption: 'During Juice, Hack Clubbers helped set up and ran a pop-up arcade cafe where they showcased their games.',
+  },
+  {
+    src: '/manifesto/hold/hold-5.png',
+    caption: 'Hack Clubbers getting Dunkin for Parthenon, the biggest all-girls hackathon held in NYC.',
+  },
+  {
+    src: '/manifesto/hold/hold-6.png',
+    caption: 'Hack Clubbers working together on their project during Hack Club\'s Midnight, a murder mystery-themed hackathon in Vienna',
+  },
+{
+    src: '/manifesto/hold/hold-7.png',
+    caption: 'Hack Clubbers huddled together around a campfire during Hack Club\'s Shipwrecked.',
+  }      
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Hacker Manifesto — Hackers Wanted</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,700&family=PT+Serif:ital,wght@0,700;1,400&family=Young+Serif&display=swap" rel="stylesheet" />
+
+    <style>
+      @font-face {
+        font-family: 'Glyseric';
+        src: url('/Glyseric.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      *, *::before, *::after { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; background: #1c1c1a; }
+    </style>
+  </head>
+  <body>
+
+    <a href="/" class="back-btn top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg> Back</a>
+
+    <!-- Photo collage -->
+    <div class="collage">
+      <div class="photo-row row-1">
+        {photoRow1.map((src) => <img class="photo" src={src} alt="" />)}
+      </div>
+      <div class="photo-row row-2">
+        {photoRow2.map((src) => <img class="photo" src={src} alt="" />)}
+      </div>
+    </div>
+
+    <!-- Hero text -->
+    <div class="hero">
+      <div class="hero-inner">
+        <h1 class="hero-title">Hackers Wanted.</h1>
+        <p class="hero-subtitle">
+          Some people are allergic to unthinking rules and bad systems.<br />
+          A few also have the talent and vision to will something better into being:<br />
+          <span class="hero-hackers">hackers</span>.<br />
+          We can either embrace them and reap the magic, or alienate them and
+          suffer the loss. <u>It's time we chose the wiser path.</u>
+        </p>
+      </div>
+    </div>
+
+    <div class="divider-wrap">
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- Manifesto body -->
+    <div class="manifesto">
+      <div class="manifesto-inner">
+        <div class="text-col">
+
+          <p>Some of us have always been overlooked, misunderstood, and underappreciated; looked at with wariness instead of wonder; set aside instead of embraced.</p>
+
+          <p>Throughout most of history, this has been the fate of the hacker. Though no society has ever suffered from having too many, and indeed many have failed their potential by nurturing too few, we've been slow to free hackers to do great things.</p>
+
+          <p>Hackers are doers. That's their glory, and their stigma. While there are no people more important to where we're going, we're still in desperate need of more—far, far more.</p>
+
+          <p>But for all their qualities—their drive, their creativity, their stubborn persistence—hackers have a branding problem. One that has more to do with us than them.</p>
+
+          <p class="bold" data-trigger="1">Hackers reflect us.</p>
+
+          <p>Hollywood and headlines have long been unkind to hackers. The popular image is of shadowy misfits who break into sensitive networks to steal things or hold them hostage—or just to prove that they can.</p>
+
+          <p>It's not that hackers don't do those things, or that those who do should have a different name. But when we distinguish between good and bad hackers as "white hats" or "black hats" we're missing the more basic point: the bad ones are just young people we failed, mostly by never asking them to do something great.</p>
+
+          <p>Hackers need challenges equal to their gifts, and opportunities equal to their ambitions. Else they'll grow frustrated and find themselves throwing their talents at whatever or whomever offers the most money or status—which can lead them to very dark and tragic places.</p>
+
+          <p>This is our problem as much as theirs. More, really. Hackers are a precious natural resource, the lifeblood of our best futures. While we can't create or micromanage them, we can—and must—support them in healthy directions.</p>
+
+          <p>Why?</p>
+
+          <p class="bold" data-trigger="2">Hackers run towards our hardest problems, with special energy and creativity, without needing to be asked.</p>
+
+          <p>Hackers, and really the hacker spirit, have long defied a single definition—which we can see reflected in our language. A project can be hacked together. An account can be hacked into. One might hack away at a solution. And that solution, if clever, might one day be called a hack. But different as these things seem, there's a common thread: a sense that there was once something in the way—perhaps friction, or bureaucracy, or groupthink—and now, thanks to the hacker's work, that obstacle is no longer there.</p>
+
+          <p>Hackers are reimaginers, with an incurable bias towards what's simpler, faster, and better.</p>
+
+          <p>The result can be beautiful or ugly, good or bad, sophisticated or crude. To have the signature of a hacker it merely has to make other clever people say "ah yes of course". Hacking is the magical ability to find the straightest line between two points—in spite of all the obstacles in the way, in spite of all the maps that say the best route is to go around.</p>
+
+          <p>A hacker has three essential qualities:</p>
+          <ol>
+            <li>They're never quite an employee. They can be managed, but rarely directed. They follow their own curiosity their own way—always honestly, often infuriatingly—along with their sense of taste for which problems are interesting and which aren't.</li>
+            <li>Code is their employee. It does exactly what's asked of it, brilliantly—if also roughly at first. Elegance tends to come after execution. The hacker's great pleasure is to look upon their creation like the god of the Old Testament and say "behold, it works".</li>
+            <li>They're bloodhounds for finding the better way to get something done, driven by a creativity that astounds—and often worries—those around them.</li>
+          </ol>
+
+          <p>A hacker is a romantic, a rebel with a most excellent cause: making this world a little less closed off, a little less boring, a little less designed by committee.</p>
+
+          <p>A hacker believes in good mischief, in being a little loose with the rules that don't matter so as to improve the outcomes that do.</p>
+
+          <p>Indeed, a hacker prides themselves on being a bit unruly. Because there is such a thing as ruly-ness, as being a slave to How Things Are Done. Hackers hate this. Sometimes it comes out in their appearance. Always it comes out in how they attack problems.</p>
+
+          <p>Hackers find unsolved challenges irresistible, which they hack away at by repeatedly asking the smart questions—the hows, the what ifs, the I wonders, the why nots—until they come up with scrappy, ingenious, totally unexpected solutions that the prematurely old among us lacked the energy and freedom to see or throw ourselves at.</p>
+
+          <p>We need that. Badly. As we always have.</p>
+
+          <p class="bold" data-trigger="3">Hackers belong to a proud lineage.</p>
+
+          <p>There's an unbroken chain of hackers stretching back to the first tools. While hackers today mostly use code, in days past they used hammers and lenses and slide rules—employing them in novel combinations and ways that others just didn't see.</p>
+
+          <p>Gutenberg didn't invent many—perhaps any—individual component(s) of the printing press. The Catholic Church had offered him salvation from bankruptcy, if only he could produce paper indulgences some cheaper way. Soon enough he'd reimagined how movable type and the pressure of a screw press could be combined to outdo the work of a thousand monks.</p>
+
+          <p>Sometimes it's about using existing tools in novel ways; other times it's about making new ones, or just rethinking the parts of the bigger picture that we wrongly assumed were fixed. The internet—and Silicon Valley around it—was built by hackers who used all those methods in turn. Someone figured out the silicon wafer, then someone in a garage down the street figured out a faster one. Then someone figured out a better way to make a wafer company.</p>
+
+          <p>Hackers can take many forms. All are programmers in some right. But some want to build the next unicorn, some want to just make some small corner of the world better, and <a href="https://en.wikipedia.org/wiki/Aaron_Swartz">some</a> want to use code to set something free. But what unites them all is a sense that a better future isn't just possible; it's possible through them.</p>
+
+          <p class="bold" data-trigger="4">If we don't support hackers, we don't grow.</p>
+
+          <p>Coding is an actual superpower. It turns people from consumers to creators; from those who engage with the world as it is to those who reshape the world to something better.</p>
+
+          <p>We're in a creation drought as a society, and have been for a while. Our young people are mostly building followings and personas, not things.</p>
+
+          <p>Building things is hard. Try to do something new—or to do an old thing a new way—and you'll get a quick education in That's Not How Things Are Done: the gravity well of committees and process manuals and best practices that confuse caution for wisdom.</p>
+
+          <p>One of history's great thinkers told <a href="https://fs.blog/chestertons-fence/">a famous story</a> about a fence blocking a path, and how one type of reformer would just destroy it while a wiser type would first ask why it was built.</p>
+
+          <p>The hacker would ask too. But the hacker would be less persuaded by bad answers.</p>
+
+          <p class="bold" data-trigger="5">We need to be willing to get out of their way.</p>
+
+          <p>Hackers don't want, or need, to be told. They'll naturally experiment, explore, and tinker; but always by working backwards from big questions and first principles, not forwards from second-hand maps that reflect yesterday's conditions and compromises.</p>
+
+          <p>Sometimes we struggle to allow them to. But we do this to our own disadvantage. Even if we think their approaches won't work, we're much better off for letting them try. At worst, they discover something new about the problem. At best, they actually go and solve them.</p>
+
+          <p>We should praise their spirit and offer them playgrounds for it—that are non-hierarchical, merit-based, and permissionless.</p>
+
+          <p>But we don't. And this starts very early on, thanks in part to a school system designed to produce factory workers for a bygone age. Most schools have become a bad simulation of real life in the modern economy. They're about performing success, not actually wrestling the bits and atoms of the world into a more sane and productive order.</p>
+
+          <p><em>This doesn't need to be how you spend your teenage years.</em> There's another path you can take, and another type of person you can be.</p>
+
+          <p>What colleges fear to admit is that they can't identify top talent from essays, scores, or interviews alone. If you want to prove yourself—not just to them, but to the companies doing the most interesting work in the world—you need to build. It doesn't matter what. It doesn't matter when you start. It matters that you start. And it's easier in the company of peers—who get you, who want to feed and feed off your energy, who want to shine just as badly.</p>
+
+          <p>You can be a lone wolf sometimes. But you'll go further in a pack.</p>
+
+          <p class="bold" data-trigger="6">The young have much to learn together, and much to teach us.</p>
+
+          <p>Hackers can't be taught really. They take ownership over their own education. When they find an interesting problem, they figure out what they need to learn and they pursue it with an enthusiasm that we mostly know now only from long memory. We can ensure that the available curriculum is good; we can't make them read it, nor determine how they'll read it.</p>
+
+          <p>But this isn't to say they aren't teachable, at least in the sense of taking direction and feedback. They just see the world differently. As we should hope they do.</p>
+
+          <p>The great challenges of our times were shaped in part by our responses to them. If we truly want to solve them, we need to be willing to turn them over to those who perceive them differently, who can approach them from new angles, with more energy and less baggage.</p>
+
+          <p>Put another way, we need to let hackers hack.</p>
+
+          <p style="margin-bottom: 0;">So consider this a giant sign in the window: Hackers Wanted. We see you, whether you're in a Bay Area garage or a rural village that the rest of the world can't find on the map. We value you. We want to stand alongside you as you build things—crazy, useful, beautiful things; things we may not even understand until you teach us.</p>
+
+
+        </div>
+
+        <!-- Side images (desktop only) -->
+        <div class="side-col" aria-hidden="true">
+          <div class="side-sticky">
+            {holdImages.map((img, i) => (
+              <div class={`hold-item ${i === 0 ? 'active' : ''}`} data-hold={i}>
+                <img class="hold-img" src={img.src} alt="" />
+                <p class="hold-caption">{img.caption}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const triggers = document.querySelectorAll('[data-trigger]');
+      const holdItems = document.querySelectorAll('.hold-item');
+      let current = 0;
+
+      function setActive(index) {
+        if (index === current) return;
+        holdItems.forEach(el => el.classList.remove('active'));
+        holdItems[index]?.classList.add('active');
+        current = index;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        // Find the highest trigger index currently visible
+        let highest = 0;
+        triggers.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight * 0.5) {
+            const idx = parseInt(el.getAttribute('data-trigger'));
+            if (idx > highest) highest = idx;
+          }
+        });
+        setActive(highest);
+      }, { threshold: 0 });
+
+      // Observe all triggers plus use scroll for real-time updates
+      triggers.forEach(el => observer.observe(el));
+
+      window.addEventListener('scroll', () => {
+        let highest = 0;
+        triggers.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight * 0.5) {
+            const idx = parseInt(el.getAttribute('data-trigger'));
+            if (idx > highest) highest = idx;
+          }
+        });
+        setActive(highest);
+      }, { passive: true });
+    </script>
+
+    <!-- CTA Footer -->
+    <footer class="cta-footer">
+      <div class="cta-section">
+        <h2 class="cta-title">The door is open.</h2>
+        <a class="apply-btn" href={APPLY_URL} target="_blank" rel="noopener noreferrer">Apply Now</a>
+      </div>
+      <p class="signoff">Love,<br />Hack Club</p>
+    </footer>
+
+    <!-- Watermark -->
+    <div class="watermark" aria-hidden="true">we are hack club.</div>
+
+    <a href="/" class="back-btn bottom"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg> Back</a>
+
+    <style>
+      /* ── Base ── */
+      body {
+        font-family: 'Glyseric', 'Newsreader', Georgia, serif;
+        color: #fff;
+        overflow-x: hidden;
+      }
+
+      /* ── Back Button ── */
+      .back-btn {
+        font-family: 'Glyseric', 'Newsreader', Georgia, serif;
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.5);
+        text-decoration: none;
+        padding: 12px 16px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        width: fit-content;
+        transition: color 0.2s ease;
+      }
+
+
+      .back-btn:hover {
+        color: #fff;
+      }
+
+      .back-btn.top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+      }
+
+      .back-btn.bottom {
+        margin-top: 0;
+        padding: 12px 16px 12px;
+      }
+
+      /* ── Photo Collage ── */
+      .collage {
+        position: relative;
+        height: clamp(480px, 40vw, 720px);
+        overflow: hidden;
+        pointer-events: none;
+        user-select: none;
+      }
+
+      .photo-row {
+        position: absolute;
+        display: flex;
+        gap: clamp(60px, 15vw, 300px);
+      }
+
+      .photo {
+        width: clamp(220px, 35vw, 670px);
+        height: clamp(165px, 26vw, 505px);
+        object-fit: cover;
+        flex-shrink: 0;
+        display: block;
+      }
+
+      .row-1 {
+        top: 0;
+        left: clamp(16px, 7.7vw, 148px);
+      }
+
+      .row-2 {
+        top: clamp(50px, 10.5vw, 201px);
+        left: clamp(-80px, -18vw, -345px);
+      }
+
+      /* ── Hero Text ── */
+      .hero {
+        padding: clamp(32px, 4vw, 76px) clamp(24px, 5vw, 80px) clamp(40px, 5vw, 80px);
+      }
+
+      .hero-inner {
+        max-width: 1122px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(20px, 2.5vw, 40px);
+      }
+
+      .hero-title {
+        font-family: 'Young Serif', serif;
+        font-size: clamp(48px, 8vw, 128px);
+        font-weight: normal;
+        color: #fff;
+        line-height: 1;
+        margin: 0;
+        text-align: center;
+      }
+
+      .hero-subtitle {
+        font-family: 'Glyseric', 'Newsreader', Georgia, serif;
+        font-size: clamp(16px, 2.2vw, 36px);
+        color: #eee;
+        line-height: 1.5;
+        margin: 0;
+        text-align: center;
+      }
+
+      .hero-hackers {
+        font-family: 'Newsreader', Georgia, serif;
+        font-style: italic;
+        font-weight: 700;
+        color: #ec5750;
+      }
+
+      .hero-subtitle u {
+        text-underline-offset: 3px;
+      }
+
+      /* ── Divider ── */
+      .divider-wrap {
+        display: flex;
+        justify-content: center;
+        padding: 0 clamp(24px, 8vw, 148px);
+        margin-bottom: clamp(40px, 5vw, 76px);
+      }
+
+      .divider-line {
+        width: clamp(200px, 25vw, 400px);
+        height: 2px;
+        background: #fff;
+        opacity: 0.25;
+      }
+
+      /* ── Manifesto body ── */
+      .manifesto {
+        padding: 0 clamp(24px, 8.3vw, 159px) clamp(60px, 8vw, 160px);
+      }
+
+      .manifesto-inner {
+        position: relative;
+        display: flex;
+        gap: 0;
+      }
+
+      .text-col {
+        flex: 1;
+        min-width: 0;
+        font-size: clamp(16px, 2vw, 32px);
+        color: #fff;
+        line-height: 1.6;
+      }
+
+      .text-col p {
+        margin: 0 0 1.2em;
+      }
+
+      .text-col p:last-child {
+        margin-bottom: 0;
+      }
+
+      .text-col .bold {
+        font-family: 'PT Serif', Georgia, serif;
+        font-weight: 700;
+        font-size: clamp(16px, 2vw, 32px);
+        color: #fff;
+        margin-top: 1.6em;
+        margin-bottom: 0.8em;
+      }
+
+      .text-col em {
+        font-family: 'PT Serif', Georgia, serif;
+        font-style: italic;
+      }
+
+      .text-col a {
+        color: #fff;
+        text-underline-offset: 3px;
+      }
+
+      .text-col ol {
+        margin: 0 0 1.2em;
+        padding-left: 1.4em;
+      }
+
+      .text-col li {
+        margin-bottom: 0.7em;
+        font-size: clamp(16px, 2vw, 32px);
+      }
+
+      /* ── CTA Footer ── */
+      .cta-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 clamp(24px, 8.3vw, 159px);
+      }
+
+      .cta-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(24px, 3vw, 48px);
+        margin-bottom: clamp(32px, 4vw, 64px);
+        width: 100%;
+      }
+
+      .cta-title {
+        font-family: 'Young Serif', serif;
+        font-size: clamp(36px, 8vw, 128px);
+        font-weight: normal;
+        color: #fff;
+        text-align: center;
+        line-height: 1;
+        margin: 0;
+      }
+
+      .apply-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: clamp(160px, 22vw, 326px);
+        height: clamp(40px, 4.5vw, 65px);
+        border: 2px solid #fff;
+        border-radius: 9999px;
+        font-family: 'Glyseric', 'Newsreader', Georgia, serif;
+        font-size: clamp(16px, 2.2vw, 36px);
+        color: #fff;
+        text-decoration: none;
+        transition: background 0.3s, color 0.3s;
+      }
+
+      .apply-btn:hover {
+        background: #fff;
+        color: #1c1c1a;
+      }
+
+      /* ── Sign-off ── */
+      .signoff {
+        font-family: 'Glyseric', 'Newsreader', Georgia, serif;
+        font-size: clamp(16px, 2vw, 32px);
+        color: #fff;
+        white-space: pre;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      /* ── Side images (sticky hold) ── */
+      .side-col {
+        display: none;
+        flex-shrink: 0;
+        width: 420px;
+      }
+
+      .side-sticky {
+        position: sticky;
+        top: 80px;
+      }
+
+      .hold-item {
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .hold-item.active {
+        display: flex;
+        animation: holdFadeIn 0.4s ease;
+      }
+
+      @keyframes holdFadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      .hold-img {
+        width: 100%;
+        height: 315px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .hold-caption {
+        font-family: 'Glyseric', 'Newsreader', Georgia, serif;
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.6);
+        text-align: right;
+        margin: 0;
+        line-height: 1.4;
+      }
+
+      /* ── Watermark ── */
+      .watermark {
+        font-family: 'Young Serif', serif;
+        font-size: clamp(32px, 7vw, 128px);
+        color: #fff;
+        opacity: 0.05;
+        text-align: right;
+        margin-top: -0.5em;
+        padding: 0 clamp(16px, 4vw, 80px) clamp(16px, 3vw, 48px);
+        user-select: none;
+        pointer-events: none;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      /* ── Desktop: show side images ── */
+      @media (min-width: 1200px) {
+        .side-col { display: block; }
+        .manifesto-inner { gap: 55px; }
+      }
+
+      /* ── Tablet ── */
+      @media (max-width: 900px) {
+        .hero {
+          padding-left: clamp(24px, 5vw, 80px);
+          padding-right: clamp(24px, 5vw, 80px);
+        }
+        .manifesto {
+          padding-left: clamp(24px, 5vw, 80px);
+          padding-right: clamp(24px, 5vw, 80px);
+        }
+      }
+
+      /* ── Mobile ── */
+      @media (max-width: 600px) {
+        .hero { padding: 24px 20px 40px; }
+        .manifesto { padding: 0 20px 60px; }
+        .divider-wrap { padding: 0 20px; margin-bottom: 40px; }
+      }
+    </style>
+  </body>
+</html>
