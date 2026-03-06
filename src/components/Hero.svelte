@@ -244,7 +244,7 @@
           <img class="flag" src="/hero/flag.svg" alt="Hack Club" loading="eager" fetchpriority="high" />
           <p class="headline">hackers wanted.</p>
         </div>
-        <p class="hero-desc">Join a team of 40 of the most ambitious young people that will help build Hack Club for the next year.<br /><span class="scroll-hint">Scroll down to read <span class="scroll-arrow">↓</span></span></p>
+        <p class="hero-desc">Hack Club is hiring 40 teenagers on a paid gap year to build the next generation of Hack Club's programs.<br /><span class="scroll-hint">Scroll down to read <span class="scroll-arrow">↓</span></span></p>
       </div>
     </div>
 
@@ -255,7 +255,7 @@
     <div class="fellowship" style:opacity={fellowshipFadeIn}>
       <h2 class="fellowship-title">Introducing the Hack Club Gap Year Fellowship</h2>
       <div class="fellowship-body">
-        <p>This is a full-time job at Hack Club HQ in Shelburne, Vermont. It's intended to be something you do for a year before you go to college or whatever your plans are after high school, but if you are on an alternate schooling path that works too!</p>
+        <p>This is a paid full-time in person role at Hack Club HQ. $50k/year + healthcare & benefits. It's intended to be something you do for a year before you go to college or whatever your plans are after high school, but if you are on an alternate schooling path that works too!</p>
         <p>The job is to design and execute on the next generation of You Ship, we ships!</p>
         <p>The people who have this job today are all of the Hack Club staff you see running programs. This is the next batch of people running Hack Club!</p>
       </div>
