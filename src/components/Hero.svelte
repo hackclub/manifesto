@@ -261,6 +261,7 @@
       </div>
       <div class="fellowship-cta">
         <a class="fellowship-btn" href={applyUrl} target="_blank" rel="noopener noreferrer">Apply Now</a>
+        <p class="fellowship-subtext"><a href="https://notes.deven.dev/posts/the-plan-for-hack-club-world-dominance" target="_blank" rel="noopener noreferrer">How Hack Club works</a> · Read the Hacker Manifesto</p>
         <span class="fellowship-scroll-hint">scroll to keep reading <span class="scroll-arrow">↓</span></span>
       </div>
     </div>
@@ -496,6 +497,23 @@
     flex-direction: column;
     align-items: center;
     gap: 16px;
+  }
+
+  .fellowship-subtext {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 15px;
+    font-family: 'Glyseric', 'Newsreader', sans-serif;
+    margin: 0;
+  }
+
+  .fellowship-subtext a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: underline;
+    transition: color 0.2s ease;
+  }
+
+  .fellowship-subtext a:hover {
+    color: rgba(255, 255, 255, 0.8);
   }
 
   .fellowship-scroll-hint {
