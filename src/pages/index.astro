@@ -62,7 +62,6 @@ import { APPLY_URL } from '../config';
         <a class="program-card" href="https://midnight.hackclub.com" target="_blank" rel="noopener">
           <img class="program-card-img" src="/images/midnight.jpg" alt="Midnight" />
           <div class="midnight-logo">
-            <img class="oblique" src="/images/midnight-logo-oblique.svg" alt="" />
             <img class="front" src="/images/midnight-logo.svg" alt="Midnight logo" />
           </div>
           <p class="program-card-desc">A murder-mystery hackathon held in Austria, Vienna with 60+ teenagers from all across the world!</p>
@@ -85,16 +84,16 @@ import { APPLY_URL } from '../config';
         <h3 class="programs-more-title">...and so much more...</h3>
         <div class="programs-more-grid">
           <a class="mini-card" href="https://summer.hackclub.com" target="_blank" rel="noopener" style="background-image:url('/images/summer-of-making.png');background-size:cover;background-position:bottom">
-            <img class="mini-card-logo" src="/images/som-logo.png" alt="Summer of Making" style="width:225px;height:130px" />
+            <img class="mini-card-logo" src="/images/som-logo.png" alt="Summer of Making" style="width:60%;height:auto" />
           </a>
 
           <a class="mini-card" href="https://campfire.hackclub.com" target="_blank" rel="noopener">
             <img class="mini-card-bg" src="/images/campfire-bg.png" alt="" />
-            <img class="mini-card-logo" src="/images/campfire-logo.svg" alt="Campfire" style="width:242px;height:56px;transform:rotate(-4deg)" />
+            <img class="mini-card-logo" src="/images/campfire-logo.png" alt="Campfire" style="width:65%;height:auto" />
           </a>
 
           <a class="mini-card" href="https://sleepover.hackclub.com" target="_blank" rel="noopener" style="background-color:#dbdcf7;background-image:url('/images/sleepover-pattern.png');background-repeat:repeat;background-size:112px">
-            <img class="mini-card-logo" src="/images/sleepover-logo.png" alt="Sleepover" style="width:224px;height:131px" />
+            <img class="mini-card-logo" src="/images/sleepover-logo.png" alt="Sleepover" style="width:60%;height:auto" />
           </a>
 
           <a class="mini-card" href="https://overglade.hackclub.com" target="_blank" rel="noopener">
@@ -103,7 +102,7 @@ import { APPLY_URL } from '../config';
 
           <a class="mini-card" href="https://undercity.hackclub.com" target="_blank" rel="noopener" style="background:#171717">
             <img class="mini-card-bg" src="/images/undercity-bg.png" alt="" />
-            <img class="mini-card-logo" src="/images/undercity-logo.png" alt="Undercity" style="width:239px;height:90px" />
+            <img class="mini-card-logo" src="/images/undercity-logo.png" alt="Undercity" style="width:65%;height:auto" />
           </a>
 
           <a class="mini-card" href="https://shiba.hackclub.com" target="_blank" rel="noopener">
@@ -114,12 +113,12 @@ import { APPLY_URL } from '../config';
 
           <a class="mini-card" href="https://hackpad.hackclub.com" target="_blank" rel="noopener">
             <img class="mini-card-bg" src="/images/hackpad-bg.png" alt="" />
-            <img class="mini-card-logo" src="/images/hackpad-logo.png" alt="Hackpad" style="width:243px;height:76px" />
+            <img class="mini-card-logo" src="/images/hackpad-logo.png" alt="Hackpad" style="width:65%;height:auto" />
           </a>
 
           <a class="mini-card" href="https://horizons.hackclub.com" target="_blank" rel="noopener">
             <img class="mini-card-bg" src="/images/horizons-bg.png" alt="" />
-            <img class="mini-card-logo" src="/images/horizons-logo.png" alt="Horizons" style="width:395px;height:117px;max-width:100%" />
+            <img class="mini-card-logo" src="/images/horizons-logo.png" alt="Horizons" style="width:100%;height:auto" />
           </a>
         </div>
       </div>
@@ -435,6 +434,7 @@ import { APPLY_URL } from '../config';
         gap: 24px;
         align-items: center;
         text-decoration: none;
+        height: fit-content;
       }
 
       .program-card:hover .program-card-img {
@@ -444,7 +444,7 @@ import { APPLY_URL } from '../config';
 
       .program-card-img {
         width: 100%;
-        height: 505px;
+        height: 300px;
         object-fit: cover;
         display: block;
         transition: transform 0.3s ease, filter 0.3s ease;
@@ -453,6 +453,7 @@ import { APPLY_URL } from '../config';
       .program-card-logo {
         height: 90px;
         object-fit: contain;
+        filter: drop-shadow(0 0 80px rgba(255, 255, 255, 0.5));
       }
 
       .program-card-desc {
@@ -469,6 +470,7 @@ import { APPLY_URL } from '../config';
         position: relative;
         height: 84px;
         width: 306px;
+        filter: drop-shadow(0 0 80px rgba(255, 255, 255, 0.5));
       }
 
       .midnight-logo .oblique {
@@ -518,7 +520,7 @@ import { APPLY_URL } from '../config';
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        height: 190px;
+        height: 150px;
         transition: transform 0.3s ease;
       }
 
@@ -546,6 +548,7 @@ import { APPLY_URL } from '../config';
         display: block;
         object-fit: contain;
       }
+
 
       .mini-card-overlay {
         position: absolute;
@@ -1118,13 +1121,16 @@ import { APPLY_URL } from '../config';
         .sc-bam-screenshot { width: 180px; height: 130px; }
         .sc-blind-logo { width: 220px; height: 70px; }
 
-        .programs-more-grid { grid-template-columns: 1fr; }
+        .programs-more-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
 
-        .mini-card { height: 160px; }
+        .mini-card { height: 100px; }
 
         .quadrant-desc, .quadrant-desc.right { font-size: 16px; text-align: left; }
 
-        .program-card-desc { font-size: 16px; }
+        .program-card-img { height: 180px; }
+        .program-card-logo { height: 60px; }
+        .program-card-desc { font-size: 14px; }
+        .program-card { gap: 12px; }
 
         .cta-end-title { font-size: 27px; }
 
