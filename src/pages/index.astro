@@ -232,6 +232,27 @@ const og = OG.index;
       </div>
     </section>
 
+    <!-- notes -->
+    <section class="notes">
+      <h2 class="notes-title">Notes from previous gap years...</h2>
+
+      <a href="https://journal.tongyu.fish/gapyear/" target="_blank" rel="noopener noreferrer" class="notes-card">
+        <img class="notes-card-photo" src="/images/notes-tongyu.jpg" alt="Tongyu" />
+        <div class="notes-card-text">
+          <p class="notes-card-title">this is why you should do a hack club gap year. →</p>
+          <p class="notes-card-author">Written by Tongyu, 2025-26 Gap Year</p>
+        </div>
+      </a>
+
+      <a href="/a-designers-note" class="notes-card">
+        <img class="notes-card-photo" src="/images/notes-manitej.jpg" alt="Manitej" />
+        <div class="notes-card-text">
+          <p class="notes-card-title">a designer's note <span class="notes-card-subtitle">(brief thoughts on a gap year)</span> →</p>
+          <p class="notes-card-author">Written by Manitej, 2025-26 Gap Year</p>
+        </div>
+      </a>
+    </section>
+
     <section class="manifesto-section">
       <div class="cta-end">
         <h2 class="cta-end-title">The door is open.</h2>
@@ -778,6 +799,73 @@ const og = OG.index;
         white-space: nowrap;
       }
 
+      /* Notes section */
+      .notes {
+        background: #1c1c1a;
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+        padding: 0 137px 100px;
+      }
+
+      .notes-title {
+        font-family: 'Young Serif', serif;
+        font-size: 48px;
+        color: #eee;
+        font-weight: normal;
+        line-height: normal;
+        margin: 0;
+      }
+
+      .notes-card {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 48px;
+        background: rgba(255, 255, 255, 0.1);
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        transition: background 0.2s;
+      }
+
+      .notes-card:hover {
+        background: rgba(255, 255, 255, 0.16);
+      }
+
+      .notes-card-photo {
+        width: 240px;
+        height: 240px;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+
+      .notes-card-text {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        color: #fff;
+      }
+
+      .notes-card-title {
+        font-family: 'Young Serif', serif;
+        font-size: 32px;
+        font-weight: normal;
+        line-height: normal;
+        margin: 0;
+      }
+
+      .notes-card-subtitle {
+        font-size: 20px;
+      }
+
+      .notes-card-author {
+        font-family: 'Glyseric', 'Newsreader', sans-serif;
+        font-size: 16px;
+        margin: 0;
+        color: #ddd;
+      }
+
       /* Manifesto section */
       .manifesto-section {
         background: #1c1c1a;
@@ -968,6 +1056,8 @@ const og = OG.index;
         .programs { padding: 48px 48px 80px; }
         .gapyear { padding: 0 48px 80px; }
         .teens-built { padding: 0 48px 80px; }
+        .notes { padding: 0 48px 80px; }
+        .notes-title { font-size: 36px; }
         .manifesto-section { padding: 0 48px 80px; }
         .programs-headline { font-size: 26px; }
         .gapyear-title { font-size: 26px; }
@@ -995,6 +1085,12 @@ const og = OG.index;
         .programs { padding: 36px 24px 60px; }
         .gapyear { padding: 0 24px 60px; }
         .teens-built { padding: 0 24px 60px; }
+        .notes { padding: 0 24px 60px; }
+        .notes-title { font-size: 28px; }
+        .notes-card { gap: 24px; }
+        .notes-card-photo { width: 160px; height: 160px; }
+        .notes-card-title { font-size: 24px; }
+        .notes-card-subtitle { font-size: 16px; }
         .manifesto-section { padding: 0 24px 60px; }
         .cta-end { padding: 0 24px 0; }
 
@@ -1032,6 +1128,12 @@ const og = OG.index;
         .programs { padding: 24px 16px 48px; }
         .gapyear { padding: 0 16px 48px; }
         .teens-built { padding: 0 16px 48px; }
+        .notes { padding: 0 16px 48px; }
+        .notes-title { font-size: 22px; }
+        .notes-card { flex-direction: column; gap: 0; }
+        .notes-card-photo { width: 100%; height: 200px; }
+        .notes-card-text { padding: 16px; }
+        .notes-card-title { font-size: 20px; }
         .manifesto-section { padding: 0 16px 48px; }
         .cta-end { padding: 0 16px 0; }
 
