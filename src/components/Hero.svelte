@@ -350,9 +350,9 @@
   /* Matches Figma clip box: right=63, bottom=65 in the 1920×1065 coordinate space */
   .hero-content {
     position: absolute;
-    right: 63px;
+    right: 75px;
     bottom: 65px;
-    width: 340px;
+    width: 352px;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -374,14 +374,14 @@
   }
 
   .flag {
-    height: 37px;
+    height: 29.6px;
     width: auto;
     display: block;
   }
 
   .headline {
     font-family: 'Young Serif', serif;
-    font-size: 40px;
+    font-size: 32px;
     color: #fff;
     line-height: 1.1;
     margin: 0;
@@ -389,7 +389,7 @@
 
   .hero-desc {
     font-family: 'Glyseric', 'Newsreader', sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     color: #fff;
     line-height: 1.4;
     margin: 0;
@@ -397,6 +397,7 @@
 
   .scroll-hint {
     color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
     opacity: 0;
     animation: fadeIn 1s ease-out 4s forwards;
   }
@@ -548,14 +549,15 @@
   .hero-apply-btn {
     align-self: flex-start;
     pointer-events: auto;
-    border-width: 2px;
-    border-color: #fff;
+    border: 2px solid #fff;
     color: #fff;
+    font-size: 20px;
     transition: background 0.5s, color 0.5s;
   }
 
   .hero-apply-btn:hover {
     background: #fff;
+    border-color: #fff;
     color: #1c1c1a;
   }
 
