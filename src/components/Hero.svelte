@@ -130,11 +130,18 @@
   });
 
   $effect(() => {
+    let lastWidth = window.innerWidth;
     function update() {
+      const newWidth = window.innerWidth;
+      // Ignore resize events that only change height (Safari toolbar show/hide)
+      if (newWidth === lastWidth) return;
+      lastWidth = newWidth;
       scale = window.innerHeight / 1065;
       vh = window.innerHeight;
     }
-    update();
+    // Initial values
+    scale = window.innerHeight / 1065;
+    vh = window.innerHeight;
     window.addEventListener('resize', update);
     return () => window.removeEventListener('resize', update);
   });
@@ -296,14 +303,14 @@
 
   .hero {
     position: relative;
-    height: 570dvh;
+    height: 570svh;
     background: #1c1c1a;
   }
 
   .hero-sticky {
     position: sticky;
     top: 0;
-    height: 100dvh;
+    height: 100svh;
     overflow: hidden;
   }
 
