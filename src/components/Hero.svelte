@@ -1,15 +1,4 @@
 <script>
-  let { applyUrl = '#' } = $props();
-
-  const DEADLINE = new Date('2026-03-20T23:59:59');
-  let daysRemaining = $state(Math.max(0, Math.ceil((DEADLINE - new Date()) / 86400000)));
-  $effect(() => {
-    const id = setInterval(() => {
-      daysRemaining = Math.max(0, Math.ceil((DEADLINE - new Date()) / 86400000));
-    }, 60000);
-    return () => clearInterval(id);
-  });
-
   // cx/cy = offset from center of 1920×1065 Figma frame, w/h = px dimensions
   const tiles = [
     // top band
@@ -262,7 +251,7 @@
           <p class="headline">hackers wanted.</p>
         </div>
         <p class="hero-desc">Hack Club is hiring 40 teenagers on a paid gap year to build the next generation of Hack Club's programs.</p>
-        <a class="fellowship-link-btn hero-apply-btn" href={applyUrl} target="_blank" rel="noopener noreferrer">Apply Now ({daysRemaining} days remaining)</a>
+        <span class="fellowship-link-btn hero-apply-btn is-closed">Applications Closed</span>
         <span class="scroll-hint">Scroll down to read <span class="scroll-arrow">↓</span></span>
       </div>
     </div>
@@ -279,7 +268,7 @@
         <p>The people who have this job today are all of the Hack Club staff you see running programs. This is the next batch of people running Hack Club!</p>
       </div>
       <div class="fellowship-cta">
-        <a class="fellowship-btn" href={applyUrl} target="_blank" rel="noopener noreferrer">Apply Now ({daysRemaining} days remaining)</a>
+        <span class="fellowship-btn is-closed">Applications Closed</span>
         <div class="fellowship-links">
           <a class="fellowship-link-btn" href="https://notes.deven.dev/posts/the-plan-for-hack-club-world-dominance" target="_blank" rel="noopener noreferrer">How Hack Club works ↗</a>
           <a class="fellowship-link-btn" href="/manifesto">Read the Hacker Manifesto ↗</a>
@@ -514,6 +503,12 @@
   .fellowship-btn:hover {
     background: #fff;
     color: #1c1c1a;
+  }
+
+  .is-closed {
+    opacity: 0.55;
+    cursor: default;
+    pointer-events: none;
   }
 
   .fellowship-cta {
